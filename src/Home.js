@@ -4,6 +4,9 @@ import './Home.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CountUp from 'react-countup';
 import ScrollTrigger from 'react-scroll-trigger';
+import PhoneInput from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
+
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -549,6 +552,46 @@ const Home = () => {
                         </Row>
                     </Container>
                 </div>
+            </div>
+
+            <div className="container message">
+                <div className="row">
+                    <div className="col-lg-12 ">
+                        <h2 className='text-center question mt-5' >Still have questions?</h2>
+                        <p className="mt-3 text-center web">We’re ready to answer your questions and jump start your project</p>
+                    </div>
+                </div>
+
+                <div className="main">
+                    <div className="name p-3">
+
+                        <input type="text" name="name" id="name" placeholder='Name' />
+                    </div>
+
+                    <div className="phno p-3">
+                        <PhoneInput
+                            placeholder="Enter phone number"
+                            value={value}
+                            onChange={setValue} />
+                    </div>
+                    <div className="email p-3">
+                        <input type="email" name="email" id="email" placeholder='Email' />
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-lg-12 text-center">
+                        <textarea name="" id="" cols="100" rows="5" placeholder='Your message'></textarea>
+                    </div>
+                </div>
+
+                <div className="row mt-3">
+                    <div className="col-lg-12 text-center">
+                        <Button variant='primary rounded-0' className='text-center' >Send Message</Button>
+                    </div>
+                </div>
+
+
             </div>
 
 

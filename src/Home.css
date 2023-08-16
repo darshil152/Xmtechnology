@@ -33,6 +33,50 @@ body {
 
 .spacing.row{
     margin-top: 105px;
+
+}
+
+input#name{
+    text-indent: 10px;
+    border: 1px solid #C4C4C4;
+    width: 246px;
+    height: 45px;
+}
+
+input.PhoneInputInput{
+    text-indent: 10px;
+    border: 1px solid #C4C4C4;
+    width: 246px;
+        height: 45px;
+}
+
+input#email{
+    text-indent: 10px;
+    border: 1px solid #C4C4C4;
+    width: 246px;
+        height: 45px;
+}
+textarea{
+    max-width: 100%;
+    text-indent: 10px;
+    border: 1px solid #C4C4C4;
+
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.question{
+    color: var(--para, #00142D);
+        text-align: center;
+        font-family: Circular Std;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
 }
 
 
@@ -213,6 +257,10 @@ nav.nav{
     margin: 0px;
 }
 
+.Grop.text-light{
+    height: 320px;
+}
+
 .footer-div-image2 {
     width: 100%;
     padding: 0px;
@@ -221,6 +269,16 @@ nav.nav{
     background-position: center;
     background-size: cover;
 }
+
+.message{
+    position: relative;
+        width: 1170px;
+        height: 500px;
+        background: white;
+        bottom: 60px;
+        box-shadow: 0px 35px 35px 0px rgba(0, 0, 0, 0.05);
+    }
+
 
   .Info {
       color: #707070       
@@ -275,6 +333,16 @@ nav.nav{
         display: none;
     }
 
+   .phno.p-3{
+    position: relative;
+    right: 21px;
+    }
+
+        textarea{
+            width: 250px;
+        }
+               
+ 
     .dica {
         width: 320px;
         display: flex;
