@@ -6,6 +6,7 @@ import CountUp from 'react-countup';
 import ScrollTrigger from 'react-scroll-trigger';
 import PhoneInput from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
+import firebaseApp from './Firebase/firebase';
 
 
 import Container from 'react-bootstrap/Container';
@@ -58,6 +59,68 @@ const Home = () => {
 
     const [countetOn, setCounteron] = useState(false)
     const [value, setValue] = useState()
+    const [name, setname] = useState()
+    const [email, setemail] = useState()
+    const [message, setmessage] = useState()
+
+
+    const handlename = (e) => {
+        setname(e.target.value)
+    }
+
+
+    const handlemail = (e) => {
+        setemail(e.target.value)
+    }
+
+    const handlemessage = (e) => {
+        setmessage(e.target.value)
+    }
+
+
+    const submitform = () => {
+        let obj = {
+            Name: name,
+            PhoneNo: value,
+            Email: email,
+            Message: message,
+            id: makeid(5)
+        }
+
+        let registerQuery = new Promise((resolve, reject) => {
+            let db = firebaseApp.firestore();
+            db.collection("ContactUs").add(obj)
+
+                .then((docRef) => {
+
+                    console.log("Document written with ID: ", docRef);
+                    resolve(docRef.id);
+                })
+                .catch((error) => {
+                    console.error("Please check form again ", error);
+                    reject(error);
+                });
+        });
+        registerQuery.then(result => {
+            console.warn('register successful')
+        }).catch(error => {
+            console.error(error)
+        })
+
+    }
+
+    const makeid = (length) => {
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const charactersLength = characters.length;
+        let counter = 0;
+        while (counter < length) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            counter += 1;
+        }
+        return result;
+    }
+
 
     return (
         <>
@@ -107,8 +170,9 @@ const Home = () => {
 
                                 <Col lg={6}>
                                     <div className='text-end'>
-                                        <img width={350} height={130} className='pt-3' src={Img1} alt="" />
+                                        <img width={350} height={130} className='ms-auto' src={Img1} alt="" />
                                         <img className='pt-3 img-fluid imag1' src={Img2} alt="" />
+
                                     </div>
                                 </Col>
                             </div>
@@ -255,8 +319,10 @@ const Home = () => {
                     <Row>
                         <div className='dic'>
                             <Col lg={4} md={6}>
-                                <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
-                                    <img width={35} src={Image1} alt="" />
+                                <div className='border  m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
+                                    <div className='d-flex justify-content-center'>
+                                        <img width={35} src={Image1} alt="" />
+                                    </div>
                                     <h4 className='fw-bold pt-3'>Web Development</h4>
                                     <p className='web'>Online impressions take time. It's exactly what you need. We build your dream website using Node, Angular, PHP, and Laravel.</p>
                                     <Button variant="primary" className='ps-4 pe-4 mt-4 pt-2 pb-2 rounded-0'>LEARN MORE</Button>{' '}
@@ -265,7 +331,9 @@ const Home = () => {
 
                             <Col lg={4} md={6}>
                                 <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services '>
-                                    <img width={35} src={Image2} alt="" />
+                                    <div className='d-flex justify-content-center'>
+                                        <img width={35} src={Image2} alt="" />
+                                    </div>
                                     <h4 className='fw-bold pt-3'>Digital Marketing</h4>
                                     <p className='pt-2 web' >By utilizing social media and paid advertising, we help small and medium businesses succeed online.</p>
                                     <Button variant="primary" className='ps-4 pe-4 pt-2 mt-3 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
@@ -274,7 +342,9 @@ const Home = () => {
 
                             <Col lg={4} md={6}>
                                 <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
-                                    <img width={35} src={Image3} alt="" />
+                                    <div className='d-flex justify-content-center'>
+                                        <img width={35} src={Image3} alt="" />
+                                    </div>
                                     <h4 className='fw-bold pt-3'>Application Development</h4>
                                     <p className='pt-2 web'>React Native, Flutter, Native Android, Native iOS. Our team thrives on methodological and technical challenges.</p>
                                     <Button variant="primary" className='ps-4 pe-4 pt-2 mt-3 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
@@ -283,7 +353,9 @@ const Home = () => {
 
                             <Col lg={4} md={6}>
                                 <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
-                                    <img width={35} src={Image1} alt="" />
+                                    <div className='d-flex justify-content-center'>
+                                        <img width={35} src={Image1} alt="" />
+                                    </div>
                                     <h4 className='fw-bold pt-3'>E-Commerce Solutions</h4>
                                     <p className='web'>Provide e-commerce websites and applications for companies to sell online. E-commerce websites with online payment solutions are our specialty.</p>
                                     <Button variant="primary" className='ps-4 pe-4 pt-2 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
@@ -292,7 +364,9 @@ const Home = () => {
 
                             <Col lg={4} md={6}>
                                 <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
-                                    <img width={35} src={Image1} alt="" />
+                                    <div className='d-flex justify-content-center'>
+                                        <img width={35} src={Image1} alt="" />
+                                    </div>
                                     <h4 className='fw-bold pt-3'>Backup & Security</h4>
                                     <p className='pt-2 web'>SMBs succeed online with us. Security and backup are included. Our daily backups give you 100% security.</p>
                                     <Button variant="primary" className='ps-4 pe-4 pt-2 mt-3 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
@@ -301,7 +375,9 @@ const Home = () => {
 
                             <Col lg={4} md={6}>
                                 <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
-                                    <img width={35} src={Image1} alt="" />
+                                    <div className='d-flex justify-content-center'>
+                                        <img width={35} src={Image1} alt="" />
+                                    </div>
                                     <h4 className='fw-bold pt-3'>Enterprise Software Services</h4>
                                     <p className='web'>SMBs succeed online with us. Security and backup are included. Our daily backups give you 100% security.</p>
                                     <Button variant="primary" className='ps-4 pe-4 pt-2 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
@@ -310,7 +386,9 @@ const Home = () => {
 
                             <Col lg={4} md={6}>
                                 <div className='border  m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services' >
-                                    <img width={35} src={Image4} alt="" />
+                                    <div className='d-flex justify-content-center'>
+                                        <img width={35} src={Image4} alt="" />
+                                    </div>
                                     <h4 className='fw-bold pt-3'>IT Support</h4>
                                     <p className='web'>We maintain websites for small, medium, and large businesses. Your existing website is regularly updated.</p>
                                     <Button variant="primary" className='ps-4 pe-4 pt-2 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
@@ -407,12 +485,12 @@ const Home = () => {
                             <Col lg={4}>
                                 <div className='end-div p-3'>
                                     <div>
-                                        <h5>Awesome Ideas</h5>
+                                        <h5 className='idea'> Awesome Ideas</h5>
                                         <p className='web'>Lorem Ipsum is simply dummy text of the
                                             printing and typesetting industry. </p>
                                     </div>
                                     <div>
-                                        <h5>Web Solution</h5>
+                                        <h5 className='idea'>Web Solution</h5>
                                         <p className='web'>Lorem Ipsum is simply dummy text of the
                                             printing and typesetting industry. </p>
                                     </div>
@@ -424,12 +502,12 @@ const Home = () => {
                             <Col lg={4}>
                                 <div className='p-3'>
                                     <div>
-                                        <h5>Planning Settings</h5>
+                                        <h5 className='idea'>Planning Settings</h5>
                                         <p className='web'>Lorem Ipsum is simply dummy text of the
                                             printing and typesetting industry. </p>
                                     </div>
                                     <div>
-                                        <h5>Client Market</h5>
+                                        <h5 className='idea'>Client Market</h5>
                                         <p className='web'>Lorem Ipsum is simply dummy text of the
                                             printing and typesetting industry. </p>
                                     </div>
@@ -511,7 +589,7 @@ const Home = () => {
                             <div className='dics'>
                                 <Col lg={3} md={6} sm={6} xs={12} >
                                     <div className='pt-4'>
-                                        <h2>Contacts</h2>
+                                        <h2 className='contact'>Contacts</h2>
                                     </div>
                                 </Col>
 
@@ -530,9 +608,9 @@ const Home = () => {
                                     </div>
                                 </Col>
                                 <Col lg={3} md={6} sm={6} xs={12} >
-                                    <div className='d-flex pt-sm-4'>
+                                    <div className='d-flex '>
                                         <img src={LocatinIcon} alt="" />
-                                        <h6 className='ms-3 pt-1 lh-base'>207, Dhara trade center,
+                                        <h6 className='ms-3 pt-1 address lh-base'>207, Dhara trade center,
                                             Mahadev Chowk,
                                             Mota varachha, Surat
                                             394101
@@ -540,7 +618,7 @@ const Home = () => {
                                     </div>
                                 </Col>
 
-                                <Col lg={3} md={6} sm={6} xs={12} className='pt-4'>
+                                <Col lg={3} md={6} sm={6} xs={12} className='pt-4 d-flex'>
                                     <img src={Fblogo} alt="" />
                                     <img className='ms-3' src={Twilogo} alt="" />
                                     <img className='ms-3' src={Inlogo} alt="" />
@@ -565,7 +643,7 @@ const Home = () => {
                 <div className="main">
                     <div className="name p-3">
 
-                        <input type="text" name="name" id="name" placeholder='Name' />
+                        <input type="text" name="name" id="name" placeholder='Name' onChange={handlename} />
                     </div>
 
                     <div className="phno p-3">
@@ -575,19 +653,19 @@ const Home = () => {
                             onChange={setValue} />
                     </div>
                     <div className="email p-3">
-                        <input type="email" name="email" id="email" placeholder='Email' />
+                        <input type="email" name="email" id="email" placeholder='Email' onChange={handlemail} />
                     </div>
                 </div>
 
                 <div className="row">
                     <div className="col-lg-12 text-center">
-                        <textarea name="" id="" cols="100" rows="5" placeholder='Your message'></textarea>
+                        <textarea name="" id="" cols="100" rows="5" placeholder='Your message' onChange={handlemessage}></textarea>
                     </div>
                 </div>
 
                 <div className="row mt-3">
                     <div className="col-lg-12 text-center">
-                        <Button variant='primary rounded-0' className='text-center' >Send Message</Button>
+                        <Button variant='primary rounded-0' className='text-center' onClick={submitform}>Send Message</Button>
                     </div>
                 </div>
 
@@ -609,7 +687,7 @@ const Home = () => {
 
                                             <p>Follow us on social media!</p>
 
-                                            <div>
+                                            <div className='d-flex'>
                                                 <img src={Fblogo} alt="" />
                                                 <img className='ms-3' src={Twilogo} alt="" />
                                                 <img className='ms-3' src={Inlogo} alt="" />

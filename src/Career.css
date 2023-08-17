@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.joboption{
+    border: 1px solid grey;
+    border-radius: 10px;
+    height: 50px;
+
+}
+
+input#headlessui-combobox-input-\:r1\:{
+    border: 1px solid grey;
+        border-radius: 10px;
+        height: 50px;
+}
+
+input#headlessui-combobox-input-\:r5\:{
+border: 1px solid grey;
+    border-radius: 10px;
+    height: 50px;
+
+}
+
+input#headlessui-combobox-input-\:r9\:{
+border: 1px solid grey;
+    border-radius: 10px;
+    height: 50px;
+}
+
+tr.headingdetail {
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    text-align: left;
+}
+
+th{padding: 10px;}
+
+td.detailtable {
+   text-align: left;
+   border: 1px solid grey;
+   margin: 15px;
+   padding: 15px;
+}
+
+table{
+    box-shadow: 5px 6px 25px hsla(0, 0%, 6%, .15);
+    border-radius: 15px;
+}
+
+ tr:nth-child(2n) {
+     background-color: #dddddd;
+ }

@@ -1,7 +1,5 @@
 *{
-    
-            font-family: Circular Std;
-        
+     font-family: Circular Std;      
 }
 
 
@@ -292,6 +290,20 @@ nav.nav{
     border-color: #707070
   }
 
+a.nav-link{
+    margin-right: 15px;
+}
+
+.hello{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button#headlessui-combobox-button-\:r3\:{
+    content: "V";
+}
+
 
 @font-face {
     font-family: Circular Std;
@@ -299,9 +311,24 @@ nav.nav{
 }
 
 
+svg.h-5.w-5 {
+    display: none;
+}
+
+
 @media screen and (max-width:992px) {
     .circle1 {
         display: none;
+    }
+
+
+    h2.contact{
+        margin-left: 30px;
+    }
+    
+
+    h5.idea{
+        text-align: center;
     }
     .circle{
         display: none;
@@ -332,6 +359,10 @@ nav.nav{
     .circle1 {
         display: none;
     }
+
+        h1.fw-bold{
+            margin-top: 55px;
+        }
 
    .phno.p-3{
     position: relative;
@@ -369,4 +400,19 @@ nav.nav{
         text-align: center;
         margin: auto;
     }
+}
+
+
+@media screen and (max-width:576px) {
+.Grop.text-light { 
+    height: 500px
+}
+
+        h1.fw-bold {
+            margin-top: 55px;
+        }
+
+.message{
+    height: 650px;
+}
 }
