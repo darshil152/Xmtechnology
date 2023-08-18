@@ -7,6 +7,7 @@ import ScrollTrigger from 'react-scroll-trigger';
 import PhoneInput from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
 import firebaseApp from './Firebase/firebase';
+import { useNavigate } from "react-router-dom";
 
 
 import Container from 'react-bootstrap/Container';
@@ -46,6 +47,15 @@ import Inlogo from './assets/Image/in.png';
 import Intralogo from './assets/Image/instagram-sketched 1.svg';
 import Sklogo from './assets/Image/skype 1.svg';
 import Gmlogo from './assets/Image/gmail 1.svg';
+
+
+import reactlogo from "./assets/Image/react_native_color.svg"
+import flutter from "./assets/Image/flutter_color.svg"
+import angular from "./assets/Image/angular_color.svg"
+import python from "./assets/Image/paython_color.svg"
+import ruby from "./assets/Image/ruby_color.svg"
+import node from "./assets/Image/node_js_color.svg"
+import dedicated from "./assets/Image/dedicated-deveoper-bg.webp"
 
 
 import bgImg from './assets/Image/2752392-removebg-preview 1.png';
@@ -121,23 +131,26 @@ const Home = () => {
         return result;
     }
 
+    const navigate = useNavigate();
+    const topage = () => {
+        window.location.href = "/career"
+    }
+
 
     return (
         <>
             <Navbar expand="lg" className="nav pb-3 pt-4 ">
                 <Container>
-                    <Navbar.Brand href="#home"><img src={Logo} alt="" className='img-fluid' /></Navbar.Brand>
+                    <Navbar.Brand href=""><img src={Logo} alt="" className='img-fluid' /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link href="#home">Services</Nav.Link>
                             <Nav.Link href="#link">About Us</Nav.Link>
                             <Nav.Link href="#link">Services</Nav.Link>
-                            <Nav.Link href="#link">Portfolio    </Nav.Link>
-                            <Nav.Link href="#link">Jobs</Nav.Link>
-
+                            <Nav.Link href="#link">Portfolio</Nav.Link>
+                            <Nav.Link href="" onClick={topage}>Jobs</Nav.Link>
+                            <Nav.Link href="#link">Hire</Nav.Link>
                             <Button variant="primary" className='rounded-5'>Contact  Us</Button>{' '}
-
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -214,7 +227,7 @@ const Home = () => {
                         <div className='d-flex justify-content-center'>
                             <Col lg={6}>
                                 <div className='text-center '>
-                                    <div className='d-flex'>
+                                    <div className='d-flex '>
                                         <h2 className='fw-bold m-auto'>How it is going?</h2>
                                         <img src={icon1} className='icon2' alt="" />
                                     </div>
@@ -298,7 +311,7 @@ const Home = () => {
                 </Container>
             </div>
 
-            <div className='mt-3 mb-3 mt-sm-5'>
+            <div className='mt-3 mb-3 mt-sm-5 bg1' style={{ width: "100%" }}>
                 <Container>
                     <Row>
                         <div className='d-flex justify-content-center'>
@@ -416,16 +429,10 @@ const Home = () => {
 
             <ScrollTrigger onEnter={() => setCounteron(true)} onExit={() => setCounteron(false)}>
                 <div className="container-fluid conter">
-
-
                     <div className="container">
-
                         <div className="row">
-
                             <div className="col-lg-3 col-md-6 col-sm-6 counter">
-
-
-                                {countetOn && <CountUp start={0} end={25} duration={5} delay={0}></CountUp>}
+                                {countetOn && <CountUp start={0} end={8} duration={5} delay={0}></CountUp>}
                                 +
                                 <br />
                                 <p className='pl-3' style={{ fontSize: "25px" }}>
@@ -434,14 +441,14 @@ const Home = () => {
 
                                 </p>
                             </div>
-                            <div className="col-lg-3 col-md-6 col-sm-6 counter" >   {countetOn && <CountUp start={0} end={38} duration={5} delay={0}></CountUp>}
+                            <div className="col-lg-3 col-md-6 col-sm-6 counter" >   {countetOn && <CountUp start={0} end={40} duration={5} delay={0}></CountUp>}
                                 +<br />
                                 <p className='pl-3' style={{ fontSize: "25px" }}>
                                     Expert <br />
                                     TeamMember
                                 </p>
                             </div>
-                            <div className="col-lg-3 col-md-6 col-sm-6 counter">   {countetOn && <CountUp start={0} end={3} duration={2} delay={0}></CountUp>}
+                            <div className="col-lg-3 col-md-6 col-sm-6 counter">   {countetOn && <CountUp start={0} end={1} duration={5} delay={0}></CountUp>}
                                 K+
                                 <br />
                                 <p className='pl-3' style={{ fontSize: "25px" }}>
@@ -449,7 +456,7 @@ const Home = () => {
                                     Complete
                                 </p>
                             </div>
-                            <div className="col-lg-3 col-md-6 col-sm-6 counter">   {countetOn && <CountUp start={0} end={99} duration={3} delay={0}></CountUp>}
+                            <div className="col-lg-3 col-md-6 col-sm-6 counter">   {countetOn && <CountUp start={0} end={100} duration={5} delay={0}></CountUp>}
                                 %
                                 <br />
                                 <p className='pl-3' style={{ fontSize: "25px" }}>
@@ -462,6 +469,78 @@ const Home = () => {
                     </div>
                 </div>
             </ScrollTrigger>
+
+
+            <div className="container">
+                <div className="row text-center formargin " >
+                    <div className="col-lg-12">
+                        <h1 style={{ fontWeight: "900" }}>Our Dedicated Developers</h1>
+                    </div>
+                </div>
+
+                <div className="row mt-5">
+                    <div className="col-lg-8">
+                        <div className="row">
+                            <div className="col-lg-6">
+                                <div class="card hiring" >
+                                    <div className="row ">
+                                        <h4 className=''>Hire Mobile developer</h4>
+                                        <div className="col-lg-6">
+                                            <img src={reactlogo} />
+                                            React Native
+                                        </div>
+                                        <div className="col-lg-6">
+                                            <img src={flutter} />
+                                            Flutter
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div className="col-lg-6">
+                                <div class="card hiring" >
+                                    <div className="row ">
+                                        <h4 className=''>Hire Mobile developer</h4>
+                                        <div className="col-lg-6">
+                                            <img src={angular} className='img-flui' />
+                                            Angular
+                                        </div>
+                                        <div className="col-lg-6">
+                                            <img src={reactlogo} />
+                                            React
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row mt-3 hiring">
+                            <h4 className='mb-4'>Hire Backend developer</h4>
+                            <div className="col-lg-4">
+
+                                <img src={python} />
+                                python
+                            </div>
+                            <div className="col-lg-4">
+                                <img src={ruby} />
+                                ruby
+                            </div>
+                            <div className="col-lg-4">
+                                <img src={node} />
+                                node
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className="col-lg-4">
+                        <div className="overlay">
+                            <img src={dedicated} style={{ aspectRatio: "1/1" }} />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
 
 

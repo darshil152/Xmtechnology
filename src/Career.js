@@ -14,37 +14,44 @@ import Data from './Data';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 let dummydata = []
 
 export default function Career() {
 
     let countryData = Country.getAllCountries();
-    const [stateData, setStateData] = useState();
-    const [cityData, setCityData] = useState();
+
 
     const [job, setjob] = useState('');
     const [item, setItem] = useState([]);
     const [showdata, setShowdata] = useState([]);
 
-    const [country, setCountry] = useState(countryData[0]);
-    const [state, setState] = useState();
-    const [city, setCity] = useState();
+    const [country, setCountry] = useState([]);
+    const [state, setState] = useState([]);
+    const [city, setCity] = useState([]);
+
+
+    const [Hcountry, setHCountry] = useState('');
+    const [Hstate, setHState] = useState('');
+    const [Hcity, setHCity] = useState('');
 
     const [position, setposition] = useState();
 
-    useEffect(() => {
-        setStateData(State.getStatesOfCountry(country?.isoCode));
-    }, [country]);
 
 
     useEffect(() => {
 
         let alldata = []
         let position = []
+        let country = []
+        let state = []
+        let city = []
         const db = firebaseApp.firestore();
         db.collection('Jobs').get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
+
+
                 dummydata.push(doc.data())
                 alldata.push(doc.data())
                 setItem(alldata)
@@ -52,10 +59,25 @@ export default function Career() {
 
 
                 position.push(doc.data().position)
+                country.push(doc.data().country)
+                state.push(doc.data().state)
+                city.push(doc.data().city)
 
                 let x = position.filter((item,
                     index) => position.indexOf(item) === index);
                 setposition(x)
+
+                let y = country.filter((item,
+                    index) => country.indexOf(item) === index);
+                setCountry(y)
+
+                let z = state.filter((item,
+                    index) => state.indexOf(item) === index);
+                setState(z)
+
+                let a = city.filter((item,
+                    index) => city.indexOf(item) === index);
+                setCity(a)
 
 
             })
@@ -65,136 +87,209 @@ export default function Career() {
 
     }, []);
 
-    useEffect(() => {
-        setCityData(City.getCitiesOfState(country?.isoCode, state?.isoCode));
-    }, [state]);
-
-    useEffect(() => {
-        stateData && setState(stateData[0]);
-    }, [stateData]);
-
-    useEffect(() => {
-        cityData && setCity(cityData[0]);
-    }, [cityData]);
 
 
-    const filterdata = (dummydata) => {
 
-        console.log(job)
-        if (job == "all") {
-            let filterCoffee = item.filter(test => test.country === country.name)
-            setShowdata(filterCoffee)
-        } else {
-            let filterCoffee = item.filter(test => test.position === job && test.country === country.name)
-            setShowdata(filterCoffee)
+    const filterdata = () => {
+
+
+
+
+        if (job != '' && Hcountry !== '' && Hstate != '' && Hcity != '') {
+            let filter2 = showdata.filter((i) => i.position == job && i.country == Hcountry && i.state == Hstate && i.city == Hcity)
+            setShowdata(filter2)
+        } else if (job != '' && Hcountry !== '' && Hstate != '') {
+
+            let filter2 = showdata.filter((i) => i.position == job && i.country == Hcountry && i.state == Hstate)
+            setShowdata(filter2)
         }
+        else if (job != '' && Hcountry !== '') {
+
+            let filter2 = showdata.filter((i) => i.position == job && i.country == Hcountry)
+            setShowdata(filter2)
+        }
+        else if (job != '') {
+            if (job == "alls") {
+                let filter2 = showdata.filter((i) => i.position == job)
+                setShowdata(item)
+            }
+        }
+        else {
+            setShowdata(item)
+        }
+
+
     }
 
     const handlejob = (e) => {
         setjob(e.target.value)
     }
 
+    const handlecountry = (e) => {
+        setHCountry(e.target.value)
+
+    }
+    const handlestate = (e) => {
+        setHState(e.target.value)
+
+    }
+
+    const handlecity = (e) => {
+        setHCity(e.target.value)
+    }
+
+
+
+
+    const tomain = () => {
+        window.location.href = "/"
+    }
+
+
     return (
         <>
             <Navbar expand="lg" className="nav pb-3 pt-4 ">
                 <Container>
-                    <Navbar.Brand href="#home"><img src={Logo} alt="" className='img-fluid' /></Navbar.Brand>
+                    <Navbar.Brand href=""><img src={Logo} alt="" className='img-fluid' onClick={tomain} /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link href="#home">Services</Nav.Link>
                             <Nav.Link href="#link">About Us</Nav.Link>
                             <Nav.Link href="#link">Services</Nav.Link>
                             <Nav.Link href="#link">Portfolio    </Nav.Link>
                             <Nav.Link href="#link">Jobs</Nav.Link>
+                            <Nav.Link href="#link">Hire</Nav.Link>
                             <Button variant="primary" className='rounded-5'>Contact  Us</Button>{' '}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
 
-            <section className="min-h-screen px-3 grid place-items-center pb-20 selection:text-white selection:bg-teal-500 ">
-                <div>
-                    <h2 className="text-2xl font-bold text-teal-900">
-                        Filter jobs
-                    </h2>
-                    <br />
-                    <div className="flex flex-wrap gap-3 p-8">
-                        <div>
-                            <p className="text-black-800 font-semibold">Job type :</p>
-                            <select onChange={handlejob} name="jobs" id="jobs" className='w-full outline-none border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0 joboption'>
-                                <option >Choose job type</option>
 
-                                <option value="all">All area of interest</option>
-                                {
-                                    position && position.map((i) => {
-                                        return (
-                                            <>
-                                                <option>{i}</option>
-                                            </>
-                                        )
-                                    })
-                                }
-                            </select>
-                        </div>
-                        <div>
-                            <p className="font-semibold">Country :</p>
-                            <Selector
-                                data={countryData}
-                                selected={country}
-                                setSelected={setCountry}
-                            />
-                        </div>
-                        {state && (
-                            <div>
-                                <p className="font-semibold">State :</p>
-                                <Selector
-                                    data={stateData}
-                                    selected={state}
-                                    setSelected={setState}
-                                />
-                            </div>
-                        )}
-                        {city && (
-                            <div>
-                                <p className="font-semibold">City :</p>
-                                <Selector data={cityData} selected={city} setSelected={setCity} />
-                            </div>
-                        )}
 
-                        <div className='mt-3'>
-                            <button class=" mt-4 btn btn-primary" style={{ width: "150px" }} onClick={filterdata}>
-                                Search
-                            </button>
-                        </div>
+
+
+            <div className="container practice">
+                <div className="row">
+                    <div className="col-lg-12">
+
+                        <h1 className='value'>  corporate open roles</h1>
+                        <p className='remote'>As a remote-first, global company, Xmtechnology does not offer relocation or visa assistance. Applicants must be br eligible to work in the country where the position is offered.</p>
                     </div>
                 </div>
+            </div>
 
 
-                <div className="container">
-                    <div className="row justify-content-center">
 
-                        <table>
-                            <tr className='headingdetail'>
-                                <th>Job type</th>
-                                <th>Position Title</th>
-                                <th>Country</th>
-                            </tr>
-                            {showdata && showdata.map((item, i) => {
-                                return (
-                                    <tr>
-                                        <td className='detailtable'>{item.jobtype}</td>
-                                        <td className='detailtable'> <Link to="/">{item.position}</Link > </td>
-                                        <td className='detailtable'>{item.country}</td>
-                                    </tr>
-                                )
-                            })}
-                        </table>
+            <div className="container-fluid mt-5">
 
+                <div className="row ms-auto">
+
+                    <div className="col-lg-3">
+
+                        <label htmlFor="jobs">Jobs</label><br />
+                        <select name="jobs" id="" onChange={handlejob}>
+                            <option value="">Choose</option>
+                            <option value="alls" >All Position</option>
+
+                            {
+                                position && position.map((i) => {
+                                    return (
+                                        <option>{i}</option>
+
+                                    )
+                                })
+                            }
+                        </select>
                     </div>
-                </div>
 
-            </section>
+
+                    <div className="col-lg-3">
+                        <label htmlFor="Country">Country</label><br />
+
+                        <select name="Country" id="" onChange={handlecountry}>
+                            <option value="">Choose</option>
+                            <option value="country">All Country</option>
+
+                            {
+                                country && country.map((i) => {
+                                    return (
+                                        <option>{i}</option>
+                                    )
+                                })
+                            }
+                        </select>
+                    </div>
+
+
+                    <div className="col-lg-3">
+                        <label htmlFor="state">state</label><br />
+
+                        <select name="state" id="" onChange={handlestate}>
+                            <option value="">Choose</option>
+                            <option value="state" >All state</option>
+
+                            {
+                                state && state.map((i) => {
+                                    return (
+                                        <option>{i}</option>
+                                    )
+                                })
+                            }
+                        </select>
+                    </div>
+
+                    <div className="col-lg-2">
+                        <label htmlFor="city">city</label><br />
+
+                        <select name="city" id="" onChange={handlecity}>
+                            <option value="">Choose</option>
+                            <option value="city" >All city</option>
+
+                            {
+                                city && city.map((i) => {
+                                    return (
+                                        <option>{i}</option>
+                                    )
+                                })
+                            }
+                        </select>
+                    </div>
+
+                    <div className="col-lg-1 mt-4">
+                        <button className='btn btn-primary' onClick={filterdata}> Search</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div className="container mt-5">
+                <div className="row justify-content-center">
+
+                    <table>
+                        <tr className='headingdetail'>
+                            <th>Job type</th>
+                            <th>Position Title</th>
+                            <th>Country</th>
+                            <th>state</th>
+                            <th>city</th>
+                        </tr>
+                        {showdata && showdata.map((item, i) => {
+                            return (
+                                <tr>
+                                    <td className='detailtable'>{item.jobtype}</td>
+                                    <td className='detailtable'> <Link to="/">{item.position}</Link > </td>
+                                    <td className='detailtable'>{item.country}</td>
+                                    <td className='detailtable'>{item.state}</td>
+                                    <td className='detailtable'>{item.city}</td>
+
+                                </tr>
+                            )
+                        })}
+                    </table>
+
+                </div>
+            </div>
 
         </>
     )

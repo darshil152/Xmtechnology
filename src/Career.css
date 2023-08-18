@@ -3,30 +3,34 @@
 @tailwind utilities;
 
 
-.joboption{
-    border: 1px solid grey;
-    border-radius: 10px;
-    height: 50px;
-
+select#jobs{
+border-radius: 10px;
+ box-shadow: 0 4px 10px hsla(0, 0%, 74%, .8);
+height: 36px;
+width: 288px;
 }
 
 input#headlessui-combobox-input-\:r1\:{
     border: 1px solid grey;
         border-radius: 10px;
-        height: 50px;
+        height: 50px !important ;
+        box-shadow: 0 4px 10px rgba(188, 188, 188, 0.8); 
 }
 
 input#headlessui-combobox-input-\:r5\:{
 border: 1px solid grey;
     border-radius: 10px;
-    height: 50px;
+    height: 50px !important;
+    box-shadow: 0 4px 10px rgba(188, 188, 188, 0.8);
 
 }
 
 input#headlessui-combobox-input-\:r9\:{
 border: 1px solid grey;
     border-radius: 10px;
-    height: 50px;
+    height: 50px !important;
+    box-shadow: 0 4px 10px rgba(188, 188, 188, 0.8);
+        
 }
 
 tr.headingdetail {
@@ -53,3 +57,138 @@ table{
  tr:nth-child(2n) {
      background-color: #dddddd;
  }
+
+ ul#headlessui-combobox-options-\:rd\:{
+    z-index: 1;
+ }
+
+
+ h1.value{
+    font-size: 62px;
+    white-space: pre-wrap;
+    transition-timing-function: ease;
+     transition-duration: 1.2s;
+     transition-delay: 0.340299s;
+ }
+
+ p.teams{
+    margin-bottom: 25px;
+ }
+ h1.growth{
+    font-size: 35px;
+ }
+
+ .practice{
+    margin-top: 60px;
+ }
+
+
+ input#form{
+    border: 1px solid black;
+    border-radius: 15px;
+ }
+
+
+.container.studentdetail {
+ background: #fff;
+ border-radius: 4px;
+ border-radius: 15px;
+ box-shadow: 0 7px 14px 0 rgba(60, 66, 87, .12),
+ 0 3px 6px 0 rgba(0, 0, 0, .12);
+ margin: 0 auto;
+ padding: 20px;
+ width: 700px;
+}
+
+input.inputstyle{
+        background-clip: padding-box;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        border-radius: false;
+        color: #495057;
+        display: block;
+        font-size: 1rem;
+        font-weight: 400;
+        height: calc(1.5em + 0.75rem + 2px);
+        line-height: 1.5;
+        padding: 0.375rem 0.75rem;
+        transition: border-color .15s ease-in-out,
+        box-shadow .15s ease-in-out;
+        width: 100%;
+    }
+
+    p.remote{
+        margin-top: 20px;
+        font-size: 20px;
+    }
+
+
+        select {
+            width: 100%;
+            max-width: 100%;
+            overflow-y: auto;
+            cursor: pointer;
+            padding: 15px 25px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            border: none;
+            outline: none;
+            border-radius: 12px;
+            color: #444;
+            font-size: 18px;
+            box-shadow: -3px 3px 5px 0px rgba(0, 0, 0, 0.10);
+        }
+    
+        select option {
+            padding: 10px 20px;
+            margin-bottom: 8px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    
+        select option:hover {
+            background-color: rgb(223, 223, 223);
+        }
+    
+        select option:checked {
+            box-shadow: 0 0 10px 100px #595959 inset;
+        }
+    
+        select::-webkit-scrollbar-track {
+            background-color: #F5F5F5;
+            border-radius: 12px;
+        }
+    
+        select::-webkit-scrollbar {
+            width: 8px;
+            background-color: #F5F5F5;
+        }
+    
+        select::-webkit-scrollbar-thumb {
+            background-color: rgb(225, 225, 225);
+            border-radius: 12px;
+            background-image: -webkit-linear-gradient(90deg,
+                    rgba(160, 160, 160, 0.2) 25%,
+                    transparent 25%,
+                    transparent 50%,
+                    rgba(160, 160, 160, 0.2) 50%,
+                    rgba(160, 160, 160, 0.2) 75%,
+                    transparent 75%,
+                    transparent)
+        }
+    
+        select.fadeIn {
+            animation: fadeInDown 0.2s;
+        }
+    
+        select.fadeOut {
+            animation: fadeInUp 0.2s;
+        }
+
+
+@media screen and (max-width:576px) {
+        h1.value {
+                font-size: 35px;
+            }
+        }
