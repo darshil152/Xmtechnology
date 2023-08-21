@@ -29,21 +29,48 @@ import Sklogo from './assets/Image/skype 1.svg';
 import Gmlogo from './assets/Image/gmail 1.svg';
 
 
+
 export default function About() {
+
+    const topage = () => {
+        window.location.href = "/career"
+    }
+
+    const toservice = () => {
+        window.location.href = "/service"
+    }
+
+    const toabout = () => {
+        window.location.href = "/about"
+    }
+
+    const toportfolio = () => {
+        window.location.href = "/portfolio"
+    }
+
+    const tohire = () => {
+        window.location.href = "/hire/react"
+    }
+
+
+    const tomain = () => {
+        window.location.href = "/"
+    }
+
     return (
         <>
             <Navbar expand="lg" className="nav pb-3 pt-4 ">
                 <Container>
-                    <Navbar.Brand href=""><img src={Logo} alt="" className='img-fluid' /></Navbar.Brand>
+                    <Navbar.Brand href=""><img src={Logo} alt="" className='img-fluid' onClick={tomain} /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link href="#link">About Us</Nav.Link>
-                            <Nav.Link href="#link">Services</Nav.Link>
-                            <Nav.Link href="#link">Portfolio    </Nav.Link>
-                            <Nav.Link href="#link">Jobs</Nav.Link>
-                            <Nav.Link href="#link">Hire</Nav.Link>
-                            <Button variant="primary" className='rounded-5'>Contact  Us</Button>{' '}
+                            <Nav.Link href="" onClick={toabout}>About Us</Nav.Link>
+                            <Nav.Link href="" onClick={toservice}>Services</Nav.Link>
+                            <Nav.Link href="" onClick={toportfolio}>Portfolio</Nav.Link>
+                            <Nav.Link href="" onClick={topage}>Jobs</Nav.Link>
+                            <Nav.Link href="" onClick={tohire}>Hire</Nav.Link>
+                            <Button variant="primary" className='rounded-5' >Contact  Us</Button>{' '}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -275,6 +302,7 @@ export default function About() {
                     </div>
                 </div>
             </div>
+
 
 
 

@@ -569,6 +569,9 @@ button.us {
 }
 
 @media screen and (max-width:768px) {
+    h1.fw-bold {
+            font-size: 40px;
+        }
     .circle1 {
         display: none;
     }
@@ -620,6 +623,14 @@ button.us {
     p.ipsum {
         text-align: center;
     }
+
+        .conters {
+            background: linear-gradient(54deg, #0669F7 0%, #0052C7 100%);
+            font-size: 35px;
+            color: white;
+            padding: 30px;
+            height: 550px;
+        }
 }
 
 @media screen and (max-width:992px) {
@@ -667,7 +678,7 @@ button.us {
         font-size: 35px;
         color: white;
         padding: 30px;
-        height: 381px;
+        height: 650px;
     }
 
     .overlasy {
@@ -676,6 +687,9 @@ button.us {
 }
 
 @media screen and (max-width:576px) {
+    h1.fw-bold{
+        font-size: 40px;
+    }
     .Grop.text-light {
         height: 500px
     }
@@ -709,6 +723,7 @@ button.us {
         width: 100%;
         height: auto;
     }
+       
 
     p.solutions {
         color: var(--white, #FFF);

@@ -160,6 +160,26 @@ export default function Career() {
         window.location.href = "/"
     }
 
+    const topage = () => {
+        window.location.href = "/career"
+    }
+
+    const toservice = () => {
+        window.location.href = "/service"
+    }
+
+    const toabout = () => {
+        window.location.href = "/about"
+    }
+
+    const toportfolio = () => {
+        window.location.href = "/portfolio"
+    }
+
+    const tohire = () => {
+        window.location.href = "/hire/react"
+    }
+
 
     return (
         <>
@@ -169,11 +189,11 @@ export default function Career() {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link href="#link">About Us</Nav.Link>
-                            <Nav.Link href="#link">Services</Nav.Link>
-                            <Nav.Link href="#link">Portfolio    </Nav.Link>
-                            <Nav.Link href="#link">Jobs</Nav.Link>
-                            <Nav.Link href="#link">Hire</Nav.Link>
+                            <Nav.Link href="" onClick={toabout}>About Us</Nav.Link>
+                            <Nav.Link href="" onClick={toservice}>Services</Nav.Link>
+                            <Nav.Link href="" onClick={toportfolio}>Portfolio</Nav.Link>
+                            <Nav.Link href="" onClick={topage}>Jobs</Nav.Link>
+                            <Nav.Link href="" onClick={tohire}>Hire</Nav.Link>
                             <Button variant="primary" className='rounded-5'>Contact  Us</Button>{' '}
                         </Nav>
                     </Navbar.Collapse>

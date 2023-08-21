@@ -132,8 +132,26 @@ const Home = () => {
     }
 
     const navigate = useNavigate();
+
+
     const topage = () => {
         window.location.href = "/career"
+    }
+
+    const toservice = () => {
+        window.location.href = "/service"
+    }
+
+    const toabout = () => {
+        window.location.href = "/about"
+    }
+
+    const toportfolio = () => {
+        window.location.href = "/portfolio"
+    }
+
+    const tohire = () => {
+        window.location.href = "/hire/react"
     }
 
 
@@ -145,11 +163,11 @@ const Home = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link href="#link">About Us</Nav.Link>
-                            <Nav.Link href="#link">Services</Nav.Link>
-                            <Nav.Link href="#link">Portfolio</Nav.Link>
+                            <Nav.Link href="" onClick={toabout}>About Us</Nav.Link>
+                            <Nav.Link href="" onClick={toservice}>Services</Nav.Link>
+                            <Nav.Link href="" onClick={toportfolio}>Portfolio</Nav.Link>
                             <Nav.Link href="" onClick={topage}>Jobs</Nav.Link>
-                            <Nav.Link href="#link">Hire</Nav.Link>
+                            <Nav.Link href="" onClick={tohire}>Hire</Nav.Link>
                             <Button variant="primary" className='rounded-5'>Contact  Us</Button>{' '}
                         </Nav>
                     </Navbar.Collapse>
@@ -165,11 +183,11 @@ const Home = () => {
                                     <div className='d-flex text-div'>
                                         <div className='circle1'></div>
                                         <div className='ms-lg-4'>
-                                            <h1 className='fw-bold' style={{ fontSize: "60px" }}>Web Design And <br />
+                                            <h1 className='fw-bold' style={{ fontSize: "50px" }}>Web Design And <br />
                                                 Development Company
                                             </h1>
 
-                                            <p className='web' style={{ fontSize: "20px" }}>We create clean and creative websites that are professional and help <br />
+                                            <p className='web' style={{ fontSize: "23px" }}>We create clean and creative websites that are professional and help <br />
                                                 you generate more visitors  and revenue.</p>
 
                                             <Button variant="primary" className='rounded-5 ps-4 pe-4 pt-2 pb-2 fs-5'>Get Started</Button>{' '}
@@ -226,11 +244,9 @@ const Home = () => {
                         <div className='d-flex justify-content-center'>
                             <Col lg={6}>
                                 <div className='text-center '>
-                                    <div className='d-flex '>
+                                    <div className=''>
                                         <h2 className='fw-bold m-auto'>How it is going?</h2>
-                                        <img src={icon1} className='icon2' alt="" />
                                     </div>
-
 
                                     <p className='p-3 web' >We offer professional web design services at affordable rates to help your
                                         business attract more visitors and keep them on your site!</p>
@@ -242,7 +258,7 @@ const Home = () => {
                     <Row>
                         <div className='dic'>
                             <Col lg={4} md={6} sm={6}>
-                                <div className='d-flex pt-4 dica'>
+                                <div className=' pt-4 dica'>
                                     <div>
                                         <h4>Info Gathering</h4>
                                         <p className='Info'>Need a good understanding of what are
@@ -318,7 +334,6 @@ const Home = () => {
                                 <div className='text-center '>
                                     <div className='d-flex'>
                                         <h2 className='fw-bold m-auto'>Our Services</h2>
-                                        <img src={icon1} className='icon1' alt="" />
                                     </div>
 
                                     <p className='p-3'>We offer professional web design services at affordable rates to help your
@@ -412,11 +427,11 @@ const Home = () => {
                 </Container>
             </div>
 
-            <div className='mt-4 mb-4 mt-5'>
+            <div className='mt-5 mb-4 mt-5'>
                 <Container>
-                    <Row>
+                    <Row className='mt-5'>
                         <Col lg={6} className='text-center m-auto'>
-                            <h3 className='fw-bold '>Intelligent Websites That Work Overtime
+                            <h3 className='fw-bold mt-5 mb-5'>Intelligent Websites That Work Overtime
                                 For Marketing Results
                             </h3>
                         </Col>
@@ -473,7 +488,7 @@ const Home = () => {
             <div className="container">
                 <div className="row text-center formargin " >
                     <div className="col-lg-12">
-                        <h1 style={{ fontWeight: "900" }}>Our Dedicated Developers</h1>
+                        <h1 style={{ fontWeight: "900" }}>Hire Our Dedicated Developers</h1>
                     </div>
                 </div>
 
