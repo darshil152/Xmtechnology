@@ -16,14 +16,16 @@ import Image3 from '../assets/Image/content 1.png';
 import Image4 from '../assets/Image/document 1.png';
 
 
-import one from "../assets/HireImage/Thinking.png"
-import two from "../assets/HireImage/UseEcp.png"
-import three from "../assets/HireImage/coding.png"
-import four from "../assets/HireImage/dev.png"
-import five from "../assets/HireImage/machine.png"
-import six from "../assets/HireImage/thinkings.png"
+import one from "../assets/HireImage/deep-learning.png"
+import two from "../assets/HireImage/web-developers.svg"
+import three from "../assets/HireImage/ai-ml-engineers.svg"
+import four from "../assets/HireImage/UseEcp.png"
+import five from "../assets/HireImage/software-development.png"
+import six from "../assets/HireImage/dev.png"
+import api from "../assets/HireImage/api.png"
+import mobile from "../assets/HireImage/mobilede.png"
 
-export default function ReactDeveloper() {
+export default function Node() {
     return (
         <>
             <Navbar expand="lg" className="nav pb-3 pt-4 ">
@@ -49,16 +51,19 @@ export default function ReactDeveloper() {
                 <div className="row">
 
                     <div className="col-lg-6">
-                        <h1 className='hire'>Hire React  Developers</h1>
-                        <p className='para'><b>Hire ReactJs developers</b> from us that harness the power of AI technologies to create interactive user interfaces for Progressive Web Applications (PWA) and Single Page Applications (SPA). Our team of 35+ React developers uses AI platforms like OpenAI Codex, Tabnine, and CodeT5 to improve code quality and reduce development costs while developing personalized web apps.</p>
+                        <h1 className='hire'>Hire nodejs  Developers</h1>
+                        <p className='para'><b>Hire Node.js developers  </b> that use the combination of the latest technology and a client-centric approach for delivering data-intensive web and mobile applications. We have a team of 25+ highly experienced Node.js developers that uses databases like MySQL, MongoDB, SQL, and many more to create highly productive enterprise-grade networking solutions.</p>
                         <ul>
-                            <li>Migration & Upgradation</li>
-                            <li>Support & Maintenance</li>
-                            <li>Expertise with JavaScript</li>
-                            <li>Maintained Coding Standards</li>
+                            <li>Custom Node.js Development
+                            </li>
+                            <li>Real-time Application Development</li>
+                            <li>Node.js Migration</li>
+                            <li>Maintenance and Upgradation</li>
+                            <li>Node.js Enterprise Web Apps</li>
+
                         </ul>
 
-                        <button className='btn btn-primary mt-2'>Let Discuss about the react Project</button>
+                        <button className='btn btn-primary mt-2'>Let Discuss about the Nodejs Project</button>
                     </div>
                     <div className="col-lg-6  mt-5 mt-sm-0   studentdetail " >
                         <div className='test'>
@@ -92,7 +97,7 @@ export default function ReactDeveloper() {
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-lg-12">
-                        <h1 className='text-center' style={{ marginTop: "35px" }}>Hire React Js Developers As Per Your Business Needs</h1>
+                        <h1 className='text-center' style={{ marginTop: "35px" }}>Hire python Js Developers As Per Your Business Needs</h1>
                     </div>
                 </div>
 
@@ -152,17 +157,17 @@ export default function ReactDeveloper() {
             <Container className='mt-5'>
                 <Row className='formargin'>
 
-                    <h1 className='text-center'>Hire ReactJS Developer for various End-to-End Services</h1>
-                    <p className='text-center pb-5'>Take your business to the next level by hiring our expert ReactJS developers. XmTechnology is a ReactJS Development Company that has expertise in developing robust and fully-featured web applications. Our talented ReactJS programmers will use their skills to deliver websites with a better front-end experience.</p>
+                    <h1 className='text-center'>Hire python Developer for various End-to-End Services</h1>
+                    <p className='text-center pb-5'>Hire python developers from us because we believe in delivering high-quality Python solutions at affordable prices. XmTechnology is a leading Python Development Company with years of experience to build a variety of web solutions for small businesses to large-scale businesses. Our highly talented team of python developers will use the python editors like PyCharm Professional Edition, VS Code, and PyCharm Community Edition to deliver the best object-oriented solutions. Hiring python developers can be challenging but don't worry as we provide python development services so that you can have a highly secure and maintainable website for your business.</p>
 
                     <div className='dic'>
                         <Col lg={4} md={6}>
                             <div className='border  m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
                                 <div className='d-flex justify-content-center'>
-                                    <img width={50} src={three} alt="" />
+                                    <img width={50} src={mobile} alt="" />
                                 </div>
-                                <h4 className='fw-bold pt-3'>ReactJS UI and UX Development</h4>
-                                <p className='web'>Hire React.JS developers from us for top-notch UI/UX design and development services. Our developers will use the latest libraries like MobX, Enzyme, Redux, and React Intl to ensure that they will provide user-friendly interfaces for all devices.</p>
+                                <h4 className='fw-bold pt-3'>Mobile Development</h4>
+                                <p className='web'>Our team of experts uses Node.js to build server-side components of mobile applications to make them fast and more efficient.</p>
                                 <Button variant="primary" className='ps-4 pe-4 mt-4 pt-2 pb-2 rounded-0'>LEARN MORE</Button>{' '}
                             </div>
                         </Col>
@@ -170,10 +175,11 @@ export default function ReactDeveloper() {
                         <Col lg={4} md={6}>
                             <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services '>
                                 <div className='d-flex justify-content-center'>
-                                    <img width={50} src={one} alt="" />
+                                    <img width={50} src={api} alt="" />
                                 </div>
-                                <h4 className='fw-bold pt-3'>Custom ReactJS Web Development</h4>
-                                <p className='pt-2 web' >Transform your vision into reality with custom ReactJS web development solutions. Hire React developer from us to build scalable and innovative applications.</p>
+                                <h4 className='fw-bold pt-3'>API Development for Node.js</h4>
+                                <p className='pt-2 web' >Our Node.js coders have all the necessary knowledge for creating back-end solutions that are high-performing, reliable, and scalable.
+                                </p>
                                 <Button variant="primary" className='ps-4 pe-4 pt-2 mt-3 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
                             </div>
                         </Col>
@@ -183,8 +189,30 @@ export default function ReactDeveloper() {
                                 <div className='d-flex justify-content-center'>
                                     <img width={50} src={five} alt="" />
                                 </div>
-                                <h4 className='fw-bold pt-3'>ReactJS Plugins Development</h4>
-                                <p className='pt-2 web'>We have a team of expert developers who will build fully-featured web applications by using custom ReactJS plugin development. Our team of ReactJS experts will be developing and integrating the plugins and different modules.</p>
+                                <h4 className='fw-bold pt-3'>Web Application Development</h4>
+                                <p className='pt-2 web'>We provide the service of web application development using the most recent Node.js frameworks like ExpressJS, Loopback, SailsJS, etc.</p>
+                                <Button variant="primary" className='ps-4 pe-4 pt-2 mt-3 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
+                            </div>
+                        </Col>
+
+                        <Col lg={4} md={6}>
+                            <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
+                                <div className='d-flex justify-content-center'>
+                                    <img width={50} src={four} alt="" />
+                                </div>
+                                <h4 className='fw-bold pt-3'>UI/UX For Node.js</h4>
+                                <p className='web'>To get highly innovative UX/UI design and the creation of effective system monitoring dashboards for your business you need to hire experienced Node.js specialists from us.</p>
+                                <Button variant="primary" className='ps-4 pe-4 pt-2 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
+                            </div>
+                        </Col>
+
+                        <Col lg={4} md={6}>
+                            <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
+                                <div className='d-flex justify-content-center'>
+                                    <img width={50} src={three} alt="" />
+                                </div>
+                                <h4 className='fw-bold pt-3'>Customization</h4>
+                                <p className='pt-2 web'>We provide different types of robust solutions with the help of Node.js and also offer customized Node.js development services as per your requirements.</p>
                                 <Button variant="primary" className='ps-4 pe-4 pt-2 mt-3 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
                             </div>
                         </Col>
@@ -194,30 +222,11 @@ export default function ReactDeveloper() {
                                 <div className='d-flex justify-content-center'>
                                     <img width={50} src={six} alt="" />
                                 </div>
-                                <h4 className='fw-bold pt-3'>ReactJS Maintenance & Support</h4>
-                                <p className='web'>Hire ReactJS Developer from XmTechnology to get rid of vulnerabilities in your ReactJS web application. Our React developers will do routine maintenance and also implement the latest features to satisfy the client’s requirements.</p>
-                                <Button variant="primary" className='ps-4 pe-4 pt-2 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
-                            </div>
-                        </Col>
-
-                        <Col lg={4} md={6}>
-                            <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
-                                <div className='d-flex justify-content-center'>
-                                    <img width={50} src={four} alt="" />
-                                </div>
-                                <h4 className='fw-bold pt-3'>ReactJS Migration & Upgradation Services</h4>
-                                <p className='pt-2 web'>Hire the best remote ReactJS programmers from XmTechnology because they have years of experience. They have proven their expertise as in the past they did the process of migrating & upgrading the existing web app to the ReactJS platform without losing any data.</p>
-                                <Button variant="primary" className='ps-4 pe-4 pt-2 mt-3 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
-                            </div>
-                        </Col>
-
-                        <Col lg={4} md={6}>
-                            <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
-                                <div className='d-flex justify-content-center'>
-                                    <img width={50} src={two} alt="" />
-                                </div>
-                                <h4 className='fw-bold pt-3'>Front-End ReactJS Development</h4>
-                                <p className='web'>Hire our React.js developers as they will provide various front-end development services for ReactJS web applications. Our programmers have expertise in building Single Page Applications (SPAs), real-time data exchange applications, and many more.</p>
+                                <h4 className='fw-bold pt-3'>integration
+                                    Modification and Integration</h4>
+                                <p className='web'>integration
+                                    Modification and Integration
+                                    Our developers can integrate APIs and third-party plugins to modify your application and have various functionalities.</p>
                                 <Button variant="primary" className='ps-4 pe-4 pt-2 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
                             </div>
                         </Col>

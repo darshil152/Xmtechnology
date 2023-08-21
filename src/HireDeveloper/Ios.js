@@ -16,14 +16,15 @@ import Image3 from '../assets/Image/content 1.png';
 import Image4 from '../assets/Image/document 1.png';
 
 
-import one from "../assets/HireImage/Thinking.png"
-import two from "../assets/HireImage/UseEcp.png"
-import three from "../assets/HireImage/coding.png"
-import four from "../assets/HireImage/dev.png"
-import five from "../assets/HireImage/machine.png"
-import six from "../assets/HireImage/thinkings.png"
+import one from "../assets/HireImage/one.png"
+import two from "../assets/HireImage/two.png"
+import three from "../assets/HireImage/three.png"
+import four from "../assets/HireImage/four.png"
+import five from "../assets/HireImage/five.png"
+import six from "../assets/HireImage/six.png"
 
-export default function ReactDeveloper() {
+
+export default function Ios() {
     return (
         <>
             <Navbar expand="lg" className="nav pb-3 pt-4 ">
@@ -49,16 +50,23 @@ export default function ReactDeveloper() {
                 <div className="row">
 
                     <div className="col-lg-6">
-                        <h1 className='hire'>Hire React  Developers</h1>
-                        <p className='para'><b>Hire ReactJs developers</b> from us that harness the power of AI technologies to create interactive user interfaces for Progressive Web Applications (PWA) and Single Page Applications (SPA). Our team of 35+ React developers uses AI platforms like OpenAI Codex, Tabnine, and CodeT5 to improve code quality and reduce development costs while developing personalized web apps.</p>
+                        <h1 className='hire'>Hire iOS/iPhone App Developers</h1>
+                        <p className='para'><b>Hire Ios developers  </b> from us to develop the most advanced, robust, and user-friendly iPhone application for the expansion of your business. Our best iPhone developers follow the modern industry standards to deliver fully functional iOS applications for different types of businesses. We have a team of 20+ iOS programmers that develop highly advanced and feature-rich applications.</p>
                         <ul>
-                            <li>Migration & Upgradation</li>
-                            <li>Support & Maintenance</li>
-                            <li>Expertise with JavaScript</li>
-                            <li>Maintained Coding Standards</li>
+                            <li>Migration & Upgradation
+
+                            </li>
+                            <li>Support & Maintenance
+                            </li>
+                            <li>Custom App Development
+                            </li>
+                            <li>MVP Development
+                            </li>
+                            <li>UI/UX Strategy Development</li>
+
                         </ul>
 
-                        <button className='btn btn-primary mt-2'>Let Discuss about the react Project</button>
+                        <button className='btn btn-primary mt-2'>Let Discuss about the Ios Project</button>
                     </div>
                     <div className="col-lg-6  mt-5 mt-sm-0   studentdetail " >
                         <div className='test'>
@@ -89,80 +97,20 @@ export default function ReactDeveloper() {
             </div>
 
 
-            <div className="container mt-5">
-                <div className="row">
-                    <div className="col-lg-12">
-                        <h1 className='text-center' style={{ marginTop: "35px" }}>Hire React Js Developers As Per Your Business Needs</h1>
-                    </div>
-                </div>
-
-                <div className="row formargin">
-                    <div className="col-lg-4 ">
-                        <div className="dream">
-                            <h4 className='text-center'>Ready to Start Your Dream Project?</h4>
-
-                            <div className="mainss">
-                                <div className="expert">
-                                    <img src={time} />
-                                    <p className='expert'>150 + Experts</p>
-                                </div>
-                                <div className="half">
-                                    <img src={half} />
-                                    <p className='expert'> Hourly  Hiring</p>
-
-                                </div>
-                            </div>
-
-                            <div className="fulltime">
-                                <img src={full} />
-                                <p className='expert'>Full-Time Hiring</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-lg-4">
-                        <div className="dream">
-                            <h1>$20  <span style={{ fontSize: "16px" }}>Hourlys</span></h1>
-                            <h5 className='mt-3 mb-3'>Hourly Plan</h5>
-                            <ul >
-                                <li>Dedicated developer</li>
-                                <li>Pay as you go</li>
-                                <li>Suitable for short-term engagement</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div className="col-lg-4">
-                        <div className="dreams">
-                            <h6 className='recomended'>RECOMMENDED FOR YOU</h6>
-                            <h1>$2400  <span>Hourlys</span></h1>
-                            <h5 className='mt-3 mb-3'>Monthly Plan</h5>
-                            <ul style={{ listStyleType: "disc" }}>
-
-                                <li>Suitable for long-term engagement</li>
-                                <li>Dedicated team of developers, Scrum Master, QAs, and architects</li>
-                                <li>160 hours per month</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
             <Container className='mt-5'>
                 <Row className='formargin'>
 
-                    <h1 className='text-center'>Hire ReactJS Developer for various End-to-End Services</h1>
-                    <p className='text-center pb-5'>Take your business to the next level by hiring our expert ReactJS developers. XmTechnology is a ReactJS Development Company that has expertise in developing robust and fully-featured web applications. Our talented ReactJS programmers will use their skills to deliver websites with a better front-end experience.</p>
+                    <h1 className='text-center'>Hire Ios Developer for various End-to-End Services</h1>
+                    <p className='text-center pb-5'>We develop next-generation iOS applications to ensure that they provide consistent performance regardless of the complexity of the app. Hire iPhone Developers from us to get the most scalable and interactive applications for different types of Apple devices. Our best iOS developers use the latest iOS technologies to deliver customized iOS applications for businesses from all over the world.</p>
 
                     <div className='dic'>
                         <Col lg={4} md={6}>
                             <div className='border  m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
                                 <div className='d-flex justify-content-center'>
-                                    <img width={50} src={three} alt="" />
+                                    <img width={50} src={one} alt="" />
                                 </div>
-                                <h4 className='fw-bold pt-3'>ReactJS UI and UX Development</h4>
-                                <p className='web'>Hire React.JS developers from us for top-notch UI/UX design and development services. Our developers will use the latest libraries like MobX, Enzyme, Redux, and React Intl to ensure that they will provide user-friendly interfaces for all devices.</p>
+                                <h4 className='fw-bold pt-3'>iPhone App Strategy</h4>
+                                <p className='web'>Hire skilled iOS developers from us because they provide the best strategies to launch the iPhone application. Our programmers create the blueprint of the application and also provide the facility for a consultation.</p>
                                 <Button variant="primary" className='ps-4 pe-4 mt-4 pt-2 pb-2 rounded-0'>LEARN MORE</Button>{' '}
                             </div>
                         </Col>
@@ -170,11 +118,38 @@ export default function ReactDeveloper() {
                         <Col lg={4} md={6}>
                             <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services '>
                                 <div className='d-flex justify-content-center'>
-                                    <img width={50} src={one} alt="" />
+                                    <img width={50} src={two} alt="" />
                                 </div>
-                                <h4 className='fw-bold pt-3'>Custom ReactJS Web Development</h4>
-                                <p className='pt-2 web' >Transform your vision into reality with custom ReactJS web development solutions. Hire React developer from us to build scalable and innovative applications.</p>
+                                <h4 className='fw-bold pt-3'>iPhone App Design</h4>
+                                <p className='pt-2 web' >app-design
+                                    iPhone App Design
+                                    Get in touch with our iPhone developers that use UI/UX designing tools like Xcode, Fabric, and AppCode to develop the most engaging apps that follow Apple’s design guidelines.</p>
                                 <Button variant="primary" className='ps-4 pe-4 pt-2 mt-3 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
+                            </div>
+                        </Col>
+
+                        <Col lg={4} md={6}>
+                            <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
+                                <div className='d-flex justify-content-center'>
+                                    <img width={50} src={three} alt="" />
+                                </div>
+                                <h4 className='fw-bold pt-3'>iphone-testing
+                                </h4>
+                                <p className='pt-2 web'>Our developers use the testing tools like EarlGrey, Detox, and OCMock to deliver iPhone applications that can work flawlessly on different versions of iOS.</p>
+                                <Button variant="primary" className='ps-4 pe-4 pt-2 mt-3 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
+                            </div>
+                        </Col>
+
+                        <Col lg={4} md={6}>
+                            <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
+                                <div className='d-flex justify-content-center'>
+                                    <img width={50} src={four} alt="" />
+                                </div>
+                                <h4 className='fw-bold pt-3'>Support and Maintenance</h4>
+                                <p className='web'>support-maintenence
+
+                                    Hire remote iOS developers from us because we provide the best support and maintenance services to make sure that the iPhone application is fully optimized.</p>
+                                <Button variant="primary" className='ps-4 pe-4 pt-2 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
                             </div>
                         </Col>
 
@@ -183,8 +158,10 @@ export default function ReactDeveloper() {
                                 <div className='d-flex justify-content-center'>
                                     <img width={50} src={five} alt="" />
                                 </div>
-                                <h4 className='fw-bold pt-3'>ReactJS Plugins Development</h4>
-                                <p className='pt-2 web'>We have a team of expert developers who will build fully-featured web applications by using custom ReactJS plugin development. Our team of ReactJS experts will be developing and integrating the plugins and different modules.</p>
+                                <h4 className='fw-bold pt-3'>App Migration</h4>
+                                <p className='pt-2 web'>migration
+                                    App Migration
+                                    Hire an expert team of iOS developers to update your old iOS applications to the latest version of iOS 16.1. Plus, we also provide the service of migration to migrate your existing application to iOS quickly without any data loss.</p>
                                 <Button variant="primary" className='ps-4 pe-4 pt-2 mt-3 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
                             </div>
                         </Col>
@@ -194,36 +171,18 @@ export default function ReactDeveloper() {
                                 <div className='d-flex justify-content-center'>
                                     <img width={50} src={six} alt="" />
                                 </div>
-                                <h4 className='fw-bold pt-3'>ReactJS Maintenance & Support</h4>
-                                <p className='web'>Hire ReactJS Developer from XmTechnology to get rid of vulnerabilities in your ReactJS web application. Our React developers will do routine maintenance and also implement the latest features to satisfy the client’s requirements.</p>
-                                <Button variant="primary" className='ps-4 pe-4 pt-2 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
-                            </div>
-                        </Col>
-
-                        <Col lg={4} md={6}>
-                            <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
-                                <div className='d-flex justify-content-center'>
-                                    <img width={50} src={four} alt="" />
-                                </div>
-                                <h4 className='fw-bold pt-3'>ReactJS Migration & Upgradation Services</h4>
-                                <p className='pt-2 web'>Hire the best remote ReactJS programmers from XmTechnology because they have years of experience. They have proven their expertise as in the past they did the process of migrating & upgrading the existing web app to the ReactJS platform without losing any data.</p>
-                                <Button variant="primary" className='ps-4 pe-4 pt-2 mt-3 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
-                            </div>
-                        </Col>
-
-                        <Col lg={4} md={6}>
-                            <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
-                                <div className='d-flex justify-content-center'>
-                                    <img width={50} src={two} alt="" />
-                                </div>
-                                <h4 className='fw-bold pt-3'>Front-End ReactJS Development</h4>
-                                <p className='web'>Hire our React.js developers as they will provide various front-end development services for ReactJS web applications. Our programmers have expertise in building Single Page Applications (SPAs), real-time data exchange applications, and many more.</p>
+                                <h4 className='fw-bold pt-3'>Apple Watch App Development</h4>
+                                <p className='web'>Consult with us to extend and grow your business by exploring the market of Apple Watch applications. We use technologies like Swift and Objective C to create different types of Apple Watch apps.</p>
                                 <Button variant="primary" className='ps-4 pe-4 pt-2 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
                             </div>
                         </Col>
                     </div>
                 </Row>
             </Container>
+
+
+
+
 
 
             <div className="container-fluid" style={{ backgroundColor: "#ededed", marginTop: "60px", padding: "50px" }}>

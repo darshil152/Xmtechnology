@@ -8,8 +8,8 @@ import PhoneInput from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
 import firebaseApp from './Firebase/firebase';
 import { useNavigate } from "react-router-dom";
-
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -22,7 +22,7 @@ import circle from './assets/Image/Ellipse 19.png';
 
 import Img1 from './assets/Image/Vector 4.png';
 import Img2 from './assets/Image/470be6e4dfc04d543155399e7ffdee85.png';
-
+import mainimage from "./assets/Image/mainimage.png"
 import image1 from './assets/Image/Human-touch 1.png';
 import image2 from './assets/Image/indeed 1.png';
 import image3 from './assets/Image/The-Stanlee-foundation 1.png';
@@ -55,16 +55,16 @@ import angular from "./assets/Image/angular_color.svg"
 import python from "./assets/Image/paython_color.svg"
 import ruby from "./assets/Image/ruby_color.svg"
 import node from "./assets/Image/node_js_color.svg"
+import laravel from "./assets/Image/laravel.png"
 import dedicated from "./assets/Image/dedicated-deveoper-bg.webp"
-
-
+import mysql from "./assets/Image/mysql.png"
+import bacgrounds from "./assets/Image/background.png"
 import bgImg from './assets/Image/2752392-removebg-preview 1.png';
 
 
 
 
 const Home = () => {
-
 
 
     const [countetOn, setCounteron] = useState(false)
@@ -165,11 +165,11 @@ const Home = () => {
                                     <div className='d-flex text-div'>
                                         <div className='circle1'></div>
                                         <div className='ms-lg-4'>
-                                            <h1 className='fw-bold'>Web Design And <br />
+                                            <h1 className='fw-bold' style={{ fontSize: "60px" }}>Web Design And <br />
                                                 Development Company
                                             </h1>
 
-                                            <p className='web'>We create clean and creative websites that are professional and help <br />
+                                            <p className='web' style={{ fontSize: "20px" }}>We create clean and creative websites that are professional and help <br />
                                                 you generate more visitors  and revenue.</p>
 
                                             <Button variant="primary" className='rounded-5 ps-4 pe-4 pt-2 pb-2 fs-5'>Get Started</Button>{' '}
@@ -182,11 +182,10 @@ const Home = () => {
                                 </Col>
 
                                 <Col lg={6}>
-                                    <div className='text-end'>
-                                        <img width={350} height={130} className='ms-auto' src={Img1} alt="" />
-                                        <img className='pt-3 img-fluid imag1' src={Img2} alt="" />
-
+                                    <div>
+                                        <img className=' img-fluid  ' src={mainimage} alt="" />
                                     </div>
+
                                 </Col>
                             </div>
                         </div>
@@ -221,7 +220,7 @@ const Home = () => {
 
 
 
-            <div className='pt-4 pb-4 mt-5'>
+            <div className='pt-4 pb-4 mt-5 backgrounds'>
                 <Container >
                     <Row>
                         <div className='d-flex justify-content-center'>
@@ -311,7 +310,7 @@ const Home = () => {
                 </Container>
             </div>
 
-            <div className='mt-3 mb-3 mt-sm-5 bg1' style={{ width: "100%" }}>
+            <div className='mt-3 mb-3 mt-sm-5 bg1 ' style={{ width: "100%" }}>
                 <Container>
                     <Row>
                         <div className='d-flex justify-content-center'>
@@ -485,12 +484,16 @@ const Home = () => {
                                 <div class="card hiring" >
                                     <div className="row ">
                                         <h4 className=''>Hire Mobile developer</h4>
-                                        <div className="col-lg-6">
-                                            <img src={reactlogo} />
+                                        <div className="col-lg-6 col-md-6 text-center">
+                                            <div className="hiringss">
+                                                <img src={reactlogo} className='img-flui' />
+                                            </div>
                                             React Native
                                         </div>
-                                        <div className="col-lg-6">
-                                            <img src={flutter} />
+                                        <div className="col-lg-6 col-md-6 text-center">
+                                            <div className="hiringss">
+                                                <img src={flutter} className='img-flui' />
+                                            </div>
                                             Flutter
                                         </div>
                                     </div>
@@ -502,12 +505,16 @@ const Home = () => {
                                 <div class="card hiring" >
                                     <div className="row ">
                                         <h4 className=''>Hire Mobile developer</h4>
-                                        <div className="col-lg-6">
-                                            <img src={angular} className='img-flui' />
+                                        <div className="col-lg-6 col-md-6 text-center">
+                                            <div className="hiringss">
+                                                <img src={angular} className='img-flui' />
+                                            </div>
                                             Angular
                                         </div>
-                                        <div className="col-lg-6">
-                                            <img src={reactlogo} />
+                                        <div className="col-lg-6 col-md-6 text-center">
+                                            <div className="hiringss">
+                                                <img src={reactlogo} className='img-flui' />
+                                            </div>
                                             React
                                         </div>
                                     </div>
@@ -516,26 +523,38 @@ const Home = () => {
                         </div>
                         <div className="row mt-3 hiring">
                             <h4 className='mb-4'>Hire Backend developer</h4>
-                            <div className="col-lg-4">
+                            <div className="col-lg-3 col-md-3 text-center">
+                                <div className="hiringss">
+                                    <img src={python} className='img-flui' />
+                                </div>
 
-                                <img src={python} />
                                 python
                             </div>
-                            <div className="col-lg-4">
-                                <img src={ruby} />
-                                ruby
+                            <div className="col-lg-3 col-md-3 text-center">
+                                <div className="hiringss">
+                                    <img src={laravel} className='img-flui' height={60} width={60} />
+                                </div>
+                                laravel
                             </div>
-                            <div className="col-lg-4">
-                                <img src={node} />
+                            <div className="col-lg-3 col-md-3 text-center">
+                                <div className="hiringss">
+                                    <img src={node} className='img-flui' />
+                                </div>
                                 node
+                            </div>
+                            <div className="col-lg-3 col-md-3 text-center">
+                                <div className="hiringss">
+                                    <img src={mysql} className='img-flui' height={70} width={70} />
+                                </div>
+                                mysql
                             </div>
 
                         </div>
                     </div>
 
                     <div className="col-lg-4">
-                        <div className="overlay">
-                            <img src={dedicated} style={{ aspectRatio: "1/1" }} />
+                        <div className="overlasy">
+                            <img src={dedicated} className='' style={{ aspectRatio: "1/1" }} />
                         </div>
                     </div>
                 </div>

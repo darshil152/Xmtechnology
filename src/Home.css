@@ -94,6 +94,14 @@ nav.nav {
     padding: 30px;
 }
 
+.conters {
+    background: linear-gradient(54deg, #0669F7 0%, #0052C7 100%);
+    font-size: 35px;
+    color: white;
+    padding: 30px;
+    height: 270px;
+}
+
 .imag1 {
     margin-top: -100px;
 }
@@ -431,6 +439,135 @@ input#form {
     border-radius: 18px;
 }
 
+.bg-image {
+    background: url(./assets/Image/background.png) no-repeat center center;
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 10%;
+    height: 900px;
+}
+
+.overlay {
+    background: url(./assets/Image/overlay.png) no-repeat center center;
+    width: 100%;
+    height: 900px;
+    background-size: cover;
+}
+
+p.solutions {
+    color: var(--white, #FFF);
+    font-family: Circular Std;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 255px;
+}
+
+.backgrounds {
+    background-image: url(./assets/Image/backgroundservice.png);
+    width: 100%;
+    height: 660px;
+    background-repeat: no-repeat;
+}
+
+.backgrounds2 {
+    background-image: url(./assets/Image/backgroundservice2.png);
+    width: 100%;
+    height: 660px;
+    background-repeat: no-repeat;
+}
+
+h6.unlock {
+    color: var(--white, #FFF);
+    font-family: Circular Std;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+}
+
+button.contact {
+    width: 170px;
+    height: 55px;
+    font-size: 20px;
+}
+
+h6.human {
+    color: #0669F7;
+    font-family: Circular Std;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+p.secret {
+    color: var(--white, #FFF);
+    font-family: Circular Std;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+button.findout {
+    background-color: #00142D;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 25px;
+    border-radius: 15px;
+}
+
+.works {
+    background-color: #00142D;
+    width: 100%;
+    padding: 80px 20px;
+}
+
+p.texts {
+    color: var(--white, #FFF);
+    font-family: Circular Std;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 180%;
+}
+
+.background-work {
+    background: #00142D;
+    height: 550px;
+    width: 100%;
+}
+
+.make {
+    background-color: #0669F7;
+    width: 100%;
+    height: auto;
+    padding: 90px 55px;
+}
+
+button.us {
+    padding: 15px 35px;
+    border: 1px solid white;
+    border-radius: 15px;
+    color: white;
+}
+
+.hiringss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bgimage {
+    background: url(./assets/Image/aboutis.png);
+    width: 100%;
+    height: 650px;
+    background-size: cover;
+}
+
 @media screen and (max-width:768px) {
     .circle1 {
         display: none;
@@ -448,6 +585,10 @@ input#form {
     textarea {
         width: 250px;
     }
+
+                .center {
+                    text-align: center;
+                }
 
     .dica {
         width: 320px;
@@ -475,6 +616,10 @@ input#form {
         text-align: center;
         margin: auto;
     }
+
+    p.ipsum {
+        text-align: center;
+    }
 }
 
 @media screen and (max-width:992px) {
@@ -482,8 +627,51 @@ input#form {
         margin-top: 20px;
     }
 
+    img.chairs {
+        margin: auto;
+    }
+
     .dream {
         margin-bottom: 12px;
+    }
+
+    .aligns {
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+
+    img.mt-5.ms-auto.rounded-5 {
+        display: none;
+    }
+
+    .background-work {
+        padding-top: 35px;
+        height: 450px;
+    }
+
+    p.ipsum {
+        text-align: center;
+    }
+
+                .center {
+                    text-align: center;
+                }
+
+    h1.ipsum {
+        text-align: center;
+    }
+
+    .conters {
+        background: linear-gradient(54deg, #0669F7 0%, #0052C7 100%);
+        font-size: 35px;
+        color: white;
+        padding: 30px;
+        height: 381px;
+    }
+
+    .overlasy {
+        display: none;
     }
 }
 
@@ -492,11 +680,78 @@ input#form {
         height: 500px
     }
 
+    p.ipsum {
+        text-align: center;
+    }
+
+    img.chairs {
+        margin: auto;
+    }
+
+    h1.ipsum {
+        text-align: center;
+    }
+
     h1.fw-bold {
         margin-top: 55px;
     }
 
+    .center {
+      text-align: center;
+    }
+
     .message {
         height: 650px;
+    }
+
+    .backgrounds {
+        background-image: url(./assets/Image/backgroundservice.png);
+        width: 100%;
+        height: auto;
+    }
+
+    p.solutions {
+        color: var(--white, #FFF);
+        font-family: Circular Std;
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 255px;
+    }
+
+    h6.unlock {
+        color: var(--white, #FFF);
+        font-family: Circular Std;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 32px;
+    }
+
+    .aligns {
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+
+    img.mt-5.ms-auto.rounded-5 {
+        display: none;
+    }
+
+    .hiringss {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .background-work {
+        padding-top: 35px;
+        height: 450px;
+    }
+
+    .centering {
+        text-align: center;
     }
 }
