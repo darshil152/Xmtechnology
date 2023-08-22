@@ -23,7 +23,10 @@ import circle from './assets/Image/Ellipse 19.png';
 
 import Img1 from './assets/Image/Vector 4.png';
 import Img2 from './assets/Image/470be6e4dfc04d543155399e7ffdee85.png';
-import mainimage from "./assets/Image/mainimage.png"
+// import mainimage from "./assets/Image/mainimage.png"
+// import mainimage from "./assets/Image/18147.jpg"
+import mainimage from "./assets/Image/programmer_v_02.jpg"
+
 import image1 from './assets/Image/Human-touch 1.png';
 import image2 from './assets/Image/indeed 1.png';
 import image3 from './assets/Image/The-Stanlee-foundation 1.png';
@@ -67,7 +70,9 @@ import bgImg from './assets/Image/2752392-removebg-preview 1.png';
 
 const Home = () => {
 
+
     useEffect(() => {
+
         AOS.init();
     }, [])
 
@@ -171,6 +176,7 @@ const Home = () => {
 
     return (
         <>
+
             <Navbar expand="lg" className="nav pb-3 pt-4 ">
                 <Container>
                     <Navbar.Brand href=""><img src={Logo} alt="" className='img-fluid' /></Navbar.Brand>
@@ -188,6 +194,10 @@ const Home = () => {
                 </Container>
             </Navbar>
 
+
+
+
+
             <div>
                 <Container fluid>
                     <Row>
@@ -201,13 +211,13 @@ const Home = () => {
                                                 Development Company
                                             </h1>
 
-                                            <p className='web create' style={{ fontSize: "23px" }}>We create clean and creative websites that are professional and help <br />
+                                            <p className='web create mt-4' style={{ fontSize: "23px" }}>We create clean and creative websites that are professional and help <br />
                                                 you generate more visitors  and revenue.</p>
 
-                                            <Button variant="primary" className='rounded-5 ps-4 pe-4 pt-2 pb-2 fs-5'>Get Started</Button>{' '}
+                                            <Button variant="primary" className='rounded-5 ps-4 mt-4 pe-4 pt-2 pb-2 fs-5'>Get Started</Button>{' '}
 
                                             <div data-aos="fade-left" data-aos-duration="2000">
-                                                <img width={50} className='pt-3 ms-5 circle' src={circle} alt="" />
+                                                <img width={50} className='pt-3  ms-5 mt-4 circle' src={circle} alt="" />
                                             </div>
                                         </div>
                                     </div>
@@ -215,7 +225,7 @@ const Home = () => {
 
                                 <Col lg={6}>
                                     <div data-aos="fade-left" data-aos-duration="2000">
-                                        <img className=' img-fluid ' src={mainimage} alt="" />
+                                        <img className=' img-fluid ' src={mainimage} alt="" style={{ height: "650px" }} />
                                     </div>
 
                                 </Col>
