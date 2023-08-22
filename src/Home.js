@@ -10,6 +10,7 @@ import firebaseApp from './Firebase/firebase';
 import { useNavigate } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -66,6 +67,10 @@ import bgImg from './assets/Image/2752392-removebg-preview 1.png';
 
 const Home = () => {
 
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
 
     const [countetOn, setCounteron] = useState(false)
     const [value, setValue] = useState()
@@ -103,6 +108,10 @@ const Home = () => {
 
                 .then((docRef) => {
 
+                    setname("")
+                    setValue("")
+                    setemail("")
+                    setmessage("")
                     console.log("Document written with ID: ", docRef);
                     resolve(docRef.id);
                 })
@@ -154,6 +163,11 @@ const Home = () => {
         window.location.href = "/hire/react"
     }
 
+    const tocontact = () => {
+        window.location.href = "/contact"
+
+    }
+
 
     return (
         <>
@@ -168,7 +182,7 @@ const Home = () => {
                             <Nav.Link href="" onClick={toportfolio}>Portfolio</Nav.Link>
                             <Nav.Link href="" onClick={topage}>Jobs</Nav.Link>
                             <Nav.Link href="" onClick={tohire}>Hire</Nav.Link>
-                            <Button variant="primary" className='rounded-5'>Contact  Us</Button>{' '}
+                            <Button variant="primary" className='rounded-5' onClick={tocontact}>Contact Us</Button>{' '}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -179,20 +193,20 @@ const Home = () => {
                     <Row>
                         <div className='dsid'>
                             <div className='div-container '>
-                                <Col lg={6} md={8}>
+                                <Col lg={6} md={8} data-aos="fade-right">
                                     <div className='d-flex text-div'>
                                         <div className='circle1'></div>
-                                        <div className='ms-lg-4'>
-                                            <h1 className='fw-bold' style={{ fontSize: "50px" }}>Web Design And <br />
+                                        <div className='ms-lg-4' data-aos="fade-right" data-aos-duration="1500">
+                                            <h1 className='fw-bold designs' style={{ fontSize: "50px" }}>Web Design And <br />
                                                 Development Company
                                             </h1>
 
-                                            <p className='web' style={{ fontSize: "23px" }}>We create clean and creative websites that are professional and help <br />
+                                            <p className='web create' style={{ fontSize: "23px" }}>We create clean and creative websites that are professional and help <br />
                                                 you generate more visitors  and revenue.</p>
 
                                             <Button variant="primary" className='rounded-5 ps-4 pe-4 pt-2 pb-2 fs-5'>Get Started</Button>{' '}
 
-                                            <div>
+                                            <div data-aos="fade-left" data-aos-duration="2000">
                                                 <img width={50} className='pt-3 ms-5 circle' src={circle} alt="" />
                                             </div>
                                         </div>
@@ -200,8 +214,8 @@ const Home = () => {
                                 </Col>
 
                                 <Col lg={6}>
-                                    <div>
-                                        <img className=' img-fluid  ' src={mainimage} alt="" />
+                                    <div data-aos="fade-left" data-aos-duration="2000">
+                                        <img className=' img-fluid ' src={mainimage} alt="" />
                                     </div>
 
                                 </Col>
@@ -326,7 +340,7 @@ const Home = () => {
                 </Container>
             </div>
 
-            <div className='mt-3 mb-3 mt-sm-5 bg1 ' style={{ width: "100%" }}>
+            <div className='mt-3 mb-3 mt-sm-5 bg1' style={{ width: "100%" }}>
                 <Container>
                     <Row>
                         <div className='d-flex justify-content-center'>
@@ -345,7 +359,7 @@ const Home = () => {
 
                     <Row>
                         <div className='dic'>
-                            <Col lg={4} md={6}>
+                            <Col lg={4} md={6} data-aos="fade-up" data-aos-duration="1500">
                                 <div className='border  m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
                                     <div className='d-flex justify-content-center'>
                                         <img width={35} src={Image1} alt="" />
@@ -356,7 +370,7 @@ const Home = () => {
                                 </div>
                             </Col>
 
-                            <Col lg={4} md={6}>
+                            <Col lg={4} md={6} data-aos="fade-up" data-aos-duration="1500">
                                 <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services '>
                                     <div className='d-flex justify-content-center'>
                                         <img width={35} src={Image2} alt="" />
@@ -367,7 +381,7 @@ const Home = () => {
                                 </div>
                             </Col>
 
-                            <Col lg={4} md={6}>
+                            <Col lg={4} md={6} data-aos="fade-up" data-aos-duration="1500">
                                 <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
                                     <div className='d-flex justify-content-center'>
                                         <img width={35} src={Image3} alt="" />
@@ -378,7 +392,7 @@ const Home = () => {
                                 </div>
                             </Col>
 
-                            <Col lg={4} md={6}>
+                            <Col lg={4} md={6} data-aos="fade-up" data-aos-duration="1500">
                                 <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
                                     <div className='d-flex justify-content-center'>
                                         <img width={35} src={Image1} alt="" />
@@ -389,7 +403,7 @@ const Home = () => {
                                 </div>
                             </Col>
 
-                            <Col lg={4} md={6}>
+                            <Col lg={4} md={6} data-aos="fade-up" data-aos-duration="1500">
                                 <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
                                     <div className='d-flex justify-content-center'>
                                         <img width={35} src={Image1} alt="" />
@@ -400,7 +414,7 @@ const Home = () => {
                                 </div>
                             </Col>
 
-                            <Col lg={4} md={6}>
+                            <Col lg={4} md={6} data-aos="fade-up" data-aos-duration="1500">
                                 <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
                                     <div className='d-flex justify-content-center'>
                                         <img width={35} src={Image1} alt="" />
@@ -411,7 +425,7 @@ const Home = () => {
                                 </div>
                             </Col>
 
-                            <Col lg={4} md={6}>
+                            <Col lg={4} md={6} data-aos="fade-up" data-aos-duration="1500">
                                 <div className='border  m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services' >
                                     <div className='d-flex justify-content-center'>
                                         <img width={35} src={Image4} alt="" />
@@ -425,7 +439,7 @@ const Home = () => {
                         </div>
                     </Row>
                 </Container>
-            </div>
+            </div >
 
             <div className='mt-5 mb-4 mt-5'>
                 <Container>
@@ -498,7 +512,7 @@ const Home = () => {
                             <div className="col-lg-6">
                                 <div class="card hiring" >
                                     <div className="row ">
-                                        <h4 className=''>Hire Mobile developer</h4>
+                                        <h4 className='text-center'>Hire Mobile developer</h4>
                                         <div className="col-lg-6 col-md-6 text-center">
                                             <div className="hiringss">
                                                 <img src={reactlogo} className='img-flui' />
@@ -519,7 +533,7 @@ const Home = () => {
                             <div className="col-lg-6">
                                 <div class="card hiring" >
                                     <div className="row ">
-                                        <h4 className=''>Hire Mobile developer</h4>
+                                        <h4 className='text-center'>Hire Mobile developer</h4>
                                         <div className="col-lg-6 col-md-6 text-center">
                                             <div className="hiringss">
                                                 <img src={angular} className='img-flui' />
@@ -578,16 +592,10 @@ const Home = () => {
 
 
 
-
-
-
-
-
             <div className='mt-4 mb-4 '>
                 <Container>
                     <Row style={{ marginTop: "100px" }}>
                         <Col lg={6} className='text-center m-auto'>
-                            <h5 className='text-primary'>OUR SERVICES</h5>
                             <h3 className='fw-bold'>What We Offer</h3>
                         </Col>
                     </Row>
@@ -597,12 +605,12 @@ const Home = () => {
                         <div className='dic'>
                             <Col lg={4}>
                                 <div className='end-div p-3'>
-                                    <div>
+                                    <div data-aos="fade-left" data-aos-duration="1500">
                                         <h5 className='idea'> Awesome Ideas</h5>
                                         <p className='web'>Lorem Ipsum is simply dummy text of the
                                             printing and typesetting industry. </p>
                                     </div>
-                                    <div>
+                                    <div data-aos="fade-right" data-aos-duration="1500">
                                         <h5 className='idea'>Web Solution</h5>
                                         <p className='web'>Lorem Ipsum is simply dummy text of the
                                             printing and typesetting industry. </p>
@@ -610,16 +618,16 @@ const Home = () => {
                                 </div>
                             </Col>
                             <Col lg={4}>
-                                <img className='img-fluid' src={bgImg} alt="" />
+                                <img className='img-fluid' src={bgImg} alt="" data-aos="fade-down" data-aos-duration="1500" />
                             </Col>
                             <Col lg={4}>
                                 <div className='p-3'>
-                                    <div>
+                                    <div data-aos="fade-left" data-aos-duration="1500">
                                         <h5 className='idea'>Planning Settings</h5>
                                         <p className='web'>Lorem Ipsum is simply dummy text of the
                                             printing and typesetting industry. </p>
                                     </div>
-                                    <div>
+                                    <div data-aos="fade-right" data-aos-duration="1500">
                                         <h5 className='idea'>Client Market</h5>
                                         <p className='web'>Lorem Ipsum is simply dummy text of the
                                             printing and typesetting industry. </p>
@@ -700,7 +708,7 @@ const Home = () => {
                     <Container>
                         <Row>
                             <div className='dics'>
-                                <Col lg={3} md={6} sm={6} xs={12} >
+                                <Col lg={2} md={6} sm={6} xs={12} >
                                     <div className='pt-4'>
                                         <h2 className='contact'>Contacts</h2>
                                     </div>
@@ -722,8 +730,8 @@ const Home = () => {
                                 </Col>
                                 <Col lg={3} md={6} sm={6} xs={12} >
                                     <div className='d-flex '>
-                                        <img src={LocatinIcon} alt="" />
-                                        <h6 className='ms-3 pt-1 address lh-base'>207, Dhara trade center,
+                                        <img src={LocatinIcon} alt="" className='mt-4' />
+                                        <h6 className='ms-3 pt-1 mt-4 address lh-base'>207, Dhara trade center,
                                             Mahadev Chowk,
                                             Mota varachha, Surat
                                             394101
@@ -731,7 +739,7 @@ const Home = () => {
                                     </div>
                                 </Col>
 
-                                <Col lg={3} md={6} sm={6} xs={12} className='pt-4 d-flex'>
+                                <Col lg={4} md={6} sm={6} xs={12} className='pt-4 pl-3 d-flex'>
                                     <img src={Fblogo} alt="" />
                                     <img className='ms-3' src={Twilogo} alt="" />
                                     <img className='ms-3' src={Inlogo} alt="" />
@@ -756,7 +764,7 @@ const Home = () => {
                 <div className="main">
                     <div className="name p-3">
 
-                        <input type="text" name="name" id="name" placeholder='Name' onChange={handlename} />
+                        <input type="text" name="name" id="name" value={name} placeholder='Name' onChange={handlename} />
                     </div>
 
                     <div className="phno p-3">
@@ -766,13 +774,13 @@ const Home = () => {
                             onChange={setValue} />
                     </div>
                     <div className="email p-3">
-                        <input type="email" name="email" id="email" placeholder='Email' onChange={handlemail} />
+                        <input type="email" name="email" id="email" value={email} placeholder='Email' onChange={handlemail} />
                     </div>
                 </div>
 
                 <div className="row">
                     <div className="col-lg-12 text-center">
-                        <textarea name="" id="" cols="100" rows="5" placeholder='Your message' onChange={handlemessage}></textarea>
+                        <textarea name="" id="" cols="100" rows="5" value={message} placeholder='Your message' onChange={handlemessage}></textarea>
                     </div>
                 </div>
 

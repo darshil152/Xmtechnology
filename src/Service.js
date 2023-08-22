@@ -6,6 +6,7 @@ import ScrollTrigger from 'react-scroll-trigger';
 import Container from 'react-bootstrap/Container';
 import firebaseApp from './Firebase/firebase';
 import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Button, Col, Image, Row } from 'react-bootstrap';
@@ -14,7 +15,9 @@ import Image1 from './assets/Image/code 1.png';
 import Image2 from './assets/Image/cart 1.png';
 import Image3 from './assets/Image/content 1.png';
 import Image4 from './assets/Image/document 1.png';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 import Logo from './assets/Image/XM.png';
 
@@ -51,6 +54,11 @@ import img10 from "./assets/Image/img10.png"
 
 export default function Service() {
 
+
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
     const [countetOn, setCounteron] = useState(false)
     const [value, setValue] = useState()
     const [name, setname] = useState()
@@ -86,6 +94,10 @@ export default function Service() {
             db.collection("ContactUs").add(obj)
 
                 .then((docRef) => {
+                    setname("")
+                    setValue("")
+                    setemail("")
+                    setmessage("")
 
                     console.log("Document written with ID: ", docRef);
                     resolve(docRef.id);
@@ -140,6 +152,10 @@ export default function Service() {
     const tohire = () => {
         window.location.href = "/hire/react"
     }
+    const tocontact = () => {
+        window.location.href = "/contact"
+
+    }
 
     return (
         <>
@@ -155,7 +171,7 @@ export default function Service() {
                             <Nav.Link href="" onClick={toportfolio}>Portfolio</Nav.Link>
                             <Nav.Link href="" onClick={topage}>Jobs</Nav.Link>
                             <Nav.Link href="" onClick={tohire}>Hire</Nav.Link>
-                            <Button variant="primary" className='rounded-5'>Contact  Us</Button>{' '}
+                            <Button variant="primary" className='rounded-5' onClick={tocontact}>Contact  Us</Button>{' '}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -168,7 +184,7 @@ export default function Service() {
                             <div className="col-lg-8 ">
                                 <p className='solutions'> Cutting-Edge IT Solutions: Empowering Your Digital Transformation</p>
                                 <h6 className='unlock'>Unlocking Business Potential Through Expert IT Solutions. Seamlessly tailored for growth.</h6>
-                                <button className='btn btn-primary contact'>Contact Us</button>
+                                <button className='btn btn-primary contact' onClick={tocontact}>Contact Us</button>
                             </div>
                         </div>
                     </div>
@@ -195,7 +211,7 @@ export default function Service() {
 
                     <Row>
                         <div className='dic'>
-                            <Col lg={4} md={6}>
+                            <Col lg={4} md={6} data-aos="fade-up" data-aos-duration="1500">
                                 <div className='border  m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
                                     <div className='d-flex justify-content-center'>
                                         <img width={35} src={Image1} alt="" />
@@ -206,7 +222,7 @@ export default function Service() {
                                 </div>
                             </Col>
 
-                            <Col lg={4} md={6}>
+                            <Col lg={4} md={6} data-aos="fade-up" data-aos-duration="1500">
                                 <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services '>
                                     <div className='d-flex justify-content-center'>
                                         <img width={35} src={Image2} alt="" />
@@ -217,7 +233,7 @@ export default function Service() {
                                 </div>
                             </Col>
 
-                            <Col lg={4} md={6}>
+                            <Col lg={4} md={6} data-aos="fade-up" data-aos-duration="1500">
                                 <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
                                     <div className='d-flex justify-content-center'>
                                         <img width={35} src={Image3} alt="" />
@@ -228,7 +244,7 @@ export default function Service() {
                                 </div>
                             </Col>
 
-                            <Col lg={4} md={6}>
+                            <Col lg={4} md={6} data-aos="fade-up" data-aos-duration="1500">
                                 <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
                                     <div className='d-flex justify-content-center'>
                                         <img width={35} src={Image1} alt="" />
@@ -239,7 +255,7 @@ export default function Service() {
                                 </div>
                             </Col>
 
-                            <Col lg={4} md={6}>
+                            <Col lg={4} md={6} data-aos="fade-up" data-aos-duration="1500">
                                 <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
                                     <div className='d-flex justify-content-center'>
                                         <img width={35} src={Image1} alt="" />
@@ -250,7 +266,7 @@ export default function Service() {
                                 </div>
                             </Col>
 
-                            <Col lg={4} md={6}>
+                            <Col lg={4} md={6} data-aos="fade-up" data-aos-duration="1500">
                                 <div className='border   m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services'>
                                     <div className='d-flex justify-content-center'>
                                         <img width={35} src={Image1} alt="" />
@@ -261,7 +277,7 @@ export default function Service() {
                                 </div>
                             </Col>
 
-                            <Col lg={4} md={6}>
+                            <Col lg={4} md={6} data-aos="fade-up" data-aos-duration="1500">
                                 <div className='border  m-auto text-center p-4 mt-2 ms-2 me-3 mb-2 services' >
                                     <div className='d-flex justify-content-center'>
                                         <img width={35} src={Image4} alt="" />
@@ -303,7 +319,7 @@ export default function Service() {
 
 
             <div className='pt-4 pb-4 mt-5 backgrounds'>
-                <Container >
+                <Container data-aos="zoom-out" data-aos-duration="1500" >
                     <Row>
                         <div className='d-flex justify-content-center'>
                             <Col lg={6}>
@@ -523,7 +539,7 @@ export default function Service() {
                 <div className="main">
                     <div className="name p-3">
 
-                        <input type="text" name="name" id="name" placeholder='Name' onChange={handlename} />
+                        <input type="text" name="name" id="name" value={name} placeholder='Name' onChange={handlename} />
                     </div>
 
                     <div className="phno p-3">
@@ -533,13 +549,13 @@ export default function Service() {
                             onChange={setValue} />
                     </div>
                     <div className="email p-3">
-                        <input type="email" name="email" id="email" placeholder='Email' onChange={handlemail} />
+                        <input type="email" name="email" id="email" value={email} placeholder='Email' onChange={handlemail} />
                     </div>
                 </div>
 
                 <div className="row">
                     <div className="col-lg-12 text-center">
-                        <textarea name="" id="" cols="100" rows="5" placeholder='Your message' onChange={handlemessage}></textarea>
+                        <textarea name="" id="" cols="100" rows="5" value={message} placeholder='Your message' onChange={handlemessage}></textarea>
                     </div>
                 </div>
 

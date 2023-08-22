@@ -58,6 +58,10 @@ const tohire = () => {
 const tomain = () => {
     window.location.href = "/"
 }
+const tocontact = () => {
+    window.location.href = "/contact"
+
+}
 
 export default function Portfolio() {
 
@@ -80,7 +84,7 @@ export default function Portfolio() {
                             <Nav.Link href="" onClick={toportfolio}>Portfolio</Nav.Link>
                             <Nav.Link href="" onClick={topage}>Jobs</Nav.Link>
                             <Nav.Link href="" onClick={tohire}>Hire</Nav.Link>
-                            <Button variant="primary" className='rounded-5'>Contact  Us</Button>{' '}
+                            <Button variant="primary" className='rounded-5' onClick={tocontact}>Contact  Us</Button>{' '}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -94,23 +98,24 @@ export default function Portfolio() {
                     <div className="col-lg-6">
 
                         <p className='text-primary mb-4'>OUR WORKS</p>
-                        <h1 className=''>Amazing things come from collaboration. Browse our selected work.</h1>
+                        <h1 className='amazing'>Amazing things come from collaboration. Browse our selected work.</h1>
                     </div>
                 </div>
             </div>
 
-            <div className="container">
+            <div className="container" data-aos="fade-up"
+                data-aos-duration="3000">
                 <div className="row mt-5 ">
                     <div className="col-lg-6  col-md-6 centering">
 
                         <img src={img1} className='mb-3' />
-                        Xm store <br />
+                        XM Store <br />
                         UI / UX Design
                     </div>
                     <div className="col-lg-6  col-md-6 centering mt-5">
 
                         <img src={img2} className='mb-3' />
-                        Xm store <br />
+                        XM Store <br />
                         UI / UX Design
                     </div>
 
@@ -119,13 +124,13 @@ export default function Portfolio() {
                     <div className="col-lg-6  col-md-6 centering">
 
                         <img src={img3} className='mb-3' />
-                        Xm store <br />
+                        XM Store <br />
                         UI / UX Design
                     </div>
                     <div className="col-lg-6  col-md-6 centering mt-5">
 
                         <img src={img4} className='mb-3' />
-                        Xm store <br />
+                        XM Store <br />
                         UI / UX Design
                     </div>
 
@@ -134,13 +139,13 @@ export default function Portfolio() {
                     <div className="col-lg-6  col-md-6 centering">
 
                         <img src={img5} className='mb-3' />
-                        Xm store <br />
+                        XM Store <br />
                         UI / UX Design
                     </div>
                     <div className="col-lg-6  col-md-6 centering mt-5">
 
                         <img src={img6} className='mb-3' />
-                        Xm store <br />
+                        XM Store <br />
                         UI / UX Design
                     </div>
 
@@ -149,13 +154,13 @@ export default function Portfolio() {
                     <div className="col-lg-6  col-md-6 centering">
 
                         <img src={img8} className='mb-3' />
-                        Xm store <br />
+                        XM Store <br />
                         UI / UX Design
                     </div>
                     <div className="col-lg-6  col-md-6 centering mt-5">
 
                         <img src={img7} className='mb-3' />
-                        Xm store <br />
+                        XM Store <br />
                         UI / UX Design
                     </div>
                 </div>
@@ -168,7 +173,7 @@ export default function Portfolio() {
                         <h1 className='text-light'>Let's make something br amazing together.</h1>
                         <p className='text-light'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
 
-                        <button className='us'>Contant Us</button>
+                        <button className='us' onClick={tocontact}>Contant Us</button>
 
 
                     </div>

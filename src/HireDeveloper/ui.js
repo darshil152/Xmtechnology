@@ -79,6 +79,24 @@ export default function Ui() {
                             <label className='mt-4 text-left' htmlFor="Email">Email address</label>
                             <input className='text-input inputstyle' id='form' type="text" />
 
+                            <label className='mt-4 text-left' htmlFor="Email">Choose Developer Team</label>
+                            <select className='text-input inputstyle' id='form'>
+                                <option value="react">React Developer</option>
+                                <option value="node">Node Developer</option>
+                                <option value="ios">Ios Developer</option>
+                                <option value="flutter">Flutter Developer</option>
+                                <option value="android">Android Developer</option>
+                                <option value="python">Python Developer</option>
+                                <option value="mern">Mern Developer</option>
+                                <option value="ui/ux">Ui/Ux Developer</option>
+                                <option value="fullstack">Fullstack Developer</option>
+                                <option value="Laravel">Laravel Developer</option>
+                                <option value="Vue">Vue Developer</option>
+                                <option value="Django">Django Developer</option>
+                                <option value="DotNet">DotNet Developer</option>
+                                <option value="Angular">Angular Developer</option>
+                            </select>
+
 
                             <label className='mt-4 text-left' htmlFor="Contact">Contact</label>
                             <input className='text-input inputstyle' id='form' type="text" />

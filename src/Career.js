@@ -8,11 +8,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import Logo from './assets/Image/XM.png';
 import { Button, Col, Image, Row } from 'react-bootstrap';
 import { City, Country, State } from "country-state-city";
-import Selector from "./Selector";
 import './Career.css'
 import Data from './Data';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
-import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import frame from "./assets/Image/Frame.png"
@@ -33,10 +31,26 @@ import Inlogo from './assets/Image/in.png';
 import Intralogo from './assets/Image/instagram-sketched 1.svg';
 import Sklogo from './assets/Image/skype 1.svg';
 import Gmlogo from './assets/Image/gmail 1.svg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { Component } from "react";
+import { Modal } from "react-bootstrap";
 
 let dummydata = []
 
 export default function Career() {
+
+
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
+    const [showModal, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
 
     let countryData = Country.getAllCountries();
 
@@ -56,6 +70,117 @@ export default function Career() {
 
     const [position, setposition] = useState();
 
+
+
+    const [name, setName] = useState('')
+    const [Lname, setLname] = useState('')
+    const [Email, setEmail] = useState('')
+    const [Number, setNumber] = useState('')
+    const [Profile, setProfile] = useState('')
+    const [Cvaddress, setCVaddress] = useState('')
+
+    const makeid = (length) => {
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const charactersLength = characters.length;
+        let counter = 0;
+        while (counter < length) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            counter += 1;
+        }
+        return result;
+    }
+
+    const Savedata = () => {
+        let objs = {
+            name: name,
+            Lname: Lname,
+            Email: Email,
+            Number: Number,
+            Profile: Profile,
+            Cvaddress: Cvaddress,
+            id: makeid(5)
+        }
+
+        let registerQuery = new Promise((resolve, reject) => {
+            let db = firebaseApp.firestore();
+            db.collection("Resumes").add(objs)
+
+                .then((docRef) => {
+                    console.log("Document written with ID: ", docRef);
+                    handleClose()
+                    resolve(docRef.id);
+                })
+                .catch((error) => {
+                    console.error("Please check form again ", error);
+                    reject(error);
+                });
+        });
+        registerQuery.then(result => {
+            console.warn('register successful')
+        }).catch(error => {
+            console.error(error)
+        })
+
+
+
+    }
+
+    const fileechange = (e) => {
+        UploadImageTOFirebase(e.target.files[0])
+    }
+
+    const UploadImageTOFirebase = (file) => {
+        const guid = () => {
+            function s4() {
+                return Math.floor((1 + Math.random()) * 0x10000)
+                    .toString(16)
+                    .substring(1);
+            }
+            return String(s4() + '-' + s4() + '-' + s4() + '-' +
+                s4() + '-' + s4() + s4() + s4());
+        }
+
+
+        let myPromise = new Promise((resolve, reject) => {
+
+            const myGuid = guid();
+            const storageUrl = firebaseApp.storage('gs://test-15878.appspot.com')
+            const storageRef = storageUrl.ref();
+            console.log('ref : ', storageRef)
+            const uploadTask = storageRef.child('Xmtech').child('resume').child(myGuid).put(file)
+            uploadTask.on('state_changed',
+                (snapShot) => {
+
+                }, (err) => {
+                    //catches the errors
+                    console.log(err)
+                    reject(err)
+                }, () => {
+
+                    firebaseApp
+                        .storage('gs://test-15878.appspot.com')
+                        .ref()
+                        .child('Xmtech')
+                        .child('resume')
+                        .child(myGuid)
+                        .getDownloadURL()
+                        .then(fireBaseUrl => {
+                            resolve(fireBaseUrl)
+                        }).catch(err => {
+                            console.log('error caught', err)
+                        })
+                })
+        })
+        myPromise.then(url => {
+            console.log(url)
+            setProfile(url)
+
+        }).catch(err => {
+            console.log('error caught', err)
+        })
+
+    }
 
 
     useEffect(() => {
@@ -180,6 +305,42 @@ export default function Career() {
         window.location.href = "/hire/react"
     }
 
+    const tocontact = () => {
+        window.location.href = "/contact"
+
+    }
+
+
+    const toreact = () => {
+        window.location.href = "/hire/react"
+    }
+
+
+    const topython = () => {
+        window.location.href = "/hire/python"
+
+    }
+
+    const toios = () => {
+        window.location.href = "/hire/ios"
+    }
+
+
+    const tonode = () => {
+        window.location.href = "/hire/node"
+    }
+
+    const toandroid = () => {
+        window.location.href = "/hire/android"
+    }
+
+    const tofigmat = () => {
+        window.location.href = "/hire/ui"
+    }
+
+
+
+
 
     return (
         <>
@@ -194,7 +355,7 @@ export default function Career() {
                             <Nav.Link href="" onClick={toportfolio}>Portfolio</Nav.Link>
                             <Nav.Link href="" onClick={topage}>Jobs</Nav.Link>
                             <Nav.Link href="" onClick={tohire}>Hire</Nav.Link>
-                            <Button variant="primary" className='rounded-5'>Contact  Us</Button>{' '}
+                            <Button variant="primary" className='rounded-5' onClick={tocontact}>Contact  Us</Button>{' '}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -205,7 +366,7 @@ export default function Career() {
                 <div className="row ">
                     <div className="col-lg-8 padd" >
                         <h1 className='text-light alwayss'>We Are Always <br /> Looking For Talent</h1>
-                        <button className='mt-3 uss'>Contact us</button>
+                        <button className='mt-3 uss' onClick={tocontact}>Contact us</button>
                         <button className='mt-3 who'>Who we are</button>
                     </div>
                 </div>
@@ -214,14 +375,16 @@ export default function Career() {
 
             <div className="container mt-5">
                 <div className="row centers d-flex justify-content-center align-items-center">
-                    <div className="col-lg-6">
+                    <div className="col-lg-6" data-aos="fade-left"
+                        data-aos-duration="3000">
                         <h1 className='text-dark part'>Be a part of <br /> future of work.</h1>
                         <p className="web">
                             Stop wasting your time, hire our in-house software developers that are tested and experienced to start working on your projects. No more going through hundred of applications, interviewing dozen of candidates, and having to keep tabs on everyone. Every developer you hire from us is assigned a project manager to make sure you have a great experience with our amazing developers.
                         </p>
-                        <button className='Apply'>Apply Now</button>
+                        <button className='Apply' onClick={handleShow}>Apply Now</button>
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-6" data-aos="fade-right"
+                        data-aos-duration="3000">
                         <img src={frame} className='img-fluid saves' />
                     </div>
                 </div>
@@ -234,24 +397,24 @@ export default function Career() {
                         <h1 className='mt-5 mb-5 text-light text-center sizess'>Hiring developers to work for you!</h1>
                         <div className="row ">
                             <div className="col-lg-4">
-                                <img src={react} className='img-fluid saves' />
+                                <img src={react} className='img-fluid saves' onClick={toreact} />
                             </div>
                             <div className="col-lg-4">
-                                <img src={python} className='img-fluid saves' />
+                                <img src={python} className='img-fluid saves' onClick={topython} />
                             </div>
                             <div className="col-lg-4">
-                                <img src={node} className='img-fluid saves' />
+                                <img src={node} className='img-fluid saves' onClick={tonode} />
                             </div>
                         </div>
                         <div className="row mb-5">
                             <div className="col-lg-4">
-                                <img src={ios} className='img-fluid saves' />
+                                <img src={ios} className='img-fluid saves' onClick={toios} />
                             </div>
                             <div className="col-lg-4">
-                                <img src={android} className='img-fluid saves' />
+                                <img src={android} className='img-fluid saves' onClick={toandroid} />
                             </div>
                             <div className="col-lg-4">
-                                <img src={figma} className='img-fluid saves' />
+                                <img src={figma} className='img-fluid saves' onClick={tofigmat} />
                             </div>
                         </div>
                     </div>
@@ -260,11 +423,13 @@ export default function Career() {
 
 
             <div className="container-fluid forbg">
-                <div className="row ">
-                    <div className="col-lg-6" style={{ padding: "55px" }}>
+                <div className="row" >
+                    <div className="col-lg-6" data-aos="fade-left"
+                        data-aos-duration="3000" style={{ padding: "55px" }}>
                         <img src={group} className='img-fluid ms-auto' />
                     </div>
-                    <div className="col-lg-6" style={{ padding: "55px" }} >
+                    <div className="col-lg-6" data-aos="fade-right"
+                        data-aos-duration="3000" style={{ padding: "55px" }} >
                         <h1 className="mt-5 xm">XM Technologies</h1>
                         <h1 className='text-dark team'>Ready to be part of our team?</h1>
                         <p className="web">Are you creatively curious or curiously creative too? Join our <br /> network to work with us, grow with us and make wonderful things together.</p>
@@ -284,7 +449,7 @@ export default function Career() {
                     <div className="col-lg-12">
 
                         <h1 className='value'>  corporate open roles</h1>
-                        <p className='remote'>As a remote-first, global company, Xmtechnology does not offer relocation or visa assistance. Applicants must be br eligible to work in the country where the position is offered.</p>
+                        <p className='remote'>As a remote-first, global company, XM Technology does not offer relocation or visa assistance. Applicants must be br eligible to work in the country where the position is offered.</p>
                     </div>
                 </div>
             </div>
@@ -373,7 +538,7 @@ export default function Career() {
             <div className="container mt-5">
                 <div className="row justify-content-center">
 
-                    <table>
+                    <table className='mb-5' style={{ width: "80%" }}>
                         <tr className='headingdetail'>
                             <th>Job type</th>
                             <th>Position Title</th>
@@ -480,6 +645,70 @@ export default function Career() {
                     </div>
                 </div>
             </div>
+
+            <Modal show={showModal} onHide={handleClose} size='lg'>
+                <Modal.Header closeButton>
+                    <Modal.Title>Apply Here !!</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+
+                    <div className="container-fluid mt-3" >
+                        <div className="container">
+                            <div className="row ">
+
+
+
+                                <div className="col-lg-6 mt-5">
+                                    <label htmlFor="Full name ">First Name</label>
+                                    <input className='text-input input' id='forms' type="text" placeholder='Ex:John ' onChange={(e) => setName(e.target.value)} />
+                                </div>
+
+                                <div className="col-lg-6 mt-5">
+                                    <label htmlFor="last name ">Last Name</label>
+                                    <input className='text-input input' id='forms' type="text" placeholder='Ex: Deo' onChange={(e) => setLname(e.target.value)} />
+                                </div>
+                            </div>
+
+                            <div className="row">
+                                <div className="col-lg-6 mt-4">
+                                    <label htmlFor="Full name ">Email name</label>
+                                    <input className='text-input input' id='forms' type="email" placeholder='Ex. johndoe@gmail.com' onChange={(e) => setEmail(e.target.value)} />
+                                </div>
+
+                                <div className="col-lg-6 mt-4">
+                                    <label htmlFor="Full name ">Number</label>
+                                    <input className='text-input input' id='forms' type="tel" placeholder='Ex. +1 515 516 0624' onChange={(e) => setNumber(e.target.value)} />
+                                </div>
+                            </div>
+
+                            <div className="row">
+                                <div className="col-lg-12 mt-4">
+                                    <label htmlFor="Street name "> Upload Your Cv</label><br />
+                                    <input className='text-input input datass' type="file" onChange={(e) => fileechange(e)}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="row">
+                                <div className="col-lg-12 mt-4">
+                                    <label htmlFor="Street name ">Street Name</label>
+                                    <input className='text-input input' id='forms' type="text" onChange={(e) => setCVaddress(e.target.value)} />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={Savedata}>
+                        Apply Now
+                    </Button>
+                </Modal.Footer>
+            </Modal>
 
         </>
     )

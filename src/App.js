@@ -12,6 +12,7 @@ import Node from './HireDeveloper/Node';
 import Android from './HireDeveloper/Android';
 import Ios from './HireDeveloper/Ios';
 import Ui from './HireDeveloper/ui';
+import Contactus from './Contactus';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/service" element={<Service />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contactus />} />
 
         </Routes>
       </BrowserRouter>

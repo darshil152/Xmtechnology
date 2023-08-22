@@ -9,18 +9,31 @@ select#jobs {
     width: 288px;
 }
 
+input.text-input.input.datass{
+    align-items: center;
+        background-color: #4245a8;
+        border-radius: 4px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, .25);
+        color: #fff;
+        cursor: pointer;
+        display: inline-flex;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px 12px;
+}
+
 .always {
     background: url(./assets/Image/Group\ 1000001715.png);
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 600px;
+    height: 480px;
 }
 
 h1.alwayss {
     color: var(--white, #FFF);
     font-family: Circular Std;
-    font-size: 75px;
+    font-size: 60px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;

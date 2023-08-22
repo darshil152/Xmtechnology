@@ -308,6 +308,36 @@ button#headlessui-combobox-button-\:r3\: {
     content: "V";
 }
 
+
+.contactbg{
+    background: url(./assets/Image/image\ 18.png) ;
+background-repeat: no-repeat;
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+}
+
+h1.contact{
+    color: var(--para, #00142D);
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%;
+}
+
+
+input#forms {
+    font-size: 18px;
+    line-height: 33px;
+    color: #242424;
+    padding: 8px 10px 5px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border: 2.77px solid #e5e5e5;
+    transition: .5s ease-in-out;
+}
+
 @font-face {
     font-family: Circular Std;
     src: url(../public/circular-std-medium-500.ttf), url(../public/CircularStd-Bold.ttf), url(../public/CircularStd-Bold1.ttf);
@@ -690,6 +720,18 @@ button.us {
     h1.fw-bold{
         font-size: 40px;
     }
+
+    h1.designs{
+        font-size: 30px;
+    }
+
+    p.create{
+        font-size: 15px;
+    }
+
+    img.job{
+        margin-top: 20px;
+    }
     .Grop.text-light {
         height: 500px
     }
@@ -763,9 +805,14 @@ button.us {
 
     .background-work {
         padding-top: 35px;
-        height: 450px;
+        height: 550px;
     }
-
+        p.text-primary.mb-4{
+            text-align: center;
+        }
+h1.amazing{
+    text-align: center;
+}
     .centering {
         text-align: center;
     }

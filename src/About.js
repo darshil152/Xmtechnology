@@ -57,6 +57,11 @@ export default function About() {
         window.location.href = "/"
     }
 
+    const tocontact = () => {
+        window.location.href = "/contact"
+
+    }
+
     return (
         <>
             <Navbar expand="lg" className="nav pb-3 pt-4 ">
@@ -70,7 +75,7 @@ export default function About() {
                             <Nav.Link href="" onClick={toportfolio}>Portfolio</Nav.Link>
                             <Nav.Link href="" onClick={topage}>Jobs</Nav.Link>
                             <Nav.Link href="" onClick={tohire}>Hire</Nav.Link>
-                            <Button variant="primary" className='rounded-5' >Contact  Us</Button>{' '}
+                            <Button variant="primary" className='rounded-5' onClick={tocontact}>Contact  Us</Button>{' '}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -99,7 +104,7 @@ export default function About() {
                             <br />
                             We are committed to deliver the best Quality IT Products with <br /> Passion & Prompt Services. Our highly experienced, creative and <br /> versatile development team has both the capability and aptitude <br /> to create innovative and technologically advanced mobile apps. <br /> We believe in frank working environments.</p>
                         <div className="center">
-                            <button className='mt-3 who whosss' style={{ margin: "0px" }}>Apply Now</button>
+                            <button className='mt-3 who whosss' style={{ margin: "0px" }} onClick={tocontact}>Apply Now</button>
                         </div>
                     </div>
 
