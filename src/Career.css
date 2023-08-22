@@ -9,6 +9,38 @@ select#jobs {
     width: 288px;
 }
 
+
+
+table {
+    width: 716px;
+    /* 140px * 5 column + 16px scrollbar width */
+    border-spacing: 0;
+}
+
+tbody,
+thead tr {
+    display: block;
+}
+
+tbody {
+    height: 238px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+tbody td,
+thead th {
+    width: 140px;
+}
+
+thead th:last-child {
+    width: 156px;
+    /* 140px + 16px scrollbar width */
+}
+
+
+
+
 input.text-input.input.datass{
     align-items: center;
         background-color: #4245a8;
@@ -137,6 +169,8 @@ input#headlessui-combobox-input-\:r9\: {
 }
 
 tr.headingdetail {
+    padding: 13px 0px;
+    border:1px solid black;
     border-left: 1px solid black;
     border-top: 1px solid black;
     border-right: 1px solid black;

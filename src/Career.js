@@ -8,6 +8,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Logo from './assets/Image/XM.png';
 import { Button, Col, Image, Row } from 'react-bootstrap';
 import { City, Country, State } from "country-state-city";
+
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import './Career.css'
 import Data from './Data';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
@@ -535,29 +537,34 @@ export default function Career() {
                 </div>
             </div>
 
-            <div className="container mt-5">
+            <div className="container mt-5 mb-5" >
                 <div className="row justify-content-center">
 
-                    <table className='mb-5' style={{ width: "80%" }}>
-                        <tr className='headingdetail'>
-                            <th>Job type</th>
-                            <th>Position Title</th>
-                            <th>Country</th>
-                            <th>state</th>
-                            <th>city</th>
-                        </tr>
-                        {showdata && showdata.map((item, i) => {
-                            return (
-                                <tr>
-                                    <td className='detailtable'>{item.jobtype}</td>
-                                    <td className='detailtable'> <Link to="/">{item.position}</Link > </td>
-                                    <td className='detailtable'>{item.country}</td>
-                                    <td className='detailtable'>{item.state}</td>
-                                    <td className='detailtable'>{item.city}</td>
+                    <table className='mb-5' style={{ width: "53%" }} class="scrolldown">
+                        <Thead>
+                            <tr className='headingdetail'>
+                                <th>Job type</th>
+                                <th>Position Title</th>
+                                <th>Country</th>
+                                <th>state</th>
+                                <th>city</th>
+                            </tr>
+                        </Thead>
+                        <Tbody>
 
-                                </tr>
-                            )
-                        })}
+                            {showdata && showdata.map((item, i) => {
+                                return (
+                                    <tr>
+                                        <td className='detailtable'>{item.jobtype}</td>
+                                        <td className='detailtable'> <Link to="/">{item.position}</Link > </td>
+                                        <td className='detailtable'>{item.country}</td>
+                                        <td className='detailtable'>{item.state}</td>
+                                        <td className='detailtable'>{item.city}</td>
+
+                                    </tr>
+                                )
+                            })}
+                        </Tbody>
                     </table>
 
                 </div>

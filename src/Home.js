@@ -640,7 +640,7 @@ const Home = () => {
             </div>
 
 
-            <div>
+            <div data-aos="flip-left" data-aos-duration="1500" >
                 <Container className='mb-5'>
                     <Row style={{ marginTop: "100px" }}>
                         <Col lg={6} className='text-center m-auto'>

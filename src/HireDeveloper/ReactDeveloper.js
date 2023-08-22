@@ -14,6 +14,18 @@ import Image1 from '../assets/Image/code 1.png';
 import Image2 from '../assets/Image/cart 1.png';
 import Image3 from '../assets/Image/content 1.png';
 import Image4 from '../assets/Image/document 1.png';
+import firebaseApp from '../Firebase/firebase';
+
+import Logos from '../assets/Image/XM.svg';
+import CallIcon from '../assets/Image/phone 2.svg';
+import MailIcon from '../assets/Image/mail 1.svg';
+import LocatinIcon from '../assets/Image/pin 1.svg';
+import Fblogo from '../assets/Image/facebook 1.svg';
+import Twilogo from '../assets/Image/twitter 1.svg';
+import Inlogo from '../assets/Image/in.png';
+import Intralogo from '../assets/Image/instagram-sketched 1.svg';
+import Sklogo from '../assets/Image/skype 1.svg';
+import Gmlogo from '../assets/Image/gmail 1.svg';
 
 
 import one from "../assets/HireImage/Thinking.png"
@@ -24,22 +36,150 @@ import five from "../assets/HireImage/machine.png"
 import six from "../assets/HireImage/thinkings.png"
 
 export default function ReactDeveloper() {
+
+
+    const [fname, setFname] = useState("")
+    const [email, setemail] = useState("")
+    const [team, setteam] = useState("")
+    const [contact, setcontact] = useState("")
+    const [message, setmessage] = useState("")
+
+
+    const [Tname, setTFname] = useState("")
+    const [Temail, setTemail] = useState("")
+    const [Tcontact, setTcontact] = useState("")
+    const [Tmessage, setTmessage] = useState("")
+
+
+    const saveTrial = () => {
+        let obj = {
+            Name: Tname,
+            PhoneNo: Tcontact,
+            Email: Temail,
+            Message: Tmessage,
+            id: makeid(5)
+        }
+
+        let registerQuery = new Promise((resolve, reject) => {
+            let db = firebaseApp.firestore();
+            db.collection("Trial").add(obj)
+
+                .then((docRef) => {
+
+                    setTFname("")
+                    setTemail("")
+                    setTcontact("")
+                    setTmessage('')
+                    console.log("Document written with ID: ", docRef);
+                    resolve(docRef.id);
+                })
+                .catch((error) => {
+                    console.error("Please check form again ", error);
+                    reject(error);
+                });
+        });
+        registerQuery.then(result => {
+            console.warn('register successful')
+        }).catch(error => {
+            console.error(error)
+        })
+    }
+
+
+    const savedata = () => {
+        let obj = {
+            Name: fname,
+            PhoneNo: contact,
+            Email: email,
+            Message: message,
+            team: team,
+            id: makeid(5)
+        }
+
+        let registerQuery = new Promise((resolve, reject) => {
+            let db = firebaseApp.firestore();
+            db.collection("HireDev").add(obj)
+
+                .then((docRef) => {
+
+                    setFname("")
+                    setemail("")
+                    setcontact("")
+                    setteam("")
+                    setmessage('')
+                    console.log("Document written with ID: ", docRef);
+                    resolve(docRef.id);
+                })
+                .catch((error) => {
+                    console.error("Please check form again ", error);
+                    reject(error);
+                });
+        });
+        registerQuery.then(result => {
+            console.warn('register successful')
+        }).catch(error => {
+            console.error(error)
+        })
+
+    }
+
+    const makeid = (length) => {
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const charactersLength = characters.length;
+        let counter = 0;
+        while (counter < length) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            counter += 1;
+        }
+        return result;
+    }
+
+    const topage = () => {
+        window.location.href = "/career"
+    }
+
+    const toservice = () => {
+        window.location.href = "/service"
+    }
+
+    const toabout = () => {
+        window.location.href = "/about"
+    }
+
+    const toportfolio = () => {
+        window.location.href = "/portfolio"
+    }
+
+    const tohire = () => {
+        window.location.href = "/hire/react"
+    }
+
+    const tocontact = () => {
+        window.location.href = "/contact"
+
+    }
+
+    const tomain = () => {
+        window.location.href = "/"
+
+    }
+
+
     return (
         <>
             <Navbar expand="lg" className="nav pb-3 pt-4 ">
                 <Container>
-                    <Navbar.Brand href=""><img src={Logo} alt="" className='img-fluid' /></Navbar.Brand>
+                    <Navbar.Brand href=""><img src={Logo} alt="" className='img-fluid' onClick={tomain} /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link href="#link">About Us</Nav.Link>
-                            <Nav.Link href="#link">Services</Nav.Link>
-                            <Nav.Link href="#link">Portfolio    </Nav.Link>
-                            <Nav.Link href="" >Jobs</Nav.Link>
-                            <Nav.Link href="" >Hiring</Nav.Link>
-
-                            <Button variant="primary" className='rounded-5'>Contact  Us</Button>{' '}
-
+                            <Nav.Link href="" onClick={toabout}>About Us</Nav.Link>
+                            <Nav.Link href="" onClick={toservice}>Services</Nav.Link>
+                            <Nav.Link href="" onClick={toportfolio}>Portfolio</Nav.Link>
+                            <Nav.Link href="" onClick={topage}>Jobs</Nav.Link>
+                            <Nav.Link href="" onClick={tohire}>Hire</Nav.Link>
+                            <Button variant="primary" className='rounded-5' onClick={tocontact}>Contact Us</Button>{' '}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -67,15 +207,15 @@ export default function ReactDeveloper() {
                             <p className='text-center'>Set up a developer interview and hire within 48 hours</p>
 
                             <label htmlFor="Full name">full name</label>
-                            <input className='text-input inputstyle' id='form' type="text" />
+                            <input className='text-input inputstyle' id='form' value={fname} type="text" onChange={(e) => setFname(e.target.value)} />
 
 
                             <label className='mt-4 text-left' htmlFor="Email">Email address</label>
-                            <input className='text-input inputstyle' id='form' type="text" />
+                            <input className='text-input inputstyle' id='form' value={email} type="email" onChange={(e) => setemail(e.target.value)} />
 
 
                             <label className='mt-4 text-left' htmlFor="Email">Choose Developer Team</label>
-                            <select className='text-input inputstyle' id='form'>
+                            <select className='text-input inputstyle' id='form' value={team} onChange={(e) => setteam(e.target.value)}>
                                 <option value="react">React Developer</option>
                                 <option value="node">Node Developer</option>
                                 <option value="ios">Ios Developer</option>
@@ -96,13 +236,13 @@ export default function ReactDeveloper() {
 
 
                             <label className='mt-4 text-left' htmlFor="Contact">Contact</label>
-                            <input className='text-input inputstyle' id='form' type="text" />
+                            <input className='text-input inputstyle' id='form' value={contact} type="text" onChange={(e) => setcontact(e.target.value)} />
 
                             <label className='mt-4 text-left' htmlFor="message">message</label>
-                            <input className='text-input inputstyle' id='form' type="text" />
+                            <input className='text-input inputstyle' id='form' type="text" value={message} style={{ height: "150px" }} onChange={(e) => setmessage(e.target.value)} />
 
 
-                            <button className=' mt-5   btn btn-primary' >Hire Developer</button>
+                            <button className=' mt-5   btn btn-primary' onClick={savedata}>Hire Developer</button>
 
                         </div>
                     </div>
@@ -156,7 +296,7 @@ export default function ReactDeveloper() {
                     <div className="col-lg-4">
                         <div className="dreams">
                             <h6 className='recomended'>RECOMMENDED FOR YOU</h6>
-                            <h1>$2400  <span>Hourlys</span></h1>
+                            <h1>$2400  <span>month</span></h1>
                             <h5 className='mt-3 mb-3'>Monthly Plan</h5>
                             <ul style={{ listStyleType: "disc" }}>
 
@@ -174,7 +314,7 @@ export default function ReactDeveloper() {
                 <Row className='formargin'>
 
                     <h1 className='text-center'>Hire ReactJS Developer for various End-to-End Services</h1>
-                    <p className='text-center pb-5'>Take your business to the next level by hiring our expert ReactJS developers. XmTechnology is a ReactJS Development Company that has expertise in developing robust and fully-featured web applications. Our talented ReactJS programmers will use their skills to deliver websites with a better front-end experience.</p>
+                    <p className='text-center pb-5'>Take your business to the next level by hiring our expert ReactJS developers. XMTechnology is a ReactJS Development Company that has expertise in developing robust and fully-featured web applications. Our talented ReactJS programmers will use their skills to deliver websites with a better front-end experience.</p>
 
                     <div className='dic'>
                         <Col lg={4} md={6}>
@@ -216,7 +356,7 @@ export default function ReactDeveloper() {
                                     <img width={50} src={six} alt="" />
                                 </div>
                                 <h4 className='fw-bold pt-3'>ReactJS Maintenance & Support</h4>
-                                <p className='web'>Hire ReactJS Developer from XmTechnology to get rid of vulnerabilities in your ReactJS web application. Our React developers will do routine maintenance and also implement the latest features to satisfy the client’s requirements.</p>
+                                <p className='web'>Hire ReactJS Developer from XMTechnology to get rid of vulnerabilities in your ReactJS web application. Our React developers will do routine maintenance and also implement the latest features to satisfy the client’s requirements.</p>
                                 <Button variant="primary" className='ps-4 pe-4 pt-2 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
                             </div>
                         </Col>
@@ -227,7 +367,7 @@ export default function ReactDeveloper() {
                                     <img width={50} src={four} alt="" />
                                 </div>
                                 <h4 className='fw-bold pt-3'>ReactJS Migration & Upgradation Services</h4>
-                                <p className='pt-2 web'>Hire the best remote ReactJS programmers from XmTechnology because they have years of experience. They have proven their expertise as in the past they did the process of migrating & upgrading the existing web app to the ReactJS platform without losing any data.</p>
+                                <p className='pt-2 web'>Hire the best remote ReactJS programmers from XMTechnology because they have years of experience. They have proven their expertise as in the past they did the process of migrating & upgrading the existing web app to the ReactJS platform without losing any data.</p>
                                 <Button variant="primary" className='ps-4 pe-4 pt-2 mt-3 pb-2  rounded-0 '>LEARN MORE</Button>{' '}
                             </div>
                         </Col>
@@ -256,35 +396,117 @@ export default function ReactDeveloper() {
 
                         <div className="col-lg-12 mt-5">
                             <label htmlFor="Full name ">Name</label>
-                            <input className='text-input input' id='form' type="text" />
+                            <input className='text-input input' id='form' type="text" value={Tname} onChange={(e) => setTFname(e.target.value)} />
                         </div>
                     </div>
 
                     <div className="row">
                         <div className="col-lg-6 mt-4">
                             <label htmlFor="Full name ">Email name</label>
-                            <input className='text-input input' id='form' type="text" />
+                            <input className='text-input input' id='form' type="text" value={Temail} onChange={(e) => setTemail(e.target.value)} />
                         </div>
 
                         <div className="col-lg-6 mt-4">
                             <label htmlFor="Full name ">Number</label>
-                            <input className='text-input input' id='form' type="number" />
+                            <input className='text-input input' id='form' type="number" value={Tcontact} onChange={(e) => setTcontact(e.target.value)} />
                         </div>
                     </div>
 
                     <div className="row">
                         <div className="col-lg-12 mt-4">
                             <label htmlFor="Full name ">Message</label>
-                            <input className='text-input input' id='form' type="text" style={{ height: "250px" }} />
+                            <input className='text-input input' id='form' type="text" value={Tmessage} style={{ height: "250px" }} onChange={(e) => setTmessage(e.target.value)} />
                         </div>
                     </div>
 
                     <div className="row mt-5 text-center">
-                        <button className='btn btn-primary m-auto w-50'>Submit</button>
+                        <button className='btn btn-primary m-auto w-50' onClick={saveTrial}>Submit</button>
                     </div>
                 </div>
             </div>
 
+
+            <div className='d-flex justify-content-center p-0 m-0'>
+                <div className='footer-div'>
+                    <div className='footer-div-image1'>
+                        <div className='footer-div-image2 pb-5 pt-3 p-3'>
+                            <Container>
+                                <Row >
+                                    <Col lg={4} md={6} sm={11} className='m-auto pt-5 '>
+
+                                        <div>
+                                            <img src={Logos} alt="" />
+                                            <p className='pt-4' style={{ width: "300px" }}>Our technical intelligence can put you on the fast track to success. That’s the promise from XM Technologies.</p>
+
+                                            <p>Follow us on social media!</p>
+
+                                            <div className='d-flex'>
+                                                <img src={Fblogo} alt="" />
+                                                <img className='ms-3' src={Twilogo} alt="" />
+                                                <img className='ms-3' src={Inlogo} alt="" />
+                                                <img className='ms-3' src={Intralogo} alt="" />
+                                                <img className='ms-3' src={Sklogo} alt="" />
+                                                <img className='ms-3' src={Gmlogo} alt="" />
+                                            </div>
+                                        </div>
+
+                                    </Col>
+
+
+                                    <Col lg={2} md={6} sm={12} className='m-auto pt-4'>
+
+                                        <div>
+                                            <h5>Navigations</h5>
+                                            <p className='m-0'> Home</p>
+                                            <p className='m-0'> About Us</p>
+                                            <p className='m-0'> Services</p>
+                                            <p className='m-0'> Portfolio</p>
+                                            <p className='m-0'> Jobs</p>
+                                            <p className='m-0'> Contact Us</p>
+                                        </div>
+                                    </Col>
+
+                                    <Col lg={3} md={6} sm={12} className='m-auto  pt-5'>
+                                        <div>
+                                            <h5>Services</h5>
+                                            <p className='m-0'> Web Development</p>
+                                            <p className='m-0'> Digital Marketing</p>
+                                            <p className='m-0'> Application Development</p>
+                                            <p className='m-0'> E-Commerce Solution</p>
+                                            <p className='m-0'> Backup & Security</p>
+                                            <p className='m-0'> Enterprise Software Services</p>
+                                            <p className='m-0'> IT Support</p>
+                                        </div>
+                                    </Col>
+                                    <Col lg={3} md={6} sm={12} className='m-auto pt-5'>
+
+                                        <div>
+                                            <h5>Get in touch</h5>
+                                            <div className='d-flex pt-2'>
+                                                <img src={LocatinIcon} className='mb-4' alt="" />
+                                                <h6 className='ms-3 pt-1 lh-base'>207, Dhara trade center,
+                                                    Mahadev Chowk,
+                                                    Mota varachha, Surat
+                                                    394101
+                                                </h6>
+                                            </div>
+                                            <div className='d-flex pt-2'>
+                                                <img src={CallIcon} alt="" />
+                                                <h6 className='ms-3 pt-1'>+91 999-888-0845</h6>
+                                            </div>
+                                            <div className='d-flex pt-2'>
+                                                <img src={MailIcon} alt="" />
+                                                <h6 className='ms-3 pt-1'>info@xmtechnologoies.com</h6>
+                                            </div>
+                                        </div>
+
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </>
     )

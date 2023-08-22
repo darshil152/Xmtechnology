@@ -14,6 +14,17 @@ import Image1 from '../assets/Image/code 1.png';
 import Image2 from '../assets/Image/cart 1.png';
 import Image3 from '../assets/Image/content 1.png';
 import Image4 from '../assets/Image/document 1.png';
+import firebaseApp from '../Firebase/firebase';
+import Logos from '../assets/Image/XM.svg';
+import CallIcon from '../assets/Image/phone 2.svg';
+import MailIcon from '../assets/Image/mail 1.svg';
+import LocatinIcon from '../assets/Image/pin 1.svg';
+import Fblogo from '../assets/Image/facebook 1.svg';
+import Twilogo from '../assets/Image/twitter 1.svg';
+import Inlogo from '../assets/Image/in.png';
+import Intralogo from '../assets/Image/instagram-sketched 1.svg';
+import Sklogo from '../assets/Image/skype 1.svg';
+import Gmlogo from '../assets/Image/gmail 1.svg';
 
 
 import one from "../assets/HireImage/deep-learning.png"
@@ -26,22 +37,150 @@ import api from "../assets/HireImage/api.png"
 import mobile from "../assets/HireImage/mobilede.png"
 
 export default function Ui() {
+
+
+
+    const [fname, setFname] = useState("")
+    const [email, setemail] = useState("")
+    const [team, setteam] = useState("")
+    const [contact, setcontact] = useState("")
+    const [message, setmessage] = useState("")
+
+    const [Tname, setTFname] = useState("")
+    const [Temail, setTemail] = useState("")
+    const [Tcontact, setTcontact] = useState("")
+    const [Tmessage, setTmessage] = useState("")
+
+
+    const saveTrial = () => {
+        let obj = {
+            Name: Tname,
+            PhoneNo: Tcontact,
+            Email: Temail,
+            Message: Tmessage,
+            id: makeid(5)
+        }
+
+        let registerQuery = new Promise((resolve, reject) => {
+            let db = firebaseApp.firestore();
+            db.collection("Trial").add(obj)
+
+                .then((docRef) => {
+
+                    setTFname("")
+                    setTemail("")
+                    setTcontact("")
+                    setTmessage('')
+                    console.log("Document written with ID: ", docRef);
+                    resolve(docRef.id);
+                })
+                .catch((error) => {
+                    console.error("Please check form again ", error);
+                    reject(error);
+                });
+        });
+        registerQuery.then(result => {
+            console.warn('register successful')
+        }).catch(error => {
+            console.error(error)
+        })
+    }
+
+
+    const savedata = () => {
+        let obj = {
+            Name: fname,
+            PhoneNo: contact,
+            Email: email,
+            Message: message,
+            team: team,
+            id: makeid(5)
+        }
+
+        let registerQuery = new Promise((resolve, reject) => {
+            let db = firebaseApp.firestore();
+            db.collection("HireDev").add(obj)
+
+                .then((docRef) => {
+
+                    setFname("")
+                    setemail("")
+                    setcontact("")
+                    setteam("")
+                    setmessage('')
+                    console.log("Document written with ID: ", docRef);
+                    resolve(docRef.id);
+                })
+                .catch((error) => {
+                    console.error("Please check form again ", error);
+                    reject(error);
+                });
+        });
+        registerQuery.then(result => {
+            console.warn('register successful')
+        }).catch(error => {
+            console.error(error)
+        })
+
+    }
+
+    const makeid = (length) => {
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const charactersLength = characters.length;
+        let counter = 0;
+        while (counter < length) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            counter += 1;
+        }
+        return result;
+    }
+
+    const topage = () => {
+        window.location.href = "/career"
+    }
+
+    const toservice = () => {
+        window.location.href = "/service"
+    }
+
+    const toabout = () => {
+        window.location.href = "/about"
+    }
+
+    const toportfolio = () => {
+        window.location.href = "/portfolio"
+    }
+
+    const tohire = () => {
+        window.location.href = "/hire/react"
+    }
+
+    const tocontact = () => {
+        window.location.href = "/contact"
+
+    }
+
+    const tomain = () => {
+        window.location.href = "/"
+
+    }
+
+
     return (
         <>
             <Navbar expand="lg" className="nav pb-3 pt-4 ">
                 <Container>
-                    <Navbar.Brand href=""><img src={Logo} alt="" className='img-fluid' /></Navbar.Brand>
+                    <Navbar.Brand href=""><img src={Logo} alt="" className='img-fluid' onClick={tomain} /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link href="#link">About Us</Nav.Link>
-                            <Nav.Link href="#link">Services</Nav.Link>
-                            <Nav.Link href="#link">Portfolio    </Nav.Link>
-                            <Nav.Link href="" >Jobs</Nav.Link>
-                            <Nav.Link href="" >Hiring</Nav.Link>
-
-                            <Button variant="primary" className='rounded-5'>Contact  Us</Button>{' '}
-
+                            <Nav.Link href="" onClick={toabout}>About Us</Nav.Link>
+                            <Nav.Link href="" onClick={toservice}>Services</Nav.Link>
+                            <Nav.Link href="" onClick={toportfolio}>Portfolio</Nav.Link>
+                            <Nav.Link href="" onClick={topage}>Jobs</Nav.Link>
+                            <Nav.Link href="" onClick={tohire}>Hire</Nav.Link>
+                            <Button variant="primary" className='rounded-5' onClick={tocontact}>Contact Us</Button>{' '}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -51,20 +190,16 @@ export default function Ui() {
                 <div className="row">
 
                     <div className="col-lg-6">
-                        <h1 className='hire'>Hire Ui/Ux App Developers</h1>
-                        <p className='para'><b>Hire Ui/Ux developers  </b> to build responsive and feature-rich Ui/Ux Design as per the requirements of your business. Our highly experienced Ui/Ux App Developers create high-performing customized Ui/Ux Design to gain an advantage over the competitors. We have a team of 30+ Ui/Ux programmers who have helped plenty of startups and businesses by using Ui/Ux  Ui/Ux Studio, and Adobe to build applications for mobiles, Web, and many more.</p>
+                        <h1 className='hire'>Hire React  Developers</h1>
+                        <p className='para'><b>Hire ReactJs developers</b> from us that harness the power of AI technologies to create interactive user interfaces for Progressive Web Applications (PWA) and Single Page Applications (SPA). Our team of 35+ React developers uses AI platforms like OpenAI Codex, Tabnine, and CodeT5 to improve code quality and reduce development costs while developing personalized web apps.</p>
                         <ul>
-
-                            <li>Support & Maintenance
-                            </li>
-                            <li>Custom App Design
-                            </li>
-
-                            <li>UI/UX Strategy Development</li>
-
+                            <li>Migration & Upgradation</li>
+                            <li>Support & Maintenance</li>
+                            <li>Expertise with JavaScript</li>
+                            <li>Maintained Coding Standards</li>
                         </ul>
 
-                        <button className='btn btn-primary mt-2'>Let Discuss about the Ui/Ux Project</button>
+                        <button className='btn btn-primary mt-2'>Let Discuss about the react Project</button>
                     </div>
                     <div className="col-lg-6  mt-5 mt-sm-0   studentdetail " >
                         <div className='test'>
@@ -73,14 +208,15 @@ export default function Ui() {
                             <p className='text-center'>Set up a developer interview and hire within 48 hours</p>
 
                             <label htmlFor="Full name">full name</label>
-                            <input className='text-input inputstyle' id='form' type="text" />
+                            <input className='text-input inputstyle' id='form' value={fname} type="text" onChange={(e) => setFname(e.target.value)} />
 
 
                             <label className='mt-4 text-left' htmlFor="Email">Email address</label>
-                            <input className='text-input inputstyle' id='form' type="text" />
+                            <input className='text-input inputstyle' id='form' value={email} type="email" onChange={(e) => setemail(e.target.value)} />
+
 
                             <label className='mt-4 text-left' htmlFor="Email">Choose Developer Team</label>
-                            <select className='text-input inputstyle' id='form'>
+                            <select className='text-input inputstyle' id='form' value={team} onChange={(e) => setteam(e.target.value)}>
                                 <option value="react">React Developer</option>
                                 <option value="node">Node Developer</option>
                                 <option value="ios">Ios Developer</option>
@@ -98,17 +234,80 @@ export default function Ui() {
                             </select>
 
 
+
+
                             <label className='mt-4 text-left' htmlFor="Contact">Contact</label>
-                            <input className='text-input inputstyle' id='form' type="text" />
+                            <input className='text-input inputstyle' id='form' value={contact} type="text" onChange={(e) => setcontact(e.target.value)} />
 
                             <label className='mt-4 text-left' htmlFor="message">message</label>
-                            <input className='text-input inputstyle' id='form' type="text" />
+                            <input className='text-input inputstyle' id='form' type="text" value={message} style={{ height: "150px" }} onChange={(e) => setmessage(e.target.value)} />
 
 
-                            <button className=' mt-5   btn btn-primary' >Hire Developer</button>
+                            <button className=' mt-5   btn btn-primary' onClick={savedata}>Hire Developer</button>
 
                         </div>
                     </div>
+                </div>
+            </div>
+
+
+            <div className="container mt-5">
+                <div className="row">
+                    <div className="col-lg-12">
+                        <h1 className='text-center' style={{ marginTop: "35px" }}>Hire Ui/Ux Developers As Per Your Business Needs</h1>
+                    </div>
+                </div>
+
+                <div className="row formargin">
+                    <div className="col-lg-4 ">
+                        <div className="dream">
+                            <h4 className='text-center'>Ready to Start Your Dream Project?</h4>
+
+                            <div className="mainss">
+                                <div className="expert">
+                                    <img src={time} />
+                                    <p className='expert'>150 + Experts</p>
+                                </div>
+                                <div className="half">
+                                    <img src={half} />
+                                    <p className='expert'> Hourly  Hiring</p>
+
+                                </div>
+                            </div>
+
+                            <div className="fulltime">
+                                <img src={full} />
+                                <p className='expert'>Full-Time Hiring</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-lg-4">
+                        <div className="dream">
+                            <h1>$20  <span style={{ fontSize: "16px" }}>Hourlys</span></h1>
+                            <h5 className='mt-3 mb-3'>Hourly Plan</h5>
+                            <ul >
+                                <li>Dedicated developer</li>
+                                <li>Pay as you go</li>
+                                <li>Suitable for short-term engagement</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="col-lg-4">
+                        <div className="dreams">
+                            <h6 className='recomended'>RECOMMENDED FOR YOU</h6>
+                            <h1>$2400  <span>Month</span></h1>
+                            <h5 className='mt-3 mb-3'>Monthly Plan</h5>
+                            <ul style={{ listStyleType: "disc" }}>
+
+                                <li>Suitable for long-term engagement</li>
+                                <li>Dedicated team of developers, Scrum Master, QAs, and architects</li>
+                                <li>160 hours per month</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -125,35 +324,118 @@ export default function Ui() {
 
                         <div className="col-lg-12 mt-5">
                             <label htmlFor="Full name ">Name</label>
-                            <input className='text-input input' id='form' type="text" />
+                            <input className='text-input input' id='form' type="text" value={Tname} onChange={(e) => setTFname(e.target.value)} />
                         </div>
                     </div>
 
                     <div className="row">
                         <div className="col-lg-6 mt-4">
                             <label htmlFor="Full name ">Email name</label>
-                            <input className='text-input input' id='form' type="text" />
+                            <input className='text-input input' id='form' type="text" value={Temail} onChange={(e) => setTemail(e.target.value)} />
                         </div>
 
                         <div className="col-lg-6 mt-4">
                             <label htmlFor="Full name ">Number</label>
-                            <input className='text-input input' id='form' type="number" />
+                            <input className='text-input input' id='form' type="number" value={Tcontact} onChange={(e) => setTcontact(e.target.value)} />
                         </div>
                     </div>
 
                     <div className="row">
                         <div className="col-lg-12 mt-4">
                             <label htmlFor="Full name ">Message</label>
-                            <input className='text-input input' id='form' type="text" style={{ height: "250px" }} />
+                            <input className='text-input input' id='form' type="text" value={Tmessage} style={{ height: "250px" }} onChange={(e) => setTmessage(e.target.value)} />
                         </div>
                     </div>
 
                     <div className="row mt-5 text-center">
-                        <button className='btn btn-primary m-auto w-50'>Submit</button>
+                        <button className='btn btn-primary m-auto w-50' onClick={saveTrial}>Submit</button>
                     </div>
                 </div>
             </div>
 
+
+
+            <div className='d-flex justify-content-center p-0 m-0'>
+                <div className='footer-div'>
+                    <div className='footer-div-image1'>
+                        <div className='footer-div-image2 pb-5 pt-3 p-3'>
+                            <Container>
+                                <Row >
+                                    <Col lg={4} md={6} sm={11} className='m-auto pt-5 '>
+
+                                        <div>
+                                            <img src={Logos} alt="" />
+                                            <p className='pt-4' style={{ width: "300px" }}>Our technical intelligence can put you on the fast track to success. That’s the promise from XM Technologies.</p>
+
+                                            <p>Follow us on social media!</p>
+
+                                            <div className='d-flex'>
+                                                <img src={Fblogo} alt="" />
+                                                <img className='ms-3' src={Twilogo} alt="" />
+                                                <img className='ms-3' src={Inlogo} alt="" />
+                                                <img className='ms-3' src={Intralogo} alt="" />
+                                                <img className='ms-3' src={Sklogo} alt="" />
+                                                <img className='ms-3' src={Gmlogo} alt="" />
+                                            </div>
+                                        </div>
+
+                                    </Col>
+
+
+                                    <Col lg={2} md={6} sm={12} className='m-auto pt-4'>
+
+                                        <div>
+                                            <h5>Navigations</h5>
+                                            <p className='m-0'> Home</p>
+                                            <p className='m-0'> About Us</p>
+                                            <p className='m-0'> Services</p>
+                                            <p className='m-0'> Portfolio</p>
+                                            <p className='m-0'> Jobs</p>
+                                            <p className='m-0'> Contact Us</p>
+                                        </div>
+                                    </Col>
+
+                                    <Col lg={3} md={6} sm={12} className='m-auto  pt-5'>
+                                        <div>
+                                            <h5>Services</h5>
+                                            <p className='m-0'> Web Development</p>
+                                            <p className='m-0'> Digital Marketing</p>
+                                            <p className='m-0'> Application Development</p>
+                                            <p className='m-0'> E-Commerce Solution</p>
+                                            <p className='m-0'> Backup & Security</p>
+                                            <p className='m-0'> Enterprise Software Services</p>
+                                            <p className='m-0'> IT Support</p>
+                                        </div>
+                                    </Col>
+                                    <Col lg={3} md={6} sm={12} className='m-auto pt-5'>
+
+                                        <div>
+                                            <h5>Get in touch</h5>
+                                            <div className='d-flex pt-2'>
+                                                <img src={LocatinIcon} className='mb-4' alt="" />
+                                                <h6 className='ms-3 pt-1 lh-base'>207, Dhara trade center,
+                                                    Mahadev Chowk,
+                                                    Mota varachha, Surat
+                                                    394101
+                                                </h6>
+                                            </div>
+                                            <div className='d-flex pt-2'>
+                                                <img src={CallIcon} alt="" />
+                                                <h6 className='ms-3 pt-1'>+91 999-888-0845</h6>
+                                            </div>
+                                            <div className='d-flex pt-2'>
+                                                <img src={MailIcon} alt="" />
+                                                <h6 className='ms-3 pt-1'>info@xmtechnologoies.com</h6>
+                                            </div>
+                                        </div>
+
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </>
     )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Button, Col, Image, Row } from 'react-bootstrap';
@@ -19,9 +19,66 @@ import Intralogo from './assets/Image/instagram-sketched 1.svg';
 import Sklogo from './assets/Image/skype 1.svg';
 import Gmlogo from './assets/Image/gmail 1.svg';
 import Logos from './assets/Image/XM.svg';
+import firebaseApp from './Firebase/firebase';
 
 
 export default function Contactus() {
+
+
+
+    const [name, setName] = useState('')
+    const [lname, setLname] = useState('')
+    const [email, setEmail] = useState('')
+    const [Contact, setContact] = useState('')
+    const [address, setaddress] = useState('')
+
+    const makeid = (length) => {
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const charactersLength = characters.length;
+        let counter = 0;
+        while (counter < length) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            counter += 1;
+        }
+        return result;
+    }
+
+    const savedata = () => {
+        let obj = {
+            Name: name,
+            lname: lname,
+            PhoneNo: Contact,
+            Email: email,
+            address: address,
+            id: makeid(5)
+        }
+
+        let registerQuery = new Promise((resolve, reject) => {
+            let db = firebaseApp.firestore();
+            db.collection("Contact").add(obj)
+
+                .then((docRef) => {
+                    setName("")
+                    setLname("")
+                    setContact("")
+                    setEmail("")
+                    setaddress("")
+
+                    console.log("Document written with ID: ", docRef);
+                    resolve(docRef.id);
+                })
+                .catch((error) => {
+                    console.error("Please check form again ", error);
+                    reject(error);
+                });
+        });
+        registerQuery.then(result => {
+            console.warn('register successful')
+        }).catch(error => {
+            console.error(error)
+        })
+    }
 
     const topage = () => {
         window.location.href = "/career"
@@ -47,6 +104,9 @@ export default function Contactus() {
     const tomain = () => {
         window.location.href = "/"
     }
+
+
+
 
     return (
         <>
@@ -85,37 +145,37 @@ export default function Contactus() {
 
                         <div className="col-lg-6 mt-5">
                             <label htmlFor="Full name ">First Name</label>
-                            <input className='text-input input' id='forms' type="text" placeholder='Ex:John ' />
+                            <input className='text-input input' id='forms' type="text" value={name} placeholder='Ex:John ' onChange={(e) => setName(e.target.value)} />
                         </div>
 
                         <div className="col-lg-6 mt-5">
                             <label htmlFor="last name ">Last Name</label>
-                            <input className='text-input input' id='forms' type="text" placeholder='Ex: Deo' />
+                            <input className='text-input input' id='forms' type="text" value={lname} placeholder='Ex: Deo' onChange={(e) => setLname(e.target.value)} />
                         </div>
                     </div>
 
                     <div className="row">
                         <div className="col-lg-6 mt-4">
                             <label htmlFor="Full name ">Email name</label>
-                            <input className='text-input input' id='forms' type="text" placeholder='Ex. johndoe@gmail.com' />
+                            <input className='text-input input' id='forms' type="text" value={email} placeholder='Ex. johndoe@gmail.com' onChange={(e) => setEmail(e.target.value)} />
                         </div>
 
                         <div className="col-lg-6 mt-4">
                             <label htmlFor="Full name ">Number</label>
-                            <input className='text-input input' id='forms' type="number" placeholder='Ex. +1 515 516 0624' />
+                            <input className='text-input input' id='forms' type="number" value={Contact} placeholder='Ex. +1 515 516 0624' onChange={(e) => setContact(e.target.value)} />
                         </div>
                     </div>
 
                     <div className="row">
                         <div className="col-lg-12 mt-4">
                             <label htmlFor="Street name ">Street Name</label>
-                            <input className='text-input input' id='forms' type="text" style={{ height: "250px" }} />
+                            <input className='text-input input' id='forms' type="text" value={address} style={{ height: "250px" }} onChange={(e) => setaddress(e.target.value)} />
                         </div>
                     </div>
 
                     <div className="row mt-5 mb-5 ">
                         <div className="col-lg-4">
-                            <button className='btn btn-primary rounded-5 m-auto w-50' style={{ padding: "10px 5px" }}>Submit</button>
+                            <button className='btn btn-primary rounded-5 m-auto w-50' style={{ padding: "10px 5px" }} onClick={savedata}>Submit</button>
                         </div>
                     </div>
                 </div>
