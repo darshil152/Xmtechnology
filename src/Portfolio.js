@@ -211,12 +211,12 @@ export default function Portfolio() {
 
                                         <div>
                                             <h5>Navigations</h5>
-                                            <p className='m-0'> Home</p>
-                                            <p className='m-0'> About Us</p>
-                                            <p className='m-0'> Services</p>
-                                            <p className='m-0'> Portfolio</p>
-                                            <p className='m-0'> Jobs</p>
-                                            <p className='m-0'> Contact Us</p>
+                                            <p className='m-0' onClick={tomain}> Home</p>
+                                            <p className='m-0' onClick={toabout}> About Us</p>
+                                            <p className='m-0' onClick={toservice}> Services</p>
+                                            <p className='m-0' onClick={toportfolio}> Portfolio</p>
+                                            <p className='m-0' onClick={topage}> Jobs</p>
+                                            <p className='m-0' onClick={tocontact}> Contact Us</p>
                                         </div>
                                     </Col>
 

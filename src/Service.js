@@ -18,6 +18,8 @@ import Image4 from './assets/Image/document 1.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import { Formik } from 'formik';
+import * as Yup from "yup";
 
 import Logo from './assets/Image/XM.png';
 
@@ -80,25 +82,28 @@ export default function Service() {
     }
 
 
-    const submitform = () => {
+    const submitform = (values) => {
+
         let obj = {
-            Name: name,
-            PhoneNo: value,
-            Email: email,
+            Name: values.name,
+            PhoneNo: values.number,
+            Email: values.email,
             Message: message,
             id: makeid(5)
         }
+
+        console.log(obj)
 
         let registerQuery = new Promise((resolve, reject) => {
             let db = firebaseApp.firestore();
             db.collection("ContactUs").add(obj)
 
                 .then((docRef) => {
+
                     setname("")
                     setValue("")
                     setemail("")
                     setmessage("")
-
                     console.log("Document written with ID: ", docRef);
                     resolve(docRef.id);
                 })
@@ -112,6 +117,7 @@ export default function Service() {
         }).catch(error => {
             console.error(error)
         })
+
 
     }
 
@@ -536,37 +542,112 @@ export default function Service() {
                     </div>
                 </div>
 
-                <div className="main">
-                    <div className="name p-3">
 
-                        <input type="text" name="name" id="name" value={name} placeholder='Name' onChange={handlename} />
-                    </div>
+                <Formik
+                    initialValues={{ email: "", name: "", number: '' }}
+                    onSubmit={(values, { setSubmitting }) => {
+                        submitform(values)
+                    }}
+                    validationSchema={Yup.object().shape({
+                        email: Yup.string()
+                            .email()
+                            .required("Email Required"),
+                        name: Yup.string()
+                            .required("Name Required"),
+                        number: Yup.string()
+                            .required("number Required")
 
-                    <div className="phno p-3">
-                        <PhoneInput
-                            placeholder="Enter phone number"
-                            value={value}
-                            onChange={setValue} />
-                    </div>
-                    <div className="email p-3">
-                        <input type="email" name="email" id="email" value={email} placeholder='Email' onChange={handlemail} />
-                    </div>
-                </div>
+                    })}
 
-                <div className="row">
-                    <div className="col-lg-12 text-center">
-                        <textarea name="" id="" cols="100" rows="5" value={message} placeholder='Your message' onChange={handlemessage}></textarea>
-                    </div>
-                </div>
+                >
+                    {props => {
+                        const {
+                            values,
+                            touched,
+                            errors,
+                            isSubmitting,
+                            handleChange,
+                            handleBlur,
+                            handleSubmit
+                        } = props;
+                        return (
+                            <>
+                                <div className="main">
+                                    <form onSubmit={handleSubmit}>
+                                        <div className="row">
+                                            <div className="col-lg-4">
+                                                <input
+                                                    name="name"
+                                                    type="text"
+                                                    id='name'
+                                                    placeholder="Enter your name"
+                                                    value={values.name}
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    className={errors.name && touched.name && "error"}
+                                                />
+                                                {errors.name && touched.name && (
+                                                    <div className="input feedback">{errors.name}</div>
+                                                )}
+                                            </div>
 
-                <div className="row mt-3">
-                    <div className="col-lg-12 text-center">
-                        <Button variant='primary rounded-0' className='text-center' onClick={submitform}>Send Message</Button>
-                    </div>
-                </div>
+                                            <div className="col-lg-4">
+                                                <input
+                                                    name="email"
+                                                    type="email"
+                                                    id='email'
+                                                    placeholder="Enter your email"
+                                                    value={values.email}
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    className={errors.email && touched.email && "error"}
+                                                />
+                                                {errors.email && touched.email && (
+                                                    <div className="input feedback">{errors.email}</div>
+                                                )}
+                                            </div>
+
+                                            <div className="col-lg-4">
+                                                <input
+                                                    name="number"
+                                                    type="number"
+                                                    id='name'
+                                                    placeholder="Enter your number"
+                                                    value={values.number}
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    className={errors.number && touched.number && "error"}
+                                                />
+                                                {errors.number && touched.number && (
+                                                    <div className="input feedback">{errors.number}</div>
+                                                )}
+                                            </div>
 
 
-            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-lg-12 mt-4 text-center">
+                                                <textarea name="" id="" cols="100" rows="5" value={message} placeholder='Your message' onChange={handlemessage}></textarea>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div className="row">
+                                            <div className="col-lg-12 mt-4 text-center">
+                                                <button type="submit" className='btn btn-primary text-center rounded-0' style={{ padding: "10px 45px" }} disabled={isSubmitting}>
+                                                    SUBMIT
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </>
+                        );
+                    }}
+                </Formik>
+            </div >
 
 
             <div className='d-flex justify-content-center p-0 m-0'>
@@ -600,12 +681,12 @@ export default function Service() {
 
                                         <div>
                                             <h5>Navigations</h5>
-                                            <p className='m-0'> Home</p>
-                                            <p className='m-0'> About Us</p>
-                                            <p className='m-0'> Services</p>
-                                            <p className='m-0'> Portfolio</p>
-                                            <p className='m-0'> Jobs</p>
-                                            <p className='m-0'> Contact Us</p>
+                                            <p className='m-0' onClick={tomain}> Home</p>
+                                            <p className='m-0' onClick={toabout}> About Us</p>
+                                            <p className='m-0' onClick={toservice}> Services</p>
+                                            <p className='m-0' onClick={toportfolio}> Portfolio</p>
+                                            <p className='m-0' onClick={topage}> Jobs</p>
+                                            <p className='m-0' onClick={tocontact}> Contact Us</p>
                                         </div>
                                     </Col>
 

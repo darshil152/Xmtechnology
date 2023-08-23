@@ -14,6 +14,8 @@ import { useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Formik } from 'formik';
+import * as Yup from "yup";
 
 import Logo from './assets/Image/XM.png';
 import Logos from './assets/Image/XM.svg';
@@ -98,14 +100,17 @@ const Home = () => {
     }
 
 
-    const submitform = () => {
+    const submitform = (values) => {
+
         let obj = {
-            Name: name,
-            PhoneNo: value,
-            Email: email,
+            Name: values.name,
+            PhoneNo: values.number,
+            Email: values.email,
             Message: message,
             id: makeid(5)
         }
+
+        console.log(obj)
 
         let registerQuery = new Promise((resolve, reject) => {
             let db = firebaseApp.firestore();
@@ -130,6 +135,7 @@ const Home = () => {
         }).catch(error => {
             console.error(error)
         })
+
 
     }
 
@@ -204,7 +210,7 @@ const Home = () => {
                         <div className='dsid'>
                             <div className='div-container '>
                                 <Col lg={6} md={8} data-aos="fade-right">
-                                    <div className='d-flex text-div'>
+                                    <div className='d-flex justify-content-center text-div'>
                                         <div className='circle1'></div>
                                         <div className='ms-lg-4' data-aos="fade-right" data-aos-duration="1500">
                                             <h1 className='fw-bold designs' style={{ fontSize: "50px" }}>Web Design And <br />
@@ -225,7 +231,7 @@ const Home = () => {
 
                                 <Col lg={6}>
                                     <div data-aos="fade-left" data-aos-duration="2000">
-                                        <img className=' img-fluid ' src={mainimage} alt="" style={{ height: "650px" }} />
+                                        <img className=' img-fluid ' src={mainimage} alt="" />
                                     </div>
 
                                 </Col>
@@ -262,7 +268,7 @@ const Home = () => {
 
 
 
-            <div className='pt-4 pb-4 mt-5 backgrounds'>
+            <div className='pt-4  mt-5 backgrounds'>
                 <Container >
                     <Row>
                         <div className='d-flex justify-content-center'>
@@ -282,7 +288,7 @@ const Home = () => {
                     <Row>
                         <div className='dic'>
                             <Col lg={4} md={6} sm={6}>
-                                <div className=' pt-4 dica'>
+                                <div className=' \dica'>
                                     <div>
                                         <h4>Info Gathering</h4>
                                         <p className='Info'>Need a good understanding of what are
@@ -454,11 +460,7 @@ const Home = () => {
             <div className='mt-5 mb-4 mt-5'>
                 <Container>
                     <Row className='mt-5'>
-                        <Col lg={6} className='text-center m-auto'>
-                            <h3 className='fw-bold mt-5 mb-5'>Intelligent Websites That Work Overtime
-                                For Marketing Results
-                            </h3>
-                        </Col>
+
 
 
                     </Row>
@@ -509,7 +511,7 @@ const Home = () => {
             </ScrollTrigger>
 
 
-            <div className="container">
+            <div className="container" data-aos="fade-up" data-aos-duration="1500">
                 <div className="row text-center formargin " >
                     <div className="col-lg-12">
                         <h1 style={{ fontWeight: "900" }}>Hire Our Dedicated Developers</h1>
@@ -543,7 +545,7 @@ const Home = () => {
                             <div className="col-lg-6">
                                 <div class="card hiring" >
                                     <div className="row ">
-                                        <h4 className='text-center'>Hire Mobile developer</h4>
+                                        <h4 className='text-center'>Hire Frontend developer</h4>
                                         <div className="col-lg-6 col-md-6 text-center">
                                             <div className="hiringss">
                                                 <img src={angular} className='img-flui' />
@@ -771,37 +773,121 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="main">
-                    <div className="name p-3">
 
-                        <input type="text" name="name" id="name" value={name} placeholder='Name' onChange={handlename} />
-                    </div>
+                <Formik
+                    initialValues={{ email: "", name: "", number: '' }}
+                    onSubmit={(values, { setSubmitting }) => {
+                        submitform(values)
+                    }}
+                    validationSchema={Yup.object().shape({
+                        email: Yup.string()
+                            .email()
+                            .required("Email Required"),
+                        name: Yup.string()
+                            .required("Name Required"),
+                        number: Yup.string()
+                            .required("number Required")
 
-                    <div className="phno p-3">
-                        <PhoneInput
-                            placeholder="Enter phone number"
-                            value={value}
-                            onChange={setValue} />
-                    </div>
-                    <div className="email p-3">
-                        <input type="email" name="email" id="email" value={email} placeholder='Email' onChange={handlemail} />
-                    </div>
-                </div>
+                    })}
 
-                <div className="row">
-                    <div className="col-lg-12 text-center">
-                        <textarea name="" id="" cols="100" rows="5" value={message} placeholder='Your message' onChange={handlemessage}></textarea>
-                    </div>
-                </div>
+                >
+                    {props => {
+                        const {
+                            values,
+                            touched,
+                            errors,
+                            isSubmitting,
+                            handleChange,
+                            handleBlur,
+                            handleSubmit
+                        } = props;
+                        return (
+                            <>
+                                <div className="main">
+                                    <form onSubmit={handleSubmit}>
+                                        <div className="row">
+                                            <div className="col-lg-4">
+                                                <input
+                                                    name="name"
+                                                    type="text"
+                                                    id='name'
+                                                    placeholder="Enter your name"
+                                                    value={values.name}
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    className={errors.name && touched.name && "error"}
+                                                />
+                                                {errors.name && touched.name && (
+                                                    <div className="input feedback">{errors.name}</div>
+                                                )}
+                                            </div>
 
-                <div className="row mt-3">
-                    <div className="col-lg-12 text-center">
-                        <Button variant='primary rounded-0' className='text-center' onClick={submitform}>Send Message</Button>
-                    </div>
-                </div>
+                                            <div className="col-lg-4">
+                                                <input
+                                                    name="email"
+                                                    type="email"
+                                                    id='email'
+                                                    placeholder="Enter your email"
+                                                    value={values.email}
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    className={errors.email && touched.email && "error"}
+                                                />
+                                                {errors.email && touched.email && (
+                                                    <div className="input feedback">{errors.email}</div>
+                                                )}
+                                            </div>
+
+                                            <div className="col-lg-4">
+                                                <input
+                                                    name="number"
+                                                    type="number"
+                                                    id='name'
+                                                    placeholder="Enter your number"
+                                                    value={values.number}
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    className={errors.number && touched.number && "error"}
+                                                />
+                                                {errors.number && touched.number && (
+                                                    <div className="input feedback">{errors.number}</div>
+                                                )}
+                                            </div>
 
 
-            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-lg-12 mt-4 text-center">
+                                                <textarea name="" id="" cols="100" rows="5" value={message} placeholder='Your message' onChange={handlemessage}></textarea>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div className="row">
+                                            <div className="col-lg-12 mt-4 text-center">
+                                                <button type="submit" className='btn btn-primary text-center rounded-0' style={{ padding: "10px 45px" }} disabled={isSubmitting}>
+                                                    SUBMIT
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </>
+                        );
+                    }}
+                </Formik>
+
+
+
+
+
+
+
+
+            </div >
 
 
             <div className='d-flex justify-content-center p-0 m-0'>
@@ -835,12 +921,12 @@ const Home = () => {
 
                                         <div>
                                             <h5>Navigations</h5>
-                                            <p className='m-0'> Home</p>
-                                            <p className='m-0'> About Us</p>
-                                            <p className='m-0'> Services</p>
-                                            <p className='m-0'> Portfolio</p>
-                                            <p className='m-0'> Jobs</p>
-                                            <p className='m-0'> Contact Us</p>
+                                            <p className='m-0' > Home</p>
+                                            <p className='m-0' onClick={toabout}> About Us</p>
+                                            <p className='m-0' onClick={toservice}> Services</p>
+                                            <p className='m-0' onClick={toportfolio}> Portfolio</p>
+                                            <p className='m-0' onClick={topage}> Jobs</p>
+                                            <p className='m-0' onClick={tocontact}> Contact Us</p>
                                         </div>
                                     </Col>
 

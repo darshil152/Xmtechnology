@@ -92,7 +92,7 @@ export default function About() {
 
 
 
-            <div className="container-fluid ">
+            <div className="container-fluid" data-aos="fade-up" data-aos-duration="1500">
                 <div className="row">
                     <div className="col-lg-6" style={{ padding: "55px" }}>
                         <img src={office} className='img-fluid rounded-4 ms-auto chairs' />
@@ -112,7 +112,7 @@ export default function About() {
             </div>
 
 
-            <div className="container ">
+            <div className="container" data-aos="fade-up" data-aos-duration="1500">
                 <div className="row ">
                     <div className="col-lg-12" style={{ padding: "55px" }}>
                         <h1 className='text-center mb-5 ' style={{ fontWeight: "900" }}>Our XM</h1>
@@ -164,7 +164,7 @@ export default function About() {
 
 
 
-            <div>
+            <div data-aos="fade-up" data-aos-duration="1500">
                 <Container className='mb-5'>
                     <Row style={{ marginTop: "100px" }}>
                         <Col lg={6} className='text-center m-auto'>
@@ -226,6 +226,12 @@ export default function About() {
             </div>
 
 
+            <h1 className='text-center borlowe'>Hello from Xm tech (borlowe)</h1>
+            <h1 className='text-center jost'>Hello from Xm tech (jost)</h1>
+            <h1 className='text-center montserrat'>Hello from Xm tech (montserrat)</h1>
+            <h1 className='text-center josephin'>Hello from Xm tech (josephin)</h1>
+
+
             <div className='d-flex justify-content-center p-0 m-0'>
                 <div className='footer-div'>
                     <div className='footer-div-image1'>
@@ -257,12 +263,12 @@ export default function About() {
 
                                         <div>
                                             <h5>Navigations</h5>
-                                            <p className='m-0'> Home</p>
-                                            <p className='m-0'> About Us</p>
-                                            <p className='m-0'> Services</p>
-                                            <p className='m-0'> Portfolio</p>
-                                            <p className='m-0'> Jobs</p>
-                                            <p className='m-0'> Contact Us</p>
+                                            <p className='m-0' onClick={tomain}> Home</p>
+                                            <p className='m-0' onClick={toabout}> About Us</p>
+                                            <p className='m-0' onClick={toservice}> Services</p>
+                                            <p className='m-0' onClick={toportfolio}> Portfolio</p>
+                                            <p className='m-0' onClick={topage}> Jobs</p>
+                                            <p className='m-0' onClick={tocontact}> Contact Us</p>
                                         </div>
                                     </Col>
 

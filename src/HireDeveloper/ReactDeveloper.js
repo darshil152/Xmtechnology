@@ -15,6 +15,8 @@ import Image2 from '../assets/Image/cart 1.png';
 import Image3 from '../assets/Image/content 1.png';
 import Image4 from '../assets/Image/document 1.png';
 import firebaseApp from '../Firebase/firebase';
+import { Formik } from 'formik';
+import * as Yup from "yup";
 
 import Logos from '../assets/Image/XM.svg';
 import CallIcon from '../assets/Image/phone 2.svg';
@@ -86,11 +88,13 @@ export default function ReactDeveloper() {
     }
 
 
-    const savedata = () => {
+    const savedata = (values) => {
+
+        console.log(values)
         let obj = {
-            Name: fname,
-            PhoneNo: contact,
-            Email: email,
+            Name: values.fname,
+            PhoneNo: values.contact,
+            Email: values.email,
             Message: message,
             team: team,
             id: makeid(5)
@@ -200,54 +204,163 @@ export default function ReactDeveloper() {
 
                         <button className='btn btn-primary mt-2'>Let Discuss about the react Project</button>
                     </div>
-                    <div className="col-lg-6  mt-5 mt-sm-0   studentdetail " >
+
+
+
+
+                    <div className="col-lg-6  mt-5 mt-sm-0  studentdetail " >
                         <div className='test'>
+
 
                             <h1 style={{ textAlign: "center", marginBottom: "35px" }}>Get Free Consultation Now</h1>
                             <p className='text-center'>Set up a developer interview and hire within 48 hours</p>
 
-                            <label htmlFor="Full name">full name</label>
-                            <input className='text-input inputstyle' id='form' value={fname} type="text" onChange={(e) => setFname(e.target.value)} />
+                            <Formik
+                                initialValues={{ fname: "", email: "", contact: "", }}
+                                onSubmit={(values, { setSubmitting }) => {
+                                    savedata(values)
+                                }}
+                                validationSchema={Yup.object().shape({
+                                    email: Yup.string()
+                                        .email()
+                                        .required("Email Required"),
+                                    fname: Yup.string()
+                                        .required("Name Required"),
+                                    contact: Yup.string()
+                                        .required("contact Required"),
+
+                                })}
+
+                            >
+                                {props => {
+                                    const {
+                                        values,
+                                        touched,
+                                        errors,
+                                        isSubmitting,
+                                        handleChange,
+                                        handleBlur,
+                                        handleSubmit
+                                    } = props;
+                                    return (
+                                        <>
+                                            <form onSubmit={handleSubmit}>
+                                                <div className="container-fluid">
+
+                                                    <div className="row ">
+                                                        <div className="col-lg-12">
+                                                            <input
+                                                                name="fname"
+                                                                type="text"
+                                                                id='name'
+                                                                style={{ width: "100%" }}
+
+                                                                placeholder="Enter your fname"
+                                                                value={values.fname}
+                                                                onChange={handleChange}
+                                                                onBlur={handleBlur}
+                                                                className={errors.fname && touched.fname && "error"}
+                                                            />
+                                                            {errors.fname && touched.fname && (
+                                                                <div className="input feedback">{errors.fname}</div>
+                                                            )}
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="row mt-4">
+                                                        <div className="col-lg-12">
+                                                            <input
+                                                                name="email"
+                                                                type="text"
+                                                                id='name'
+                                                                style={{ width: "100%" }}
+
+                                                                placeholder="Enter your email"
+                                                                value={values.email}
+                                                                onChange={handleChange}
+                                                                onBlur={handleBlur}
+                                                                className={errors.email && touched.email && "error"}
+                                                            />
+                                                            {errors.email && touched.email && (
+                                                                <div className="input feedback">{errors.email}</div>
+                                                            )}
+                                                        </div>
+                                                    </div>
 
 
-                            <label className='mt-4 text-left' htmlFor="Email">Email address</label>
-                            <input className='text-input inputstyle' id='form' value={email} type="email" onChange={(e) => setemail(e.target.value)} />
-
-
-                            <label className='mt-4 text-left' htmlFor="Email">Choose Developer Team</label>
-                            <select className='text-input inputstyle' id='form' value={team} onChange={(e) => setteam(e.target.value)}>
-                                <option value="react">React Developer</option>
-                                <option value="node">Node Developer</option>
-                                <option value="ios">Ios Developer</option>
-                                <option value="flutter">Flutter Developer</option>
-                                <option value="android">Android Developer</option>
-                                <option value="python">Python Developer</option>
-                                <option value="mern">Mern Developer</option>
-                                <option value="ui/ux">Ui/Ux Developer</option>
-                                <option value="fullstack">Fullstack Developer</option>
-                                <option value="Laravel">Laravel Developer</option>
-                                <option value="Vue">Vue Developer</option>
-                                <option value="Django">Django Developer</option>
-                                <option value="DotNet">DotNet Developer</option>
-                                <option value="Angular">Angular Developer</option>
-                            </select>
+                                                    <div className="row mt-3">
+                                                        <select className='text-input inputstyle' id='name' style={{ width: "95%" }} value={team} onChange={(e) => setteam(e.target.value)}>
+                                                            <option value="react">React Developer</option>
+                                                            <option value="node">Node Developer</option>
+                                                            <option value="ios">Ios Developer</option>
+                                                            <option value="flutter">Flutter Developer</option>
+                                                            <option value="android">Android Developer</option>
+                                                            <option value="python">Python Developer</option>
+                                                            <option value="mern">Mern Developer</option>
+                                                            <option value="ui/ux">Ui/Ux Developer</option>
+                                                            <option value="fullstack">Fullstack Developer</option>
+                                                            <option value="Laravel">Laravel Developer</option>
+                                                            <option value="Vue">Vue Developer</option>
+                                                            <option value="Django">Django Developer</option>
+                                                            <option value="DotNet">DotNet Developer</option>
+                                                            <option value="Angular">Angular Developer</option>
+                                                        </select>
 
 
 
+                                                    </div>
+                                                    <div className="row mt-4">
+                                                        <div className="col-lg-12">
+                                                            <input
+                                                                name="contact"
+                                                                type="number"
+                                                                id='names'
+                                                                style={{ width: "100%" }}
+                                                                placeholder="Enter your contact"
+                                                                value={values.contact}
+                                                                onChange={handleChange}
+                                                                onBlur={handleBlur}
+                                                                className={errors.contact && touched.contact && "error"}
+                                                            />
+                                                            {errors.contact && touched.contact && (
+                                                                <div className="input feedback">{errors.contact}</div>
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                            <label className='mt-4 text-left' htmlFor="Contact">Contact</label>
-                            <input className='text-input inputstyle' id='form' value={contact} type="text" onChange={(e) => setcontact(e.target.value)} />
-
-                            <label className='mt-4 text-left' htmlFor="message">message</label>
-                            <input className='text-input inputstyle' id='form' type="text" value={message} style={{ height: "150px" }} onChange={(e) => setmessage(e.target.value)} />
+                                                <div className="row mt-4">
+                                                    <div className="col-lg-12">
+                                                        <textarea name="" id="" cols="70" rows="10" className='ml-3 mr-3' style={{ width: "96%" }} placeholder='Your Message' value={message} onChange={(e) => setmessage(e.target.value)}></textarea>
 
 
-                            <button className=' mt-5   btn btn-primary' onClick={savedata}>Hire Developer</button>
+                                                    </div>
+
+
+                                                    <div className="row">
+                                                        <div className="col-lg-12 mt-4 text-center">
+                                                            <button type="submit" className='btn btn-primary text-center rounded-0' style={{ padding: "10px 45px" }} disabled={isSubmitting}>
+                                                                Hire Developers
+                                                            </button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </form >
+                                        </>
+                                    );
+                                }}
+                            </Formik>
+
+
+
+
 
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
 
 
             <div className="container mt-5">
@@ -415,12 +528,12 @@ export default function ReactDeveloper() {
                     <div className="row">
                         <div className="col-lg-12 mt-4">
                             <label htmlFor="Full name ">Message</label>
-                            <input className='text-input input' id='form' type="text" value={Tmessage} style={{ height: "250px" }} onChange={(e) => setTmessage(e.target.value)} />
+                            <textarea name="" id="" cols="255" rows="10" className='text-input input' value={Tmessage} onChange={(e) => setTmessage(e.target.value)}></textarea>
                         </div>
                     </div>
 
                     <div className="row mt-5 text-center">
-                        <button className='btn btn-primary m-auto w-50' onClick={saveTrial}>Submit</button>
+                        <button className='btn btn-primary rounded-5 m-auto w-50' style={{ padding: "10px 5px" }} onClick={saveTrial}>Submit</button>
                     </div>
                 </div>
             </div>
@@ -457,12 +570,12 @@ export default function ReactDeveloper() {
 
                                         <div>
                                             <h5>Navigations</h5>
-                                            <p className='m-0'> Home</p>
-                                            <p className='m-0'> About Us</p>
-                                            <p className='m-0'> Services</p>
-                                            <p className='m-0'> Portfolio</p>
-                                            <p className='m-0'> Jobs</p>
-                                            <p className='m-0'> Contact Us</p>
+                                            <p className='m-0' onClick={tomain}> Home</p>
+                                            <p className='m-0' onClick={toabout}> About Us</p>
+                                            <p className='m-0' onClick={toservice}> Services</p>
+                                            <p className='m-0' onClick={toportfolio}> Portfolio</p>
+                                            <p className='m-0' onClick={topage}> Jobs</p>
+                                            <p className='m-0' onClick={tocontact}> Contact Us</p>
                                         </div>
                                     </Col>
 

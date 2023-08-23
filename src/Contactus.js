@@ -131,7 +131,7 @@ export default function Contactus() {
                 <div className="row text-center">
                     <div className="col-lg-12">
                         <h1 className='mt-5 contact'>CONTACT US</h1>
-                        <p className='web'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <p className='web' style={{ fontSize: "20px" }}>Let’s talk about what you want to accomplish and how we can make it happen.</p>
                     </div>
                 </div>
             </div>
@@ -168,8 +168,9 @@ export default function Contactus() {
 
                     <div className="row">
                         <div className="col-lg-12 mt-4">
-                            <label htmlFor="Street name ">Street Name</label>
-                            <input className='text-input input' id='forms' type="text" value={address} style={{ height: "250px" }} onChange={(e) => setaddress(e.target.value)} />
+                            <label htmlFor="Street name ">Street Name</label><br />
+                            <textarea name="" cols="255" rows="10" id='forms' value={address} onChange={(e) => setaddress(e.target.value)}></textarea>
+
                         </div>
                     </div>
 
@@ -214,12 +215,12 @@ export default function Contactus() {
 
                                         <div>
                                             <h5>Navigations</h5>
-                                            <p className='m-0'> Home</p>
-                                            <p className='m-0'> About Us</p>
-                                            <p className='m-0'> Services</p>
-                                            <p className='m-0'> Portfolio</p>
-                                            <p className='m-0'> Jobs</p>
-                                            <p className='m-0'> Contact Us</p>
+                                            <p className='m-0' onClick={tomain}> Home</p>
+                                            <p className='m-0' onClick={toabout}> About Us</p>
+                                            <p className='m-0' onClick={toservice}> Services</p>
+                                            <p className='m-0' onClick={toportfolio}> Portfolio</p>
+                                            <p className='m-0' onClick={topage}> Jobs</p>
+                                            <p className='m-0' > Contact Us</p>
                                         </div>
                                     </Col>
 

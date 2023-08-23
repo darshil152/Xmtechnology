@@ -8,6 +8,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Logo from './assets/Image/XM.png';
 import { Button, Col, Image, Row } from 'react-bootstrap';
 import { City, Country, State } from "country-state-city";
+import { Formik } from 'formik';
+import * as Yup from "yup";
 
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import './Career.css'
@@ -93,14 +95,18 @@ export default function Career() {
         return result;
     }
 
-    const Savedata = () => {
+    const Savedata = (values) => {
+
+
+        console.log(values)
+
         let objs = {
-            name: name,
-            Lname: Lname,
-            Email: Email,
-            Number: Number,
+            name: values.fname,
+            Lname: values.lname,
+            Email: values.email,
+            Number: values.number,
             Profile: Profile,
-            Cvaddress: Cvaddress,
+            Cvaddress: values.address,
             id: makeid(5)
         }
 
@@ -435,7 +441,7 @@ export default function Career() {
                         <h1 className="mt-5 xm">XM Technologies</h1>
                         <h1 className='text-dark team'>Ready to be part of our team?</h1>
                         <p className="web">Are you creatively curious or curiously creative too? Join our <br /> network to work with us, grow with us and make wonderful things together.</p>
-                        <button className='mt-3 who' style={{ margin: "0px" }}>Apply Now</button>
+                        <button className='mt-3 who' style={{ margin: "0px" }} onClick={handleShow}>Apply Now</button>
                     </div>
 
                 </div>
@@ -462,7 +468,7 @@ export default function Career() {
                     <div className="col-lg-3">
 
                         <label htmlFor="jobs">Jobs</label><br />
-                        <select name="jobs" id="" onChange={handlejob}>
+                        <select name="jobs" id="names" onChange={handlejob}>
                             <option value="">Choose</option>
                             <option value="alls" >All Position</option>
 
@@ -481,7 +487,7 @@ export default function Career() {
                     <div className="col-lg-3">
                         <label htmlFor="Country">Country</label><br />
 
-                        <select name="Country" id="" onChange={handlecountry}>
+                        <select name="Country" id="names" onChange={handlecountry}>
                             <option value="">Choose</option>
                             <option value="country">All Country</option>
 
@@ -499,7 +505,7 @@ export default function Career() {
                     <div className="col-lg-3">
                         <label htmlFor="state">state</label><br />
 
-                        <select name="state" id="" onChange={handlestate}>
+                        <select name="state" id="names" onChange={handlestate}>
                             <option value="">Choose</option>
                             <option value="state" >All state</option>
 
@@ -516,7 +522,7 @@ export default function Career() {
                     <div className="col-lg-2">
                         <label htmlFor="city">city</label><br />
 
-                        <select name="city" id="" onChange={handlecity}>
+                        <select name="city" id="names" onChange={handlecity}>
                             <option value="">Choose</option>
                             <option value="city" >All city</option>
 
@@ -602,12 +608,12 @@ export default function Career() {
 
                                         <div>
                                             <h5>Navigations</h5>
-                                            <p className='m-0'> Home</p>
-                                            <p className='m-0'> About Us</p>
-                                            <p className='m-0'> Services</p>
-                                            <p className='m-0'> Portfolio</p>
-                                            <p className='m-0'> Jobs</p>
-                                            <p className='m-0'> Contact Us</p>
+                                            <p className='m-0' onClick={tomain}> Home</p>
+                                            <p className='m-0' onClick={toabout}> About Us</p>
+                                            <p className='m-0' onClick={toservice}> Services</p>
+                                            <p className='m-0' onClick={toportfolio}> Portfolio</p>
+                                            <p className='m-0' onClick={topage}> Jobs</p>
+                                            <p className='m-0' onClick={tocontact}> Contact Us</p>
                                         </div>
                                     </Col>
 
@@ -659,63 +665,158 @@ export default function Career() {
                 </Modal.Header>
                 <Modal.Body>
 
-                    <div className="container-fluid mt-3" >
-                        <div className="container">
-                            <div className="row ">
+                    <Formik
+                        initialValues={{ fname: "", lname: "", number: '', address: "", email: "" }}
+                        onSubmit={(values, { setSubmitting }) => {
+                            Savedata(values)
+                        }}
+                        validationSchema={Yup.object().shape({
+                            email: Yup.string()
+                                .email()
+                                .required("Email Required"),
+                            fname: Yup.string()
+                                .required("Name Required"),
+                            lname: Yup.string()
+                                .required("Name Required"),
+                            number: Yup.string()
+                                .required("number Required"),
+                            address: Yup.string()
+                                .required("address Required")
+
+                        })}
+
+                    >
+                        {props => {
+                            const {
+                                values,
+                                touched,
+                                errors,
+                                isSubmitting,
+                                handleChange,
+                                handleBlur,
+                                handleSubmit
+                            } = props;
+                            return (
+                                <>
+                                    <form onSubmit={handleSubmit}>
+                                        <div className="container-fluid">
+
+                                            <div className="row ">
+                                                <div className="col-lg-6">
+                                                    <input
+                                                        name="fname"
+                                                        type="text"
+                                                        id='names'
+                                                        placeholder="Enter your fname"
+                                                        value={values.fname}
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                        className={errors.fname && touched.fname && "error"}
+                                                    />
+                                                    {errors.fname && touched.fname && (
+                                                        <div className="input feedback">{errors.fname}</div>
+                                                    )}
+                                                </div>
 
 
+                                                <div className="col-lg-6">
+                                                    <input
+                                                        name="lname"
+                                                        type="text"
+                                                        id='names'
+                                                        placeholder="Enter your lname"
+                                                        value={values.lname}
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                        className={errors.lname && touched.lname && "error"}
+                                                    />
+                                                    {errors.lname && touched.lname && (
+                                                        <div className="input feedback">{errors.lname}</div>
+                                                    )}
+                                                </div>
+                                            </div>
 
-                                <div className="col-lg-6 mt-5">
-                                    <label htmlFor="Full name ">First Name</label>
-                                    <input className='text-input input' id='forms' type="text" placeholder='Ex:John ' onChange={(e) => setName(e.target.value)} />
-                                </div>
+                                            <div className="row mt-4">
 
-                                <div className="col-lg-6 mt-5">
-                                    <label htmlFor="last name ">Last Name</label>
-                                    <input className='text-input input' id='forms' type="text" placeholder='Ex: Deo' onChange={(e) => setLname(e.target.value)} />
-                                </div>
-                            </div>
 
-                            <div className="row">
-                                <div className="col-lg-6 mt-4">
-                                    <label htmlFor="Full name ">Email name</label>
-                                    <input className='text-input input' id='forms' type="email" placeholder='Ex. johndoe@gmail.com' onChange={(e) => setEmail(e.target.value)} />
-                                </div>
+                                                <div className="col-lg-6">
+                                                    <input
+                                                        name="email"
+                                                        type="email"
+                                                        id='names'
+                                                        placeholder="Enter your email"
+                                                        value={values.email}
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                        className={errors.email && touched.email && "error"}
+                                                    />
+                                                    {errors.email && touched.email && (
+                                                        <div className="input feedback">{errors.email}</div>
+                                                    )}
+                                                </div>
 
-                                <div className="col-lg-6 mt-4">
-                                    <label htmlFor="Full name ">Number</label>
-                                    <input className='text-input input' id='forms' type="tel" placeholder='Ex. +1 515 516 0624' onChange={(e) => setNumber(e.target.value)} />
-                                </div>
-                            </div>
+                                                <div className="col-lg-6 ">
+                                                    <input
+                                                        name="number"
+                                                        type="number"
+                                                        id='names'
+                                                        placeholder="Enter your number"
+                                                        value={values.number}
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                        className={errors.number && touched.number && "error"}
+                                                    />
+                                                    {errors.number && touched.number && (
+                                                        <div className="input feedback">{errors.number}</div>
+                                                    )}
+                                                </div>
 
-                            <div className="row">
-                                <div className="col-lg-12 mt-4">
-                                    <label htmlFor="Street name "> Upload Your Cv</label><br />
-                                    <input className='text-input input datass' type="file" onChange={(e) => fileechange(e)}
-                                    />
-                                </div>
-                            </div>
+                                            </div>
+                                            <div className="row mt-4">
+                                                <div className="col-lg-12">
+                                                    <input className='text-input input datass' style={{ width: "80%" }} type="file" onChange={(e) => fileechange(e)} />
+                                                </div>
+                                            </div>
 
-                            <div className="row">
-                                <div className="col-lg-12 mt-4">
-                                    <label htmlFor="Street name ">Street Name</label>
-                                    <input className='text-input input' id='forms' type="text" onChange={(e) => setCVaddress(e.target.value)} />
-                                </div>
-                            </div>
+                                            <div className="row mt-4">
+                                                <div className="col-lg-12">
+                                                    <input
+                                                        name="address"
+                                                        type="address"
+                                                        id='names'
+                                                        style={{ width: "100%" }}
+                                                        placeholder="Enter your address"
+                                                        value={values.address}
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                        className={errors.address && touched.address && "error"}
+                                                    />
+                                                    {errors.address && touched.address && (
+                                                        <div className="input feedback">{errors.address}</div>
+                                                    )}
+                                                </div>
+                                            </div>
 
-                        </div>
-                    </div>
 
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={Savedata}>
-                        Apply Now
-                    </Button>
-                </Modal.Footer>
-            </Modal>
+                                            <div className="row">
+                                                <div className="col-lg-12 mt-4 text-center">
+                                                    <button type="submit" className='btn btn-primary text-center rounded-0' style={{ padding: "10px 45px" }} disabled={isSubmitting}>
+                                                        SUBMIT
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </form >
+                                </>
+                            );
+                        }}
+                    </Formik>
+                </Modal.Body >
+
+
+            </Modal >
 
         </>
     )

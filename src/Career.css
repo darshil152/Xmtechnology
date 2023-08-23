@@ -2,12 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,800;0,900;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap');
 select#jobs {
     border-radius: 10px;
     box-shadow: 0 4px 10px hsla(0, 0%, 74%, .8);
     height: 36px;
     width: 288px;
 }
+
+
+h1.jost {
+    font-family: 'Jost', sans-serif;
+        font-weight: 500;
+        font-size: 35px;
+
+}
+
+h1.borlowe {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+h1.montserrat{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+        font-size: 30px;
+}
+
+h1.josephin{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 500;
+        font-size: 30px;
+}
+
 
 
 
@@ -257,20 +288,21 @@ p.remote {
     font-size: 20px;
 }
 
-select {
-    width: 100%;
-    max-width: 100%;
-    overflow-y: auto;
-    cursor: pointer;
-    padding: 15px 25px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: none;
-    outline: none;
-    border-radius: 12px;
-    color: #444;
-    font-size: 18px;
-    box-shadow: -3px 3px 5px 0px rgba(0, 0, 0, 0.10);
+
+
+select#name{
+    text-indent: 10px;
+        border: 1px solid #C4C4C4;
+        width: 246px;
+        height: 55px;
+        margin-left: 12px;
+}
+
+select#names {
+    text-indent: 10px;
+    border: 1px solid #C4C4C4;
+    width: 350px;
+    height: 55px;
 }
 
 select option {
