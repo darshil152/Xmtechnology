@@ -29,8 +29,13 @@ import Sklogo from './assets/Image/skype 1.svg';
 import Gmlogo from './assets/Image/gmail 1.svg';
 
 
+import { PopupWidget } from "react-calendly";
+import { InlineWidget } from "react-calendly";
 
 export default function About() {
+
+    const [isOpen, setIsopen] = useState(false)
+
 
     const topage = () => {
         window.location.href = "/career"
@@ -226,6 +231,10 @@ export default function About() {
                 </Container>
             </div>
 
+
+            <div className="mb-5">
+                <InlineWidget url="https://calendly.com/d/4d9-985-fnm/xmtechnology-inquiry" />
+            </div>
 
             <div className='d-flex justify-content-center p-0 m-0'>
                 <div className='footer-div'>
