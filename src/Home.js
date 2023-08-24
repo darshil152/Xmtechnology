@@ -100,6 +100,8 @@ const Home = () => {
     }
 
 
+
+
     const submitform = (values) => {
 
         let obj = {
@@ -122,6 +124,8 @@ const Home = () => {
                     setValue("")
                     setemail("")
                     setmessage("")
+                    navigate("/")
+
                     console.log("Document written with ID: ", docRef);
                     resolve(docRef.id);
                 })
@@ -209,7 +213,7 @@ const Home = () => {
                     <Row>
                         <div className='dsid'>
                             <div className='div-container '>
-                                <Col lg={6} md={8} data-aos="fade-right">
+                                <Col lg={6} md={8} className='mt-5' data-aos="fade-right">
                                     <div className='d-flex justify-content-center text-div'>
                                         <div className='circle1'></div>
                                         <div className='ms-lg-4' data-aos="fade-right" data-aos-duration="1500">
@@ -288,7 +292,7 @@ const Home = () => {
                     <Row>
                         <div className='dic'>
                             <Col lg={4} md={6} sm={6}>
-                                <div className=' \dica'>
+                                <div className=' dica'>
                                     <div>
                                         <h4>Info Gathering</h4>
                                         <p className='Info'>Need a good understanding of what are
@@ -488,8 +492,8 @@ const Home = () => {
                                     TeamMember
                                 </p>
                             </div>
-                            <div className="col-lg-3 col-md-6 col-sm-6 counter">   {countetOn && <CountUp start={0} end={1} duration={5} delay={0}></CountUp>}
-                                K+
+                            <div className="col-lg-3 col-md-6 col-sm-6 counter">   {countetOn && <CountUp start={0} end={150} duration={5} delay={0}></CountUp>}
+                                +
                                 <br />
                                 <p className='pl-3' style={{ fontSize: "25px" }}>
                                     Project <br />
@@ -618,14 +622,14 @@ const Home = () => {
                             <Col lg={4}>
                                 <div className='end-div p-3'>
                                     <div data-aos="fade-left" data-aos-duration="1500">
-                                        <h5 className='idea'> Awesome Ideas</h5>
-                                        <p className='web'>Lorem Ipsum is simply dummy text of the
-                                            printing and typesetting industry. </p>
+                                        <h5 className='idea' style={{ fontSize: "20px" }}> Blazing Fast & Enhanced
+                                            Site Performance.</h5>
+                                        <p className='web' style={{ fontSize: "15px" }}>Building a high-performing site to engage your users  </p>
                                     </div>
                                     <div data-aos="fade-right" data-aos-duration="1500">
-                                        <h5 className='idea'>Web Solution</h5>
-                                        <p className='web'>Lorem Ipsum is simply dummy text of the
-                                            printing and typesetting industry. </p>
+                                        <h5 className='idea' style={{ fontSize: "20px" }}>Design Thinking
+                                            with Embedded Innovation</h5>
+                                        <p className='web' style={{ fontSize: "15px" }}>Delivering effective web strategies with structured IT solutions to boost your site performance</p>
                                     </div>
                                 </div>
                             </Col>
@@ -635,14 +639,14 @@ const Home = () => {
                             <Col lg={4}>
                                 <div className='p-3'>
                                     <div data-aos="fade-left" data-aos-duration="1500">
-                                        <h5 className='idea'>Planning Settings</h5>
-                                        <p className='web'>Lorem Ipsum is simply dummy text of the
-                                            printing and typesetting industry. </p>
+                                        <h5 className='idea' style={{ fontSize: "20px" }}>Expanding Capabilities
+                                        </h5>
+                                        <p className='web' style={{ fontSize: "15px" }}>Supporting our partners with in-depth insights analysis </p>
                                     </div>
                                     <div data-aos="fade-right" data-aos-duration="1500">
-                                        <h5 className='idea'>Client Market</h5>
-                                        <p className='web'>Lorem Ipsum is simply dummy text of the
-                                            printing and typesetting industry. </p>
+                                        <h5 className='idea' style={{ fontSize: "20px" }}>Optimizing Business Environment
+                                            Results</h5>
+                                        <p className='web' style={{ fontSize: "15px" }}>Providing premium services to transform business challenges into optimised results </p>
                                     </div>
                                 </div>
                             </Col>
@@ -785,8 +789,6 @@ const Home = () => {
                             .required("Email Required"),
                         name: Yup.string()
                             .required("Name Required"),
-                        number: Yup.string()
-                            .required("number Required")
 
                     })}
 
@@ -806,7 +808,7 @@ const Home = () => {
                                 <div className="main">
                                     <form onSubmit={handleSubmit}>
                                         <div className="row">
-                                            <div className="col-lg-4">
+                                            <div className="col-lg-4 centerrr mt-3">
                                                 <input
                                                     name="name"
                                                     type="text"
@@ -815,14 +817,14 @@ const Home = () => {
                                                     value={values.name}
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
-                                                    className={errors.name && touched.name && "error"}
+                                                    className={errors.name && touched.name && "error-input"}
                                                 />
                                                 {errors.name && touched.name && (
                                                     <div className="input feedback">{errors.name}</div>
                                                 )}
                                             </div>
 
-                                            <div className="col-lg-4">
+                                            <div className="col-lg-4 centerrr mt-3">
                                                 <input
                                                     name="email"
                                                     type="email"
@@ -831,37 +833,28 @@ const Home = () => {
                                                     value={values.email}
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
-                                                    className={errors.email && touched.email && "error"}
+                                                    className={errors.email && touched.email && "error-input"}
                                                 />
                                                 {errors.email && touched.email && (
                                                     <div className="input feedback">{errors.email}</div>
                                                 )}
                                             </div>
 
-                                            <div className="col-lg-4">
-                                                <input
-                                                    name="number"
-                                                    type="number"
-                                                    id='name'
-                                                    placeholder="Enter your number"
-                                                    value={values.number}
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    className={errors.number && touched.number && "error"}
-                                                />
-                                                {errors.number && touched.number && (
-                                                    <div className="input feedback">{errors.number}</div>
-                                                )}
+                                            <div className="col-lg-4 centerrr mt-3">
+                                                <PhoneInput
+                                                    style={{ width: "315px" }}
+                                                    placeholder="Enter phone number"
+                                                    value={value}
+                                                    onChange={setValue} />
                                             </div>
 
 
                                         </div>
                                         <div className="row">
                                             <div className="col-lg-12 mt-4 text-center">
-                                                <textarea name="" id="" cols="100" rows="5" value={message} placeholder='Your message' onChange={handlemessage}></textarea>
+                                                <textarea name="" id="" cols="120" rows="5" value={message} placeholder='Your message' onChange={handlemessage}></textarea>
                                             </div>
                                         </div>
-
 
 
 

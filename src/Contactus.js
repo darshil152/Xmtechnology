@@ -7,11 +7,11 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Container from 'react-bootstrap/Container';
-
+import { Formik } from 'formik';
+import * as Yup from "yup";
 import CallIcon from './assets/Image/phone 2.svg';
 import MailIcon from './assets/Image/mail 1.svg';
 import LocatinIcon from './assets/Image/pin 1.svg';
-
 import Fblogo from './assets/Image/facebook 1.svg';
 import Twilogo from './assets/Image/twitter 1.svg';
 import Inlogo from './assets/Image/in.png';
@@ -20,10 +20,12 @@ import Sklogo from './assets/Image/skype 1.svg';
 import Gmlogo from './assets/Image/gmail 1.svg';
 import Logos from './assets/Image/XM.svg';
 import firebaseApp from './Firebase/firebase';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Contactus() {
 
+    const navigate = useNavigate();
 
 
     const [name, setName] = useState('')
@@ -44,12 +46,14 @@ export default function Contactus() {
         return result;
     }
 
-    const savedata = () => {
+    const savedata = (values) => {
+
+        console.log(values)
         let obj = {
-            Name: name,
-            lname: lname,
-            PhoneNo: Contact,
-            Email: email,
+            Name: values.fname,
+            lname: values.lname,
+            PhoneNo: values.number,
+            Email: values.email,
             address: address,
             id: makeid(5)
         }
@@ -64,6 +68,7 @@ export default function Contactus() {
                     setContact("")
                     setEmail("")
                     setaddress("")
+                    navigate("/")
 
                     console.log("Document written with ID: ", docRef);
                     resolve(docRef.id);
@@ -108,6 +113,8 @@ export default function Contactus() {
 
 
 
+
+
     return (
         <>
             <Navbar expand="lg" className="nav pb-3 pt-4 ">
@@ -127,6 +134,7 @@ export default function Contactus() {
                 </Container>
             </Navbar>
 
+
             <div className="container-fluid contactbg">
                 <div className="row text-center">
                     <div className="col-lg-12">
@@ -141,43 +149,143 @@ export default function Contactus() {
                 <div className="container">
                     <div className="row ">
 
+                        <Formik
+                            initialValues={{ fname: "", lname: "", number: '', email: "" }}
+                            onSubmit={(values, { setSubmitting }) => {
+                                savedata(values)
+                            }}
+                            validationSchema={Yup.object().shape({
+                                email: Yup.string()
+                                    .email()
+                                    .required("Email Required"),
+                                fname: Yup.string()
+                                    .required("fname Required"),
+                                lname: Yup.string()
+                                    .required("lname Required"),
+                                number: Yup.string()
+                                    .required("Contact number Required"),
 
 
-                        <div className="col-lg-6 mt-5">
-                            <label htmlFor="Full name ">First Name</label>
-                            <input className='text-input input' id='forms' type="text" value={name} placeholder='Ex:John ' onChange={(e) => setName(e.target.value)} />
-                        </div>
+                            })}
 
-                        <div className="col-lg-6 mt-5">
-                            <label htmlFor="last name ">Last Name</label>
-                            <input className='text-input input' id='forms' type="text" value={lname} placeholder='Ex: Deo' onChange={(e) => setLname(e.target.value)} />
-                        </div>
-                    </div>
+                        >
+                            {props => {
+                                const {
+                                    values,
+                                    touched,
+                                    errors,
+                                    isSubmitting,
+                                    handleChange,
+                                    handleBlur,
+                                    handleSubmit
+                                } = props;
+                                return (
+                                    <>
+                                        <form onSubmit={handleSubmit}>
+                                            <div className="container-fluid">
 
-                    <div className="row">
-                        <div className="col-lg-6 mt-4">
-                            <label htmlFor="Full name ">Email name</label>
-                            <input className='text-input input' id='forms' type="text" value={email} placeholder='Ex. johndoe@gmail.com' onChange={(e) => setEmail(e.target.value)} />
-                        </div>
+                                                <div className="row ">
+                                                    <div className="col-lg-6 mt-4">
+                                                        <input
+                                                            name="fname"
+                                                            type="text"
+                                                            id='names'
+                                                            style={{ width: "100%" }}
+                                                            placeholder="Enter your fname"
+                                                            value={values.fname}
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            className={errors.fname && touched.fname && "error-input"}
+                                                        />
+                                                        {errors.fname && touched.fname && (
+                                                            <div className="input feedback">{errors.fname}</div>
+                                                        )}
+                                                    </div>
 
-                        <div className="col-lg-6 mt-4">
-                            <label htmlFor="Full name ">Number</label>
-                            <input className='text-input input' id='forms' type="number" value={Contact} placeholder='Ex. +1 515 516 0624' onChange={(e) => setContact(e.target.value)} />
-                        </div>
-                    </div>
 
-                    <div className="row">
-                        <div className="col-lg-12 mt-4">
-                            <label htmlFor="Street name ">Street Name</label><br />
-                            <textarea name="" cols="255" rows="10" id='forms' value={address} onChange={(e) => setaddress(e.target.value)}></textarea>
+                                                    <div className="col-lg-6 mt-4">
+                                                        <input
+                                                            name="lname"
+                                                            type="text"
+                                                            id='names'
+                                                            style={{ width: "100%" }}
 
-                        </div>
-                    </div>
+                                                            placeholder="Enter your lname"
+                                                            value={values.lname}
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            className={errors.lname && touched.lname && "error-input"}
+                                                        />
+                                                        {errors.lname && touched.lname && (
+                                                            <div className="input feedback">{errors.lname}</div>
+                                                        )}
+                                                    </div>
+                                                </div>
 
-                    <div className="row mt-5 mb-5 ">
-                        <div className="col-lg-4">
-                            <button className='btn btn-primary rounded-5 m-auto w-50' style={{ padding: "10px 5px" }} onClick={savedata}>Submit</button>
-                        </div>
+                                                <div className="row ">
+
+
+                                                    <div className="col-lg-6 mt-4">
+                                                        <input
+                                                            name="email"
+                                                            type="email"
+                                                            id='names'
+                                                            style={{ width: "100%" }}
+
+                                                            placeholder="Enter your email"
+                                                            value={values.email}
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            className={errors.email && touched.email && "error-input"}
+                                                        />
+                                                        {errors.email && touched.email && (
+                                                            <div className="input feedback">{errors.email}</div>
+                                                        )}
+                                                    </div>
+
+                                                    <div className="col-lg-6 mt-4">
+                                                        <input
+                                                            name="number"
+                                                            type="tel"
+                                                            id='names'
+                                                            style={{ width: "100%" }}
+
+                                                            placeholder="Enter your message"
+                                                            value={values.number}
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            className={errors.number && touched.number && "error-input"}
+                                                        />
+                                                        {errors.number && touched.number && (
+                                                            <div className="input feedback">{errors.number}</div>
+                                                        )}
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div className="row">
+                                                    <div className="col-lg-12 mt-4">
+                                                        <textarea name="" cols="255" rows="10" id='forms' style={{ width: "100%" }} value={address} onChange={(e) => setaddress(e.target.value)} placeholder="Enter your address"
+                                                        ></textarea>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div className="row">
+                                                    <div className="col-lg-12 mt-4 mb-5 text-center">
+                                                        <button type="submit" className='btn btn-primary text-center rounded-0' style={{ padding: "10px 45px" }} disabled={isSubmitting}>
+                                                            SUBMIT
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form >
+                                    </>
+                                );
+                            }}
+                        </Formik>
                     </div>
                 </div>
             </div>

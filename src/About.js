@@ -82,7 +82,9 @@ export default function About() {
             </Navbar>
 
 
-            <div className="cotainer-fluid bgimage">
+            <div className="cotainer-fluid bgimage" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500">
                 <div className="row">
                     <div className="col-lg-12">
                     </div>
@@ -116,11 +118,10 @@ export default function About() {
                 <div className="row ">
                     <div className="col-lg-12" style={{ padding: "55px" }}>
                         <h1 className='text-center mb-5 ' style={{ fontWeight: "900" }}>Our XM</h1>
-                        <p className='web center'>Our highly experienced, creative and versatile development team has both the capability and aptitude to create innovative and technologically advanced mobile apps. We believe in frank working environments. <br />
-                            The first impression sometimes does it all. Too simple or too hazy outlook fails to impress the individuals and thus might result in lack of traffic or make them switch over to other similar websites. Our team of well-experienced web designers and web developer’s lead by experts are they’re to work on the designs and development of websites based on customers’ requirement and specification. <br />
-
-                            We carry out planning, and detail outline of the work, before moving onto the final task. At this stage, our ideas are presented to the client and measures are taken to be assured that the customer is satisfied with the ideas. A study is alongside made to make sure that the website would be successful in bringing visitors and potential customers. Our work considers the use of all the latest technologies. Bringing out the best through the use of them is what we look for. Once the website is ready with the designs, layouts and all, it is bound to amaze all. At SkyPearl iNfotech™ our work would dazzle the eyes. <br />
-                            Our products are intended for web developers or webmasters who want to spend a little investment to add significant value to their projects, create high-end Web applications as well as to speed up their development time. At SkyPearl iNfotech™, we always try to win new grounds by stretching our limits. Let us be a pivotal aspect in your software development venture to experience our professional and technical reach.</p>
+                        <p className='web center'> <span style={{ color: "black", fontSize: "25px" }}>Our Mission </span>- To deliver innovative and top-notch IT solutions that meet the short-term and long-term business goals. To translate the high-tech recommendations in a manner that humans can control for the ultimate benefit of organizational objectives. To bring the best user experience by leveraging the latest digital transformation invented across the globe. <br />
+                            <br /><br />
+                            <span style={{ color: "black", fontSize: "25px" }}>Our Vision </span> -To bring disruptive changes in the way businesses operate by incorporating the latest technology that reduces human efforts with utmost efficiency to ensure smooth and result-oriented business operations.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -224,12 +225,6 @@ export default function About() {
 
                 </Container>
             </div>
-
-
-            <h1 className='text-center borlowe'>Hello from Xm tech (borlowe)</h1>
-            <h1 className='text-center jost'>Hello from Xm tech (jost)</h1>
-            <h1 className='text-center montserrat'>Hello from Xm tech (montserrat)</h1>
-            <h1 className='text-center josephin'>Hello from Xm tech (josephin)</h1>
 
 
             <div className='d-flex justify-content-center p-0 m-0'>

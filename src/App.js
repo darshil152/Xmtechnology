@@ -13,6 +13,7 @@ import Android from './HireDeveloper/Android';
 import Ios from './HireDeveloper/Ios';
 import Ui from './HireDeveloper/ui';
 import Contactus from './Contactus';
+import Admin from './Admin';
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/career" element={<Career />} />
           <Route path="/jobform" element={<Jobform />} />
+          <Route path="/admin" element={<Admin />} />
+
 
           <Route path="/hire/react" element={<ReactDeveloper />} />
           <Route path="/hire/python" element={<Python />} />

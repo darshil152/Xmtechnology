@@ -10,6 +10,10 @@ import { Button, Col, Image, Row } from 'react-bootstrap';
 import { City, Country, State } from "country-state-city";
 import { Formik } from 'formik';
 import * as Yup from "yup";
+import MUIDataTable from "mui-datatables";
+import { ThemeProvider, createTheme } from '@material-ui/core/styles';
+import { CacheProvider } from '@emotion/react';
+import createCache from '@emotion/cache';
 
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import './Career.css'
@@ -49,11 +53,70 @@ export default function Career() {
         AOS.init();
     }, [])
 
+
+
+
+    const columns = [
+        {
+            name: "jobtype",
+            label: "jobtype",
+            options: {
+                filter: true,
+                sort: true,
+            }
+        },
+        {
+            name: "position",
+            label: "Company",
+            options: {
+                filter: true,
+                sort: false,
+            }
+        },
+        {
+            name: "country",
+            label: "country",
+            options: {
+                filter: true,
+                sort: false,
+            }
+        },
+        {
+            name: "state",
+            label: "State",
+            options: {
+                filter: true,
+                sort: false,
+            }
+        },
+        {
+            name: "city",
+            label: "city",
+            options: {
+                filter: true,
+                sort: false,
+            }
+        },
+    ];
+
+    const options = {
+        filterType: 'checkbox',
+        selectableRows: "multiple",
+        selectableRowsHideCheckboxes: true,
+        selectableRowsOnClick: true,
+    };
+    const muiCache = createCache({
+        key: 'mui-datatables',
+        prepend: true
+    })
+
+
     const [showModal, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const navigate = useNavigate();
 
 
     let countryData = Country.getAllCountries();
@@ -106,7 +169,7 @@ export default function Career() {
             Email: values.email,
             Number: values.number,
             Profile: Profile,
-            Cvaddress: values.address,
+            Cvaddress: Cvaddress,
             id: makeid(5)
         }
 
@@ -115,6 +178,8 @@ export default function Career() {
             db.collection("Resumes").add(objs)
 
                 .then((docRef) => {
+                    navigate("/")
+
                     console.log("Document written with ID: ", docRef);
                     handleClose()
                     resolve(docRef.id);
@@ -399,11 +464,12 @@ export default function Career() {
             </div>
 
 
-            <div className="container-fluid foryou">
+            <div className="container-fluid foryou" >
                 <div className="row">
                     <div className="container">
                         <h1 className='mt-5 mb-5 text-light text-center sizess'>Hiring developers to work for you!</h1>
-                        <div className="row ">
+                        <div className="row " data-aos="fade-up"
+                            data-aos-duration="3000">
                             <div className="col-lg-4">
                                 <img src={react} className='img-fluid saves' onClick={toreact} />
                             </div>
@@ -414,7 +480,8 @@ export default function Career() {
                                 <img src={node} className='img-fluid saves' onClick={tonode} />
                             </div>
                         </div>
-                        <div className="row mb-5">
+                        <div className="row mb-5" data-aos="fade-up"
+                            data-aos-duration="3000">
                             <div className="col-lg-4">
                                 <img src={ios} className='img-fluid saves' onClick={toios} />
                             </div>
@@ -452,8 +519,9 @@ export default function Career() {
 
 
 
-            <div className="container practice">
-                <div className="row">
+            <div className="container practice" data-aos="fade-right"
+                data-aos-duration="3000">
+                <div className="row text-center">
                     <div className="col-lg-12">
 
                         <h1 className='value'>  corporate open roles</h1>
@@ -461,7 +529,7 @@ export default function Career() {
                     </div>
                 </div>
             </div>
-            <div className="container-fluid mt-5">
+            <div className="container mt-5">
 
                 <div className="row ms-auto">
 
@@ -535,9 +603,12 @@ export default function Career() {
                             }
                         </select>
                     </div>
+                    <br />
 
-                    <div className="col-lg-1 mt-4">
-                        <button className='btn btn-primary' onClick={filterdata}> Search</button>
+                    <div className="row">
+                        <div className="col-lg-12 mt-4">
+                            <button className='btn btn-primary' onClick={filterdata}> Search</button>
+                        </div>
                     </div>
 
                 </div>
@@ -545,34 +616,18 @@ export default function Career() {
 
             <div className="container mt-5 mb-5" >
                 <div className="row justify-content-center">
-
-                    <table className='mb-5' style={{ width: "53%" }} class="scrolldown">
-                        <Thead>
-                            <tr className='headingdetail'>
-                                <th>Job type</th>
-                                <th>Position Title</th>
-                                <th>Country</th>
-                                <th>state</th>
-                                <th>city</th>
-                            </tr>
-                        </Thead>
-                        <Tbody>
-
-                            {showdata && showdata.map((item, i) => {
-                                return (
-                                    <tr>
-                                        <td className='detailtable'>{item.jobtype}</td>
-                                        <td className='detailtable'> <Link to="/">{item.position}</Link > </td>
-                                        <td className='detailtable'>{item.country}</td>
-                                        <td className='detailtable'>{item.state}</td>
-                                        <td className='detailtable'>{item.city}</td>
-
-                                    </tr>
-                                )
-                            })}
-                        </Tbody>
-                    </table>
-
+                    <div className="col-lg-12">
+                        <CacheProvider value={muiCache}>
+                            <ThemeProvider theme={createTheme()}>
+                                <MUIDataTable
+                                    title={"Job List"}
+                                    data={showdata}
+                                    columns={columns}
+                                    options={options}
+                                />
+                            </ThemeProvider>
+                        </CacheProvider>
+                    </div>
                 </div>
             </div>
 
@@ -666,22 +721,21 @@ export default function Career() {
                 <Modal.Body>
 
                     <Formik
-                        initialValues={{ fname: "", lname: "", number: '', address: "", email: "" }}
+                        initialValues={{ fname: "", lname: "", number: '', email: "" }}
                         onSubmit={(values, { setSubmitting }) => {
                             Savedata(values)
                         }}
                         validationSchema={Yup.object().shape({
                             email: Yup.string()
                                 .email()
-                                .required("Email Required"),
+                                .required("email Required"),
                             fname: Yup.string()
                                 .required("Name Required"),
                             lname: Yup.string()
                                 .required("Name Required"),
                             number: Yup.string()
                                 .required("number Required"),
-                            address: Yup.string()
-                                .required("address Required")
+
 
                         })}
 
@@ -702,7 +756,7 @@ export default function Career() {
                                         <div className="container-fluid">
 
                                             <div className="row ">
-                                                <div className="col-lg-6">
+                                                <div className="col-lg-6 mt-4">
                                                     <input
                                                         name="fname"
                                                         type="text"
@@ -711,7 +765,7 @@ export default function Career() {
                                                         value={values.fname}
                                                         onChange={handleChange}
                                                         onBlur={handleBlur}
-                                                        className={errors.fname && touched.fname && "error"}
+                                                        className={errors.fname && touched.fname && "error-input"}
                                                     />
                                                     {errors.fname && touched.fname && (
                                                         <div className="input feedback">{errors.fname}</div>
@@ -719,7 +773,7 @@ export default function Career() {
                                                 </div>
 
 
-                                                <div className="col-lg-6">
+                                                <div className="col-lg-6 mt-4">
                                                     <input
                                                         name="lname"
                                                         type="text"
@@ -728,7 +782,7 @@ export default function Career() {
                                                         value={values.lname}
                                                         onChange={handleChange}
                                                         onBlur={handleBlur}
-                                                        className={errors.lname && touched.lname && "error"}
+                                                        className={errors.lname && touched.lname && "error-input"}
                                                     />
                                                     {errors.lname && touched.lname && (
                                                         <div className="input feedback">{errors.lname}</div>
@@ -736,10 +790,10 @@ export default function Career() {
                                                 </div>
                                             </div>
 
-                                            <div className="row mt-4">
+                                            <div className="row ">
 
 
-                                                <div className="col-lg-6">
+                                                <div className="col-lg-6 mt-4">
                                                     <input
                                                         name="email"
                                                         type="email"
@@ -748,31 +802,32 @@ export default function Career() {
                                                         value={values.email}
                                                         onChange={handleChange}
                                                         onBlur={handleBlur}
-                                                        className={errors.email && touched.email && "error"}
+                                                        className={errors.email && touched.email && "error-input"}
                                                     />
                                                     {errors.email && touched.email && (
                                                         <div className="input feedback">{errors.email}</div>
                                                     )}
                                                 </div>
 
-                                                <div className="col-lg-6 ">
+                                                <div className="col-lg-6 mt-4">
                                                     <input
                                                         name="number"
-                                                        type="number"
+                                                        type="tel"
                                                         id='names'
                                                         placeholder="Enter your number"
                                                         value={values.number}
                                                         onChange={handleChange}
                                                         onBlur={handleBlur}
-                                                        className={errors.number && touched.number && "error"}
+                                                        className={errors.number && touched.number && "error-input"}
                                                     />
+
                                                     {errors.number && touched.number && (
                                                         <div className="input feedback">{errors.number}</div>
                                                     )}
                                                 </div>
 
                                             </div>
-                                            <div className="row mt-4">
+                                            <div className="row mt-4 ">
                                                 <div className="col-lg-12">
                                                     <input className='text-input input datass' style={{ width: "80%" }} type="file" onChange={(e) => fileechange(e)} />
                                                 </div>
@@ -780,26 +835,13 @@ export default function Career() {
 
                                             <div className="row mt-4">
                                                 <div className="col-lg-12">
-                                                    <input
-                                                        name="address"
-                                                        type="address"
-                                                        id='names'
-                                                        style={{ width: "100%" }}
-                                                        placeholder="Enter your address"
-                                                        value={values.address}
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                        className={errors.address && touched.address && "error"}
-                                                    />
-                                                    {errors.address && touched.address && (
-                                                        <div className="input feedback">{errors.address}</div>
-                                                    )}
+                                                    <textarea name="" cols="200" rows="5" id='names' className='textaraa' onChange={(e) => setCVaddress(e.target.value)} placeholder='Write your cover letter'></textarea>
                                                 </div>
                                             </div>
 
 
-                                            <div className="row">
-                                                <div className="col-lg-12 mt-4 text-center">
+                                            <div className="row ">
+                                                <div className="col-lg-12 mt-3 text-center">
                                                     <button type="submit" className='btn btn-primary text-center rounded-0' style={{ padding: "10px 45px" }} disabled={isSubmitting}>
                                                         SUBMIT
                                                     </button>

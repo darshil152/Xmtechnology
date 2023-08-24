@@ -39,7 +39,9 @@ import Logos from './assets/Image/XM.svg';
 import service1 from "./assets/Image/service1.png"
 import service2 from "./assets/Image/service2.png"
 import service3 from "./assets/Image/service3.png"
+import { useNavigate } from "react-router-dom";
 
+import 'react-phone-number-input/style.css'
 
 
 import img1 from "./assets/Image/img1.png"
@@ -55,6 +57,9 @@ import img10 from "./assets/Image/img10.png"
 
 
 export default function Service() {
+
+    const navigate = useNavigate();
+
 
 
     useEffect(() => {
@@ -86,7 +91,7 @@ export default function Service() {
 
         let obj = {
             Name: values.name,
-            PhoneNo: values.number,
+            PhoneNo: value,
             Email: values.email,
             Message: message,
             id: makeid(5)
@@ -99,6 +104,7 @@ export default function Service() {
             db.collection("ContactUs").add(obj)
 
                 .then((docRef) => {
+                    navigate("/")
 
                     setname("")
                     setValue("")
@@ -511,8 +517,8 @@ export default function Service() {
                                     TeamMember
                                 </p>
                             </div>
-                            <div className="col-lg-3 col-md-6 col-sm-6 counter">   {countetOn && <CountUp start={0} end={1} duration={5} delay={0}></CountUp>}
-                                K+
+                            <div className="col-lg-3 col-md-6 col-sm-6 counter">   {countetOn && <CountUp start={0} end={150} duration={5} delay={0}></CountUp>}
+                                +
                                 <br />
                                 <p className='pl-3' style={{ fontSize: "25px" }}>
                                     Project <br />
@@ -554,8 +560,6 @@ export default function Service() {
                             .required("Email Required"),
                         name: Yup.string()
                             .required("Name Required"),
-                        number: Yup.string()
-                            .required("number Required")
 
                     })}
 
@@ -575,7 +579,7 @@ export default function Service() {
                                 <div className="main">
                                     <form onSubmit={handleSubmit}>
                                         <div className="row">
-                                            <div className="col-lg-4">
+                                            <div className="col-lg-4 centerrr mt-3">
                                                 <input
                                                     name="name"
                                                     type="text"
@@ -584,14 +588,14 @@ export default function Service() {
                                                     value={values.name}
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
-                                                    className={errors.name && touched.name && "error"}
+                                                    className={errors.name && touched.name && "error-input"}
                                                 />
                                                 {errors.name && touched.name && (
                                                     <div className="input feedback">{errors.name}</div>
                                                 )}
                                             </div>
 
-                                            <div className="col-lg-4">
+                                            <div className="col-lg-4 centerrr mt-3">
                                                 <input
                                                     name="email"
                                                     type="email"
@@ -600,34 +604,26 @@ export default function Service() {
                                                     value={values.email}
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
-                                                    className={errors.email && touched.email && "error"}
+                                                    className={errors.email && touched.email && "error-input"}
                                                 />
                                                 {errors.email && touched.email && (
                                                     <div className="input feedback">{errors.email}</div>
                                                 )}
                                             </div>
 
-                                            <div className="col-lg-4">
-                                                <input
-                                                    name="number"
-                                                    type="number"
-                                                    id='name'
-                                                    placeholder="Enter your number"
-                                                    value={values.number}
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    className={errors.number && touched.number && "error"}
-                                                />
-                                                {errors.number && touched.number && (
-                                                    <div className="input feedback">{errors.number}</div>
-                                                )}
+                                            <div className="col-lg-4 centerrr mt-3">
+                                                <PhoneInput
+                                                    style={{ width: "315px" }}
+                                                    placeholder="Enter phone number"
+                                                    value={value}
+                                                    onChange={setValue} />
                                             </div>
 
 
                                         </div>
                                         <div className="row">
                                             <div className="col-lg-12 mt-4 text-center">
-                                                <textarea name="" id="" cols="100" rows="5" value={message} placeholder='Your message' onChange={handlemessage}></textarea>
+                                                <textarea name="" id="" cols="120" rows="5" value={message} placeholder='Your message' onChange={handlemessage}></textarea>
                                             </div>
                                         </div>
 

@@ -27,6 +27,7 @@ import Inlogo from '../assets/Image/in.png';
 import Intralogo from '../assets/Image/instagram-sketched 1.svg';
 import Sklogo from '../assets/Image/skype 1.svg';
 import Gmlogo from '../assets/Image/gmail 1.svg';
+import { useNavigate } from "react-router-dom";
 
 
 import one from "../assets/HireImage/deep-learning.png"
@@ -40,6 +41,7 @@ import mobile from "../assets/HireImage/mobilede.png"
 
 export default function Android() {
 
+    const navigate = useNavigate();
 
 
 
@@ -69,6 +71,7 @@ export default function Android() {
             db.collection("Trial").add(obj)
 
                 .then((docRef) => {
+                    navigate("/")
 
                     setTFname("")
                     setTemail("")
@@ -107,6 +110,7 @@ export default function Android() {
             db.collection("HireDev").add(obj)
 
                 .then((docRef) => {
+                    navigate("/")
 
                     setFname("")
                     setemail("")
@@ -259,7 +263,7 @@ export default function Android() {
                                                                 value={values.fname}
                                                                 onChange={handleChange}
                                                                 onBlur={handleBlur}
-                                                                className={errors.fname && touched.fname && "error"}
+                                                                className={errors.fname && touched.fname && "error-input"}
                                                             />
                                                             {errors.fname && touched.fname && (
                                                                 <div className="input feedback">{errors.fname}</div>
@@ -279,7 +283,7 @@ export default function Android() {
                                                                 value={values.email}
                                                                 onChange={handleChange}
                                                                 onBlur={handleBlur}
-                                                                className={errors.email && touched.email && "error"}
+                                                                className={errors.email && touched.email && "error-input"}
                                                             />
                                                             {errors.email && touched.email && (
                                                                 <div className="input feedback">{errors.email}</div>
@@ -313,14 +317,14 @@ export default function Android() {
                                                         <div className="col-lg-12">
                                                             <input
                                                                 name="contact"
-                                                                type="number"
+                                                                type="tel"
                                                                 id='names'
                                                                 style={{ width: "100%" }}
                                                                 placeholder="Enter your contact"
                                                                 value={values.contact}
                                                                 onChange={handleChange}
                                                                 onBlur={handleBlur}
-                                                                className={errors.contact && touched.contact && "error"}
+                                                                className={errors.contact && touched.contact && "error-input"}
                                                             />
                                                             {errors.contact && touched.contact && (
                                                                 <div className="input feedback">{errors.contact}</div>
@@ -443,12 +447,12 @@ export default function Android() {
                     <div className="row">
                         <div className="col-lg-6 mt-4">
                             <label htmlFor="Full name ">Email name</label>
-                            <input className='text-input input' id='form' type="text" value={Temail} onChange={(e) => setTemail(e.target.value)} />
+                            <input className='text-input input' id='form' type="email" value={Temail} onChange={(e) => setTemail(e.target.value)} />
                         </div>
 
                         <div className="col-lg-6 mt-4">
                             <label htmlFor="Full name ">Number</label>
-                            <input className='text-input input' id='form' type="number" value={Tcontact} onChange={(e) => setTcontact(e.target.value)} />
+                            <input className='text-input input' id='form' type="tel" value={Tcontact} onChange={(e) => setTcontact(e.target.value)} />
                         </div>
                     </div>
 

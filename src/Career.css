@@ -6,11 +6,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap');
+
+
 select#jobs {
     border-radius: 10px;
     box-shadow: 0 4px 10px hsla(0, 0%, 74%, .8);
     height: 36px;
     width: 288px;
+}
+
+.input.feedback {
+    color: red;
+}
+
+textarea#names {
+    width: 100%;
 }
 
 
@@ -28,7 +38,8 @@ h1.borlowe {
 }
 
 h1.montserrat{
-    font-family: 'Montserrat', sans-serif;
+    font-family: Circular Std;
+
     font-weight: 500;
         font-size: 30px;
 }
@@ -38,7 +49,6 @@ h1.josephin{
     font-weight: 500;
         font-size: 30px;
 }
-
 
 
 
@@ -69,8 +79,16 @@ thead th:last-child {
     /* 140px + 16px scrollbar width */
 }
 
+td.MuiTableCell-root.MuiTableCell-footer.MuiTableCell-sizeMedium.tss-1ork7hi-MUIDataTablePagination-tableCellContainer.mui-datatables-nfmglb-MuiTableCell-root{    display: none;
+display: none;
+}
 
 
+.tss-1cdcmys-MUIDataTable-responsiveBase{
+    position: relative;
+        height: auto;
+        max-height: 300px;
+}
 
 input.text-input.input.datass{
     align-items: center;
@@ -95,8 +113,9 @@ input.text-input.input.datass{
 
 h1.alwayss {
     color: var(--white, #FFF);
-    font-family: Circular Std;
-    font-size: 60px;
+        font-family: Circular Std;
+
+       font-size: 60px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -164,6 +183,7 @@ h1.sizess {
     color: var(--white, #FFF);
     text-align: center;
     font-family: Circular Std;
+    
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
@@ -216,7 +236,7 @@ td.detailtable {
     text-align: left;
     border: 1px solid grey;
     margin: 15px;
-    padding: 15px;
+    padding: 5px;
 }
 
 table {
@@ -352,10 +372,15 @@ img.img-fluid.saves {
 
 .padd{
     margin-left: 100px;
-    padding-top: 101px;
+    padding-top: 30px;
 }
 
 @media screen and (max-width:576px) {
+
+    textarea#names {
+            width: 80%;
+        }
+
     .forbg {
         text-align: center;
     }
@@ -395,7 +420,9 @@ img.img-fluid.saves {
         margin-bottom: 15px;
     }
 }
-
+.error-input {
+    border: 1px solid red !important;
+}
 
 @media screen and (max-width:1168px) {
     .forbg {
@@ -438,6 +465,9 @@ img.img-fluid.saves {
 }
 
 @media screen and (max-width:472px) {
+    textarea#names {
+            width: 80%
+        }
     .centers {
         text-align: center;
     }

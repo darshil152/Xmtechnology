@@ -1,6 +1,7 @@
 * {
-    font-family: Circular Std;
-    scroll-behavior: smooth;
+       font-family: Circular Std;
+
+      scroll-behavior: smooth;
 }
 
 body {
@@ -92,7 +93,9 @@ textarea {
 .question {
     color: var(--para, #00142D);
     text-align: center;
-    font-family: Circular Std;
+       font-family: Circular Std;
+
+
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
@@ -307,8 +310,13 @@ nav.nav {
     color: #707070
 }
 
+.input.feedback {
+    color: red;
+}
+
 .web {
-    color: #707070
+    color: #707070;
+    font-size: 20px;
 }
 
 .services {
@@ -360,7 +368,9 @@ input#forms {
 }
 
 @font-face {
-    font-family: Circular Std;
+       font-family: Circular Std;
+
+
     src: url(../public/circular-std-medium-500.ttf), url(../public/CircularStd-Bold.ttf), url(../public/CircularStd-Bold1.ttf);
 }
 
@@ -507,7 +517,9 @@ input#form {
 
 p.solutions {
     color: var(--white, #FFF);
-    font-family: Circular Std;
+       font-family: Circular Std;
+
+
     font-size: 55px;
     font-style: normal;
     font-weight: 700;
@@ -531,7 +543,10 @@ p.solutions {
 
 h6.unlock {
     color: var(--white, #FFF);
-    font-family: Circular Std;
+         font-family: Circular Std;
+
+
+
     font-size: 22px;
     font-style: normal;
     font-weight: 500;
@@ -546,7 +561,10 @@ button.contact {
 
 h6.human {
     color: #0669F7;
-    font-family: Circular Std;
+         font-family: Circular Std;
+
+
+
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -555,7 +573,10 @@ h6.human {
 
 p.secret {
     color: var(--white, #FFF);
-    font-family: Circular Std;
+         font-family: Circular Std;
+
+
+
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
@@ -578,7 +599,9 @@ button.findout {
 
 p.texts {
     color: var(--white, #FFF);
-    font-family: Circular Std;
+       font-family: Circular Std;
+
+
     font-size: 18px;
     font-style: normal;
     font-weight: 450;
@@ -619,7 +642,26 @@ button.us {
     background-size: cover;
 }
 
+@media screen and (max-width:390px) {
+
+    input.PhoneInputInput {
+            text-indent: 10px;
+            border: 1px solid #C4C4C4;
+            height: 45px;
+            margin-left: 15px !important;
+        }
+    }
+
 @media screen and (max-width:768px) {
+
+    input.PhoneInputInput{
+ margin-left: 30px;   
+}
+
+.col-lg-4.centerrr.mt-3{
+    text-align: center;
+}
+
     h1.fw-bold {
             font-size: 40px;
         }
@@ -640,9 +682,9 @@ button.us {
         width: 250px;
     }
 
-                .center {
-                    text-align: center;
-                }
+    .center {
+     text-align: center;
+    }
 
     .dica {
         width: 320px;
@@ -683,6 +725,20 @@ button.us {
             height: 550px;
         }
 }
+
+@media screen and (max-width:768px) {
+
+    .backgrounds {
+            background-image: url(./assets/Image/backgroundservice.png);
+            width: 100%;
+            height: 750px;
+            background-repeat: no-repeat;
+        }
+
+    .message {
+            height: 650px;
+        }
+    }
 
 @media screen and (max-width:992px) {
     .test {
@@ -778,7 +834,7 @@ button.us {
     }
 
     .message {
-        height: 650px;
+        height: 750px;
     }
 
     .backgrounds {
@@ -790,7 +846,9 @@ button.us {
 
     p.solutions {
         color: var(--white, #FFF);
-        font-family: Circular Std;
+           font-family: Circular Std;
+
+
         font-size: 45px;
         font-style: normal;
         font-weight: 700;
@@ -800,7 +858,7 @@ button.us {
 
     h6.unlock {
         color: var(--white, #FFF);
-        font-family: Circular Std;
+   font-family: Circular Std;
         font-size: 18px;
         font-style: normal;
         font-weight: 500;

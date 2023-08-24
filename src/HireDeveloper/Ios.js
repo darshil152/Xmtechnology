@@ -17,6 +17,7 @@ import Image4 from '../assets/Image/document 1.png';
 import firebaseApp from '../Firebase/firebase';
 import { Formik } from 'formik';
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 import Logos from '../assets/Image/XM.svg';
 import CallIcon from '../assets/Image/phone 2.svg';
@@ -39,6 +40,7 @@ import six from "../assets/HireImage/six.png"
 
 export default function Ios() {
 
+    const navigate = useNavigate();
 
 
 
@@ -69,6 +71,7 @@ export default function Ios() {
             db.collection("Trial").add(obj)
 
                 .then((docRef) => {
+                    navigate("/")
 
                     setTFname("")
                     setTemail("")
@@ -107,6 +110,7 @@ export default function Ios() {
             db.collection("HireDev").add(obj)
 
                 .then((docRef) => {
+                    navigate("/")
 
                     setFname("")
                     setemail("")
@@ -258,7 +262,7 @@ export default function Ios() {
                                                                 value={values.fname}
                                                                 onChange={handleChange}
                                                                 onBlur={handleBlur}
-                                                                className={errors.fname && touched.fname && "error"}
+                                                                className={errors.fname && touched.fname && "error-input"}
                                                             />
                                                             {errors.fname && touched.fname && (
                                                                 <div className="input feedback">{errors.fname}</div>
@@ -278,7 +282,7 @@ export default function Ios() {
                                                                 value={values.email}
                                                                 onChange={handleChange}
                                                                 onBlur={handleBlur}
-                                                                className={errors.email && touched.email && "error"}
+                                                                className={errors.email && touched.email && "error-input"}
                                                             />
                                                             {errors.email && touched.email && (
                                                                 <div className="input feedback">{errors.email}</div>
@@ -312,14 +316,14 @@ export default function Ios() {
                                                         <div className="col-lg-12">
                                                             <input
                                                                 name="contact"
-                                                                type="number"
+                                                                type="tel"
                                                                 id='names'
                                                                 style={{ width: "100%" }}
                                                                 placeholder="Enter your contact"
                                                                 value={values.contact}
                                                                 onChange={handleChange}
                                                                 onBlur={handleBlur}
-                                                                className={errors.contact && touched.contact && "error"}
+                                                                className={errors.contact && touched.contact && "error-input"}
                                                             />
                                                             {errors.contact && touched.contact && (
                                                                 <div className="input feedback">{errors.contact}</div>
@@ -526,12 +530,12 @@ export default function Ios() {
                     <div className="row">
                         <div className="col-lg-6 mt-4">
                             <label htmlFor="Full name ">Email name</label>
-                            <input className='text-input input' id='form' type="text" value={Temail} onChange={(e) => setTemail(e.target.value)} />
+                            <input className='text-input input' id='form' type="email" value={Temail} onChange={(e) => setTemail(e.target.value)} />
                         </div>
 
                         <div className="col-lg-6 mt-4">
                             <label htmlFor="Full name ">Number</label>
-                            <input className='text-input input' id='form' type="number" value={Tcontact} onChange={(e) => setTcontact(e.target.value)} />
+                            <input className='text-input input' id='form' type="tel" value={Tcontact} onChange={(e) => setTcontact(e.target.value)} />
                         </div>
                     </div>
 
