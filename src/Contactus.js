@@ -145,7 +145,7 @@ export default function Contactus() {
                 </div>
             </div>
 
-            <h1 className='mt-5 text-center'>For Internarional Clients Bussiness Meeting</h1>
+            <h1 className='mt-5 text-center'>For Internarional Clients Business Meeting</h1>
 
             <div className="mb-5">
                 <InlineWidget url="https://calendly.com/pdarshil996/30min" />

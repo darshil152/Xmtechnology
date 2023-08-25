@@ -534,28 +534,31 @@ export default function Career() {
                 <div className="row ms-auto">
 
                     <div className="col-lg-3">
+                        <div className="space">
 
-                        <label htmlFor="jobs">Jobs</label><br />
-                        <select name="jobs" id="names" onChange={handlejob}>
-                            <option value="">Choose</option>
-                            <option value="alls" >All Position</option>
 
-                            {
-                                position && position.map((i) => {
-                                    return (
-                                        <option>{i}</option>
+                            <label htmlFor="jobs">Jobs</label><br />
+                            <select name="jobs" id="names" onChange={handlejob} className='rounded-3'>
+                                <option value="">Choose</option>
+                                <option value="alls" >All Position</option>
 
-                                    )
-                                })
-                            }
-                        </select>
+                                {
+                                    position && position.map((i) => {
+                                        return (
+                                            <option>{i}</option>
+
+                                        )
+                                    })
+                                }
+                            </select>
+                        </div>
                     </div>
 
 
                     <div className="col-lg-3">
                         <label htmlFor="Country">Country</label><br />
 
-                        <select name="Country" id="names" onChange={handlecountry}>
+                        <select name="Country" id="names" onChange={handlecountry} className='rounded-3'>
                             <option value="">Choose</option>
                             <option value="country">All Country</option>
 
@@ -571,9 +574,9 @@ export default function Career() {
 
 
                     <div className="col-lg-3">
-                        <label htmlFor="state">state</label><br />
+                        <label htmlFor="state">State</label><br />
 
-                        <select name="state" id="names" onChange={handlestate}>
+                        <select name="state" id="names" onChange={handlestate} className='rounded-3'>
                             <option value="">Choose</option>
                             <option value="state" >All state</option>
 
@@ -588,9 +591,9 @@ export default function Career() {
                     </div>
 
                     <div className="col-lg-2">
-                        <label htmlFor="city">city</label><br />
+                        <label htmlFor="city">ity</label><br />
 
-                        <select name="city" id="names" onChange={handlecity}>
+                        <select name="city" id="names" onChange={handlecity} className='rounded-3'>
                             <option value="">Choose</option>
                             <option value="city" >All city</option>
 
