@@ -21,6 +21,7 @@ import Gmlogo from './assets/Image/gmail 1.svg';
 import Logos from './assets/Image/XM.svg';
 import firebaseApp from './Firebase/firebase';
 import { useNavigate } from 'react-router-dom';
+import { InlineWidget } from "react-calendly";
 
 
 export default function Contactus() {
@@ -142,6 +143,12 @@ export default function Contactus() {
                         <p className='web' style={{ fontSize: "20px" }}>Let’s talk about what you want to accomplish and how we can make it happen.</p>
                     </div>
                 </div>
+            </div>
+
+            <h1 className='mt-5 text-center'>For Internarional Clients Bussiness Meeting</h1>
+
+            <div className="mb-5">
+                <InlineWidget url="https://calendly.com/pdarshil996/30min" />
             </div>
 
 
