@@ -171,7 +171,7 @@ export default function Portfolio() {
                 <div className="row">
                     <div className="col-lg-12 text-center">
                         <h1 className='text-light'>Let's make something br amazing together.</h1>
-                        <p className='text-light'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        <p className='text-light'>Our futuristic and progressive IT solutions will help you attain your business goals. Contact us to make a massive difference in your business.</p>
 
                         <button className='us' onClick={tocontact}>Contant Us</button>
 

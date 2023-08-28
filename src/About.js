@@ -138,28 +138,36 @@ export default function About() {
                             <div className="row mt-5">
                                 <h1 className='text-center mb-5 ' style={{ fontWeight: "900" }}>Our Vision</h1>
 
-                                <div className="col-lg-4">
-                                    <h1 className='ipsum'>For the People</h1>
+                                <div className="col-lg-6">
+                                    <h1 className='ipsum'>Unleashing the Power of Information:</h1>
 
                                 </div>
-                                <div className="col-lg-8">
-                                    <p className='ipsum'>Lorem Ipsum is simply dummy text of the printing and typesetting <br /> industry. Lorem Ipsum has been the industry's standard dummy text  <br /> ever since the 1500s, when an unknown printer took a galley of type  <br /> and scrambled it to make a type specimen book.</p>
+                                <div className="col-lg-6">
+                                    <p className='ipsum'>In this era of rapid digital transformation, information is the cornerstone of progress. Our vision revolves around making information accessible, organized, and actionable. We believe that by harnessing the power of data and knowledge, we can drive informed decision-making, spur innovation, and enhance collaboration across all domains.
+
+                                    </p>
                                 </div>
                             </div>
                             <div className="row mt-5">
-                                <div className="col-lg-4">
-                                    <h1 className='ipsum'>For The Process</h1>
+                                <div className="col-lg-6">
+                                    <h1 className='ipsum'>Pioneering Technological Evolution:
+
+                                    </h1>
                                 </div>
-                                <div className="col-lg-8">
-                                    <p className='ipsum'>Lorem Ipsum is simply dummy text of the printing and typesetting <br /> industry. Lorem Ipsum has been the industry's standard dummy text  <br /> ever since the 1500s, when an unknown printer took a galley of type  <br /> and scrambled it to make a type specimen book.</p>
+                                <div className="col-lg-6">
+                                    <p className='ipsum'>Technology is the driving force behind innovation. Our vision is to be at the forefront of technological evolution, constantly exploring new horizons, and turning complex ideas into elegant solutions. By staying ahead of the curve, we aim to provide our audience with insights into the latest trends, breakthroughs, and advancements that are shaping the world around us.</p>
                                 </div>
                             </div>
                             <div className="row mt-5 mb-5">
-                                <div className="col-lg-4">
-                                    <h1 className='ipsum'>For The Clients</h1>
+                                <div className="col-lg-6">
+                                    <h1 className='ipsum'>Fostering Innovation and Creativity:
+
+                                    </h1>
                                 </div>
-                                <div className="col-lg-8">
-                                    <p className='ipsum'>Lorem Ipsum is simply dummy text of the printing and typesetting <br /> industry. Lorem Ipsum has been the industry's standard dummy text  <br /> ever since the 1500s, when an unknown printer took a galley of type  <br /> and scrambled it to make a type specimen book.</p>
+                                <div className="col-lg-6">
+                                    <p className='ipsum'>Innovation flourishes in an environment that encourages creativity and diversity of thought. Our vision is to cultivate a community where ideas are celebrated, and curiosity is nurtured. We aspire to be a hub for individuals to connect, collaborate, and exchange insights, ultimately fostering a culture of innovation that leads to groundbreaking solutions.
+
+                                    </p>
                                 </div>
                             </div>
                         </div>

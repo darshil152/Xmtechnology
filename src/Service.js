@@ -211,7 +211,6 @@ export default function Service() {
                                 <div className='text-center '>
                                     <div className='d-flex'>
                                         <h2 className='fw-bold m-auto'>Our Services</h2>
-                                        <img src={icon1} className='icon1' alt="" />
                                     </div>
 
                                     <p className='p-3'>We offer professional web design services at affordable rates to help your
@@ -306,7 +305,7 @@ export default function Service() {
             </div>
 
 
-            <div className="background-work">
+            <div className="background-work mt-5">
                 <div className="container">
                     <div className="row aligns">
                         <div className="d-flex align-items-center">
@@ -314,7 +313,7 @@ export default function Service() {
                                 <h6 className="human">THE HUMAN ELEMENT</h6>
                                 <p className='secret'>What's our secret? <br />
                                     Great people.</p>
-                                <p className='texts'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                                <p className='texts'>Behind every technological marvel and information breakthrough, there's an unsung hero – the people who make it all happen. At our information and technology website, we understand that the real magic lies in the collaboration, expertise, and passion of the individuals who drive innovation forward. Our secret ingredient? It's simple: great people.
                                 </p>
                                 <button className='findout'> Find out more</button>
                             </div>
@@ -487,11 +486,9 @@ export default function Service() {
                             />
                         </div>
                     </div>
-                    <h3 className='fw-bold text-light text-center mt-5 '>Intelligent Websites That Work Overtime
-                        For Marketing Results
-                    </h3>
+
                 </div>
-            </div >
+            </div>
 
 
 
