@@ -189,7 +189,7 @@ const Home = () => {
 
             <Navbar expand="lg" className="nav pb-3 pt-4 ">
                 <Container>
-                    <Navbar.Brand href=""><img src={Logo} alt="" className='img-fluid' /></Navbar.Brand>
+                    <Navbar.Brand href=""><img src={Logo} alt="" className='img-fluid headerlogo' /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">

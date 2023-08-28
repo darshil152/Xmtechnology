@@ -11,6 +11,10 @@ body {
     overflow-x: hidden;
 }
 
+img.img-fluid.headerlogo{
+    width: 90px;
+}
+
 textarea.text-input.input{
     font-size: 18px;
         line-height: 33px;
