@@ -419,7 +419,7 @@ export default function Career() {
         <>
             <Navbar expand="lg" className="nav pb-3 pt-4 ">
                 <Container>
-                    <Navbar.Brand href=""><img src={Logo} alt="" className='img-fluid headerlogo' /></Navbar.Brand>
+                    <Navbar.Brand href=""><img src={Logo} alt="" className='img-fluid headerlogo' onClick={tomain} /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
@@ -591,7 +591,7 @@ export default function Career() {
                     </div>
 
                     <div className="col-lg-2">
-                        <label htmlFor="city">ity</label><br />
+                        <label htmlFor="city">City</label><br />
 
                         <select name="city" id="names" onChange={handlecity} className='rounded-3'>
                             <option value="">Choose</option>

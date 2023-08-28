@@ -886,7 +886,7 @@ const Home = () => {
             <div className='d-flex justify-content-center p-0 m-0'>
                 <div className='footer-div'>
                     <div className='footer-div-image1'>
-                        <div className='footer-div-image2 pb-5 pt-3 p-3'>
+                        <div className='footer-div-image2 pb-5 pt-3'>
                             <Container>
                                 <Row >
                                     <Col lg={4} md={6} sm={11} className='m-auto pt-5 '>

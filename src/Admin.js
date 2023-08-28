@@ -362,6 +362,8 @@ export default function Admin() {
         });
     }
 
+
+
     const gettrial = () => {
         let x = []
         const db = firebaseApp.firestore();
