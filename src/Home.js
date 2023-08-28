@@ -217,14 +217,14 @@ const Home = () => {
                                     <div className='d-flex justify-content-center text-div'>
                                         <div className='circle1'></div>
                                         <div className='ms-lg-4' data-aos="fade-right" data-aos-duration="1500">
-                                            <h1 className='fw-bold designs' style={{ fontSize: "50px" }}>Web Design And <br />
+                                            <h1 className='fw-bold designs' style={{ fontSize: "50px" }}>Web  And App<br />
                                                 Development Company
                                             </h1>
 
-                                            <p className='web create mt-4' style={{ fontSize: "23px" }}>We create clean and creative websites that are professional and help <br />
+                                            <p className='web create mt-4' style={{ fontSize: "23px" }}>We create clean and creative websites and applications that  <br /> are professional and help
                                                 you generate more visitors  and revenue.</p>
 
-                                            <Button variant="primary" className='rounded-5 ps-4 mt-4 pe-4 pt-2 pb-2 fs-5'>Get Started</Button>{' '}
+                                            <Button variant="primary" className='rounded-5 ps-4 mt-4 pe-4 pt-2 pb-2 fs-5' onClick={tocontact}>Get Started</Button>{' '}
 
                                             <div data-aos="fade-left" data-aos-duration="2000">
                                                 <img width={50} className='pt-3  ms-5 mt-4 circle' src={circle} alt="" />
