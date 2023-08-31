@@ -1,7 +1,10 @@
 * {
        font-family: Circular Std;
-
       scroll-behavior: smooth;
+}
+
+html{
+    overflow-x: hidden;
 }
 
 body {
