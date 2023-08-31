@@ -318,16 +318,18 @@ select#name{
     text-indent: 10px;
         border: 1px solid #C4C4C4;
         width: 246px;
-        height: 55px;
+        height: 45px !important;
         margin-left: 12px;
+        
 }
 
 select#names {
     text-indent: 10px;
     border: 1px solid #C4C4C4;
     width: 314px;
-    height: 55px;
-}
+        height: 45px !important;
+   }
+
 
 select option {
     padding: 10px 20px;
@@ -469,6 +471,15 @@ img.img-fluid.saves {
 }
 
 @media screen and (max-width:472px) {
+
+    select#names {
+            text-indent: 10px;
+            border: 1px solid #C4C4C4;
+            width: 314px;
+            height: 45px !important;
+            width: 93% !important;
+        }
+
     textarea#names {
             width: 80%
         }

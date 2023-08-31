@@ -257,7 +257,7 @@ export default function Contactus() {
                                                             id='names'
                                                             style={{ width: "100%" }}
 
-                                                            placeholder="Enter your message"
+                                                            placeholder="Enter your contact number"
                                                             value={values.number}
                                                             onChange={handleChange}
                                                             onBlur={handleBlur}
@@ -273,7 +273,7 @@ export default function Contactus() {
 
                                                 <div className="row">
                                                     <div className="col-lg-12 mt-4">
-                                                        <textarea name="" cols="255" rows="10" id='forms' style={{ width: "100%" }} value={address} onChange={(e) => setaddress(e.target.value)} placeholder="Enter your address"
+                                                        <textarea name="" cols="255" rows="10" id='forms' style={{ width: "100%" }} value={address} onChange={(e) => setaddress(e.target.value)} placeholder="Enter your message"
                                                         ></textarea>
 
                                                     </div>
