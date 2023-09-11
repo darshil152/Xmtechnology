@@ -142,30 +142,30 @@ export default function Service() {
 
 
     const tomain = () => {
-        window.location.href = "/"
+        navigate("/")
     }
 
     const topage = () => {
-        window.location.href = "/career"
+        navigate("/career")
     }
 
     const toservice = () => {
-        window.location.href = "/service"
+        navigate("/service")
     }
 
     const toabout = () => {
-        window.location.href = "/about"
+        navigate("/about")
     }
 
     const toportfolio = () => {
-        window.location.href = "/portfolio"
+        navigate("/portfolio")
     }
 
     const tohire = () => {
-        window.location.href = "/hire/react"
+        navigate("/hire/react")
     }
     const tocontact = () => {
-        window.location.href = "/contact"
+        navigate("/contact")
 
     }
 
@@ -319,7 +319,7 @@ export default function Service() {
                             </div>
                             <div className="col-lg-4 d-flex">
                                 <img
-                                    src={service1}
+                                    src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fservice1.png?alt=media&token=a07d78be-d8a7-4955-a027-5d40827c3e44"}
                                     className='mt-5 ms-auto rounded-5'
                                 />
                             </div>
@@ -429,18 +429,18 @@ export default function Service() {
                     <div className="row">
                         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
                             <img
-                                src={img1}
+                                src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg1.png?alt=media&token=d123657a-8a89-4d8b-b031-391a846cf582"}
                                 class="w-100 shadow-1-strong rounded mb-4 grids"
                                 alt="Boat on Calm Water"
                             />
 
                             <img
-                                src={img2}
+                                src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg2.png?alt=media&token=292f37bd-0f4a-4bc4-98f3-a74e7a1649a8"}
                                 class="w-100 shadow-1-strong rounded mb-4 grids"
                                 alt="Wintry Mountain Landscape"
                             />
                             <img
-                                src={img3}
+                                src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg3.png?alt=media&token=218ed0a2-1aa9-465b-8cee-58bc491da067"}
                                 class="w-100 shadow-1-strong rounded mb-4 grids"
                                 alt="Mountains in the Clouds"
                             />
@@ -448,19 +448,19 @@ export default function Service() {
 
                         <div class="col-lg-4 mb-4 mb-lg-0">
                             <img
-                                src={img4}
+                                src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg4.png?alt=media&token=d09a5411-9129-4792-bbeb-e388f62b701c"}
                                 class="w-100 shadow-1-strong rounded mb-4 grids"
                                 alt="Mountains in the Clouds"
                             />
 
                             <img
-                                src={img5}
+                                src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg5.png?alt=media&token=fd33c58f-a4bc-46ce-b370-08543ab15f7a"}
                                 class="w-100 shadow-1-strong rounded mb-4 grids"
                                 alt="Boat on Calm Water"
                             />
 
                             <img
-                                src={img6}
+                                src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg6.png?alt=media&token=6f267782-aafd-4b47-8ee6-17f77b60cdf3"}
                                 class="w-100 shadow-1-strong rounded mb-4 grids"
                                 alt="Boat on Calm Water"
                             />
@@ -468,19 +468,19 @@ export default function Service() {
 
                         <div class="col-lg-4 mb-4 mb-lg-0">
                             <img
-                                src={img7}
+                                src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg7.png?alt=media&token=ea728e04-191d-47e8-952b-1eb3f4164c53"}
                                 class="w-100 shadow-1-strong rounded mb-4 grids"
                                 alt="Waves at Sea"
                             />
 
                             <img
-                                src={img8}
+                                src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg8.png?alt=media&token=773e6146-1283-43cf-b0cf-6a03a6f494ac"}
                                 class="w-100 shadow-1-strong rounded mb-4 grids"
                                 alt="Yosemite National Park"
                             />
 
                             <img
-                                src={img9}
+                                src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg9.png?alt=media&token=a28c6a7c-9e62-4252-9d90-d3a57a0fac44"}
                                 class="w-100 shadow-1-strong rounded mb-4 grids"
                                 alt="Yosemite National Park"
                             />
@@ -713,7 +713,9 @@ export default function Service() {
                                             </div>
                                             <div className='d-flex pt-2'>
                                                 <img src={MailIcon} alt="" />
-                                                <h6 className='ms-3 pt-1'>info@xmtechnologoies.com</h6>
+                                                <a className='mails' href="mailto:info@xmtechnologies.com">
+                                                    <h6 className='ms-3 pt-1'>info@xmtechnologies.com</h6></a>
+
                                             </div>
                                         </div>
 

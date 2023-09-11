@@ -108,7 +108,7 @@ input.text-input.input.datass{
 }
 
 .always {
-    background: url(./assets/Image/Group\ 1000001715.png);
+    background: url("https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2FGroup%201000001715%20(1).png?alt=media&token=43919050-19b6-44e3-b3b7-9f7b7a4fc9b4");
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -118,7 +118,7 @@ input.text-input.input.datass{
 h1.alwayss {
     color: var(--white, #FFF);
         font-family: Circular Std;
-
+margin-top: 60px;
        font-size: 60px;
     font-style: normal;
     font-weight: 700;
@@ -380,6 +380,8 @@ img.img-fluid.saves {
     margin-left: 100px;
     padding-top: 30px;
 }
+
+
 
 @media screen and (max-width:576px) {
 

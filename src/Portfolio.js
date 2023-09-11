@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Container from 'react-bootstrap/Container';
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -34,34 +35,7 @@ import img7 from "./assets/Image/img7.png"
 import img8 from "./assets/Image/img8.png"
 
 
-const topage = () => {
-    window.location.href = "/career"
-}
 
-const toservice = () => {
-    window.location.href = "/service"
-}
-
-const toabout = () => {
-    window.location.href = "/about"
-}
-
-const toportfolio = () => {
-    window.location.href = "/portfolio"
-}
-
-const tohire = () => {
-    window.location.href = "/hire/react"
-}
-
-
-const tomain = () => {
-    window.location.href = "/"
-}
-const tocontact = () => {
-    window.location.href = "/contact"
-
-}
 
 export default function Portfolio() {
 
@@ -70,6 +44,39 @@ export default function Portfolio() {
 
 
     }, [])
+
+    const navigate = useNavigate();
+
+    const topage = () => {
+        navigate("/career")
+    }
+
+    const toservice = () => {
+        navigate("/service")
+    }
+
+    const toabout = () => {
+        navigate("/about")
+    }
+
+    const toportfolio = () => {
+        navigate("/portfolio")
+    }
+
+    const tohire = () => {
+        navigate("/hire/react")
+    }
+
+
+    const tomain = () => {
+        navigate("/")
+    }
+    const tocontact = () => {
+        navigate("/contact")
+
+    }
+
+
 
     return (
         <>
@@ -108,13 +115,15 @@ export default function Portfolio() {
                 <div className="row mt-5 ">
                     <div className="col-lg-6  col-md-6 centering">
 
-                        <img src={img1} className='mb-3' />
+                        <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg4.png?alt=media&token=d09a5411-9129-4792-bbeb-e388f62b701c"}
+                            className='mb-3' />
                         XM Store <br />
                         UI / UX Design
                     </div>
                     <div className="col-lg-6  col-md-6 centering mt-5">
 
-                        <img src={img2} className='mb-3' />
+                        <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg5.png?alt=media&token=fd33c58f-a4bc-46ce-b370-08543ab15f7a"}
+                            className='mb-3' />
                         XM Store <br />
                         UI / UX Design
                     </div>
@@ -123,13 +132,15 @@ export default function Portfolio() {
                 <div className="row mt-5">
                     <div className="col-lg-6  col-md-6 centering">
 
-                        <img src={img3} className='mb-3' />
+                        <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg6.png?alt=media&token=6f267782-aafd-4b47-8ee6-17f77b60cdf3"}
+                            className='mb-3' />
                         XM Store <br />
                         UI / UX Design
                     </div>
                     <div className="col-lg-6  col-md-6 centering mt-5">
 
-                        <img src={img4} className='mb-3' />
+                        <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg7.png?alt=media&token=ea728e04-191d-47e8-952b-1eb3f4164c53"}
+                            className='mb-3' />
                         XM Store <br />
                         UI / UX Design
                     </div>
@@ -138,13 +149,15 @@ export default function Portfolio() {
                 <div className="row mt-5">
                     <div className="col-lg-6  col-md-6 centering">
 
-                        <img src={img5} className='mb-3' />
+                        <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg8.png?alt=media&token=773e6146-1283-43cf-b0cf-6a03a6f494ac"}
+                            className='mb-3' />
                         XM Store <br />
                         UI / UX Design
                     </div>
                     <div className="col-lg-6  col-md-6 centering mt-5">
 
-                        <img src={img6} className='mb-3' />
+                        <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg9.png?alt=media&token=a28c6a7c-9e62-4252-9d90-d3a57a0fac44"}
+                            className='mb-3' />
                         XM Store <br />
                         UI / UX Design
                     </div>
@@ -153,13 +166,15 @@ export default function Portfolio() {
                 <div className="row mt-5 mb-5">
                     <div className="col-lg-6  col-md-6 centering">
 
-                        <img src={img8} className='mb-3' />
+                        <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg1.png?alt=media&token=d123657a-8a89-4d8b-b031-391a846cf582"}
+                            className='mb-3' />
                         XM Store <br />
                         UI / UX Design
                     </div>
                     <div className="col-lg-6  col-md-6 centering mt-5">
 
-                        <img src={img7} className='mb-3' />
+                        <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fimg2.png?alt=media&token=292f37bd-0f4a-4bc4-98f3-a74e7a1649a8"}
+                            className='mb-3' />
                         XM Store <br />
                         UI / UX Design
                     </div>
@@ -250,7 +265,9 @@ export default function Portfolio() {
                                             </div>
                                             <div className='d-flex pt-2'>
                                                 <img src={MailIcon} alt="" />
-                                                <h6 className='ms-3 pt-1'>info@xmtechnologoies.com</h6>
+                                                <a href="mailto:info@xmtechnologies.com">
+                                                    <h6 className='ms-3 pt-1'>info@xmtechnologies.com</h6></a>
+
                                             </div>
                                         </div>
 

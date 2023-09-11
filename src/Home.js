@@ -73,6 +73,7 @@ import bgImg from './assets/Image/2752392-removebg-preview 1.png';
 const Home = () => {
 
 
+
     useEffect(() => {
 
         AOS.init();
@@ -159,28 +160,32 @@ const Home = () => {
 
 
     const topage = () => {
-        window.location.href = "/career"
+        navigate("/career")
     }
 
     const toservice = () => {
-        window.location.href = "/service"
+        navigate("/service")
+
     }
 
     const toabout = () => {
-        window.location.href = "/about"
+        navigate("/about")
+
     }
 
     const toportfolio = () => {
-        window.location.href = "/portfolio"
+        navigate("/portfolio")
+
     }
 
     const tohire = () => {
-        window.location.href = "/hire/react"
+        navigate("/hire/react")
+
+
     }
 
     const tocontact = () => {
-        window.location.href = "/contact"
-
+        navigate("/contact")
     }
 
 
@@ -738,9 +743,11 @@ const Home = () => {
                                             <h6 className='ms-3 pt-1'>+91 999-888-0845</h6>
                                         </div>
 
-                                        <div className='d-flex pt-4'>
+                                        <div className='d-flex pt-2'>
                                             <img src={MailIcon} alt="" />
-                                            <h6 className='ms-3 pt-1'>info@xmtechnologoies.com</h6>
+                                            <a href="mailto:info@xmtechnologies.com">
+                                                <h6 className='ms-3 pt-1'>info@xmtechnologies.com</h6></a>
+
                                         </div>
                                     </div>
                                 </Col>
@@ -953,7 +960,9 @@ const Home = () => {
                                             </div>
                                             <div className='d-flex pt-2'>
                                                 <img src={MailIcon} alt="" />
-                                                <h6 className='ms-3 pt-1'>info@xmtechnologoies.com</h6>
+                                                <a className='mails' href="mailto:info@xmtechnologies.com">
+                                                    <h6 className='ms-3 pt-1'>info@xmtechnologies.com</h6></a>
+
                                             </div>
                                         </div>
 

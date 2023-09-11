@@ -10,8 +10,11 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Logo from './assets/Image/XM.png';
+import { useNavigate } from "react-router-dom";
 
 export default function Admin() {
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         getuestion()
@@ -22,33 +25,39 @@ export default function Admin() {
     }, [])
 
     const topage = () => {
-        window.location.href = "/career"
+        navigate("/career")
+
+
     }
 
     const toservice = () => {
-        window.location.href = "/service"
+        navigate("/service")
+
     }
 
     const toabout = () => {
-        window.location.href = "/about"
+        navigate("/about")
+
     }
 
     const toportfolio = () => {
-        window.location.href = "/portfolio"
+        navigate("/portfolio")
+
     }
 
     const tohire = () => {
-        window.location.href = "/hire/react"
+        navigate("/hire/react")
+
     }
 
 
     const tomain = () => {
-        window.location.href = "/"
+        navigate("/")
+
     }
 
     const tocontact = () => {
-        window.location.href = "/contact"
-
+        navigate("/contact")
     }
 
 

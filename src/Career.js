@@ -14,10 +14,11 @@ import MUIDataTable from "mui-datatables";
 import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import './Career.css'
-import Data from './Data';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -218,7 +219,7 @@ export default function Career() {
         let myPromise = new Promise((resolve, reject) => {
 
             const myGuid = guid();
-            const storageUrl = firebaseApp.storage('gs://test-15878.appspot.com')
+            const storageUrl = firebaseApp.storage('gs://xmtechnologies-853d7.appspot.com')
             const storageRef = storageUrl.ref();
             console.log('ref : ', storageRef)
             const uploadTask = storageRef.child('Xmtech').child('resume').child(myGuid).put(file)
@@ -232,7 +233,7 @@ export default function Career() {
                 }, () => {
 
                     firebaseApp
-                        .storage('gs://test-15878.appspot.com')
+                        .storage('gs://xmtechnologies-853d7.appspot.com')
                         .ref()
                         .child('Xmtech')
                         .child('resume')
@@ -355,60 +356,67 @@ export default function Career() {
 
 
     const tomain = () => {
-        window.location.href = "/"
+        navigate("/")
+
     }
 
     const topage = () => {
-        window.location.href = "/career"
+        navigate("/career")
+
     }
 
     const toservice = () => {
-        window.location.href = "/service"
+        navigate("/service")
+
     }
 
     const toabout = () => {
-        window.location.href = "/about"
+        navigate("/about")
+
     }
 
     const toportfolio = () => {
-        window.location.href = "/portfolio"
+        navigate("/portfolio")
+
     }
 
     const tohire = () => {
-        window.location.href = "/hire/react"
+        navigate("/hire/react")
+
     }
 
     const tocontact = () => {
-        window.location.href = "/contact"
+        navigate("/contact")
+
 
     }
 
 
     const toreact = () => {
-        window.location.href = "/hire/react"
+        navigate("/hire/react")
     }
 
 
     const topython = () => {
-        window.location.href = "/hire/python"
+        navigate("/hire/python")
 
     }
 
     const toios = () => {
-        window.location.href = "/hire/ios"
+        navigate("/hire/ios")
     }
 
 
     const tonode = () => {
-        window.location.href = "/hire/node"
+        navigate("/hire/node")
     }
 
     const toandroid = () => {
-        window.location.href = "/hire/android"
+        navigate("/hire/android")
     }
 
     const tofigmat = () => {
-        window.location.href = "/hire/ui"
+        navigate("/hire/ui")
     }
 
 
@@ -458,11 +466,28 @@ export default function Career() {
                     </div>
                     <div className="col-lg-6" data-aos="fade-right"
                         data-aos-duration="3000">
-                        <img src={frame} className='img-fluid saves' />
+                        <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2FFrame.png?alt=media&token=01476b03-e186-457b-bd22-db1a9bf19151"} className='img-fluid saves' />
                     </div>
                 </div>
             </div>
 
+            <Tabs >
+                <TabList>
+                    <Tab>Website Development</Tab>
+                    <Tab>Application development</Tab>
+                    <Tab>Ui/Ux Development</Tab>
+
+                </TabList>
+
+                <TabPanel>
+
+
+
+                </TabPanel>
+                <TabPanel>
+                    <h2>Any content 2</h2>
+                </TabPanel>
+            </Tabs>
 
             <div className="container-fluid foryou" >
                 <div className="row">
@@ -471,37 +496,42 @@ export default function Career() {
                         <div className="row " data-aos="fade-up"
                             data-aos-duration="3000">
                             <div className="col-lg-4">
-                                <img src={react} className='img-fluid saves' onClick={toreact} />
+                                <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Freact.png?alt=media&token=50f4110f-d5c5-4db3-8e01-3dee262b8d6b "} className='img-fluid saves' onClick={toreact} />
                             </div>
                             <div className="col-lg-4">
-                                <img src={python} className='img-fluid saves' onClick={topython} />
+                                <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fpython.png?alt=media&token=50c313a9-4d24-4da8-aa12-238a8c0cf898"} className='img-fluid saves' onClick={topython} />
                             </div>
                             <div className="col-lg-4">
-                                <img src={node} className='img-fluid saves' onClick={tonode} />
+                                <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fnode.png?alt=media&token=c49774bb-00f5-42bf-9b92-af62ad2298fc"} className='img-fluid saves' onClick={tonode} />
                             </div>
                         </div>
                         <div className="row mb-5" data-aos="fade-up"
                             data-aos-duration="3000">
                             <div className="col-lg-4">
-                                <img src={ios} className='img-fluid saves' onClick={toios} />
+                                <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fios.png?alt=media&token=59f19538-010f-41ad-883b-0117fca6894c"} className='img-fluid saves' onClick={toios} />
                             </div>
                             <div className="col-lg-4">
-                                <img src={android} className='img-fluid saves' onClick={toandroid} />
+                                <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fandroid.png?alt=media&token=6de6310b-7571-4dc7-972b-2e5ea06f9523"} className='img-fluid saves' onClick={toandroid} />
                             </div>
                             <div className="col-lg-4">
-                                <img src={figma} className='img-fluid saves' onClick={tofigmat} />
+                                <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Ffigma.png?alt=media&token=2edf48b4-c20b-4674-9ca9-2f2a8cdb3466"} className='img-fluid saves' onClick={tofigmat} />
                             </div>
                         </div>
                     </div>
-                </div>
+                </div >
             </div>
+
+
+
+
+
 
 
             <div className="container-fluid forbg">
                 <div className="row" >
                     <div className="col-lg-6" data-aos="fade-left"
                         data-aos-duration="3000" style={{ padding: "55px" }}>
-                        <img src={group} className='img-fluid ms-auto' />
+                        <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fforming%20team%20leadership-rafiki%201.png?alt=media&token=97dcafa9-d976-4bda-9e00-2a0c406ba3a8"} className='img-fluid ms-auto' />
                     </div>
                     <div className="col-lg-6" data-aos="fade-right"
                         data-aos-duration="3000" style={{ padding: "55px" }} >
@@ -705,7 +735,9 @@ export default function Career() {
                                             </div>
                                             <div className='d-flex pt-2'>
                                                 <img src={MailIcon} alt="" />
-                                                <h6 className='ms-3 pt-1'>info@xmtechnologoies.com</h6>
+                                                <a className='mails' href="mailto:info@xmtechnologies.com">
+                                                    <h6 className='ms-3 pt-1'>info@xmtechnologies.com</h6></a>
+
                                             </div>
                                         </div>
 

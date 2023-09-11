@@ -10,11 +10,9 @@ import { Button, Col, Image, Row } from 'react-bootstrap';
 import { City, Country, State } from "country-state-city";
 import Selector from "./Selector";
 import './Career.css'
-import Data from './Data';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import office from "./assets/Image/office.png"
 import icon1 from './assets/Image/circle.svg';
 import Logos from './assets/Image/XM.svg';
@@ -27,42 +25,44 @@ import Inlogo from './assets/Image/in.png';
 import Intralogo from './assets/Image/instagram-sketched 1.svg';
 import Sklogo from './assets/Image/skype 1.svg';
 import Gmlogo from './assets/Image/gmail 1.svg';
+import { useNavigate } from "react-router-dom";
 
 
 import { PopupWidget } from "react-calendly";
 
 export default function About() {
+    const navigate = useNavigate();
 
     const [isOpen, setIsopen] = useState(false)
 
 
     const topage = () => {
-        window.location.href = "/career"
+        navigate("/career")
     }
 
     const toservice = () => {
-        window.location.href = "/service"
+        navigate("/service")
     }
 
     const toabout = () => {
-        window.location.href = "/about"
+        navigate("/about")
     }
 
     const toportfolio = () => {
-        window.location.href = "/portfolio"
+        navigate("/portfolio")
     }
 
     const tohire = () => {
-        window.location.href = "/hire/react"
+        navigate("/hire/react")
     }
 
 
     const tomain = () => {
-        window.location.href = "/"
+        navigate("/")
     }
 
     const tocontact = () => {
-        window.location.href = "/contact"
+        navigate("/contact")
 
     }
 
@@ -101,7 +101,7 @@ export default function About() {
             <div className="container-fluid" data-aos="fade-up" data-aos-duration="1500">
                 <div className="row">
                     <div className="col-lg-6" style={{ padding: "55px" }}>
-                        <img src={office} className='img-fluid rounded-4 ms-auto chairs' />
+                        <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Foffice.png?alt=media&token=6fe7c2f6-3ec8-4ed6-aaad-650337c1e533"} className='img-fluid rounded-4 ms-auto chairs' />
                     </div>
                     <div className="col-lg-6" style={{ padding: "55px" }} >
                         <h1 className="mt-5 xm ipsum">XM Technologies</h1>
@@ -311,7 +311,9 @@ export default function About() {
                                             </div>
                                             <div className='d-flex pt-2'>
                                                 <img src={MailIcon} alt="" />
-                                                <h6 className='ms-3 pt-1'>info@xmtechnologoies.com</h6>
+                                                <a className='mails' href="mailto:info@xmtechnologies.com">
+                                                    <h6 className='ms-3 pt-1'>info@xmtechnologies.com</h6></a>
+
                                             </div>
                                         </div>
 

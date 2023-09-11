@@ -146,32 +146,33 @@ export default function Ios() {
     }
 
     const topage = () => {
-        window.location.href = "/career"
+        navigate("/career")
+
     }
 
     const toservice = () => {
-        window.location.href = "/service"
+        navigate("/service")
     }
 
     const toabout = () => {
-        window.location.href = "/about"
+        navigate("/about")
     }
 
     const toportfolio = () => {
-        window.location.href = "/portfolio"
+        navigate("/portfolio")
     }
 
     const tohire = () => {
-        window.location.href = "/hire/react"
+        navigate("/hire/react")
     }
 
     const tocontact = () => {
-        window.location.href = "/contact"
+        navigate("/contact")
 
     }
 
     const tomain = () => {
-        window.location.href = "/"
+        navigate("/")
 
     }
 
@@ -624,7 +625,9 @@ export default function Ios() {
                                             </div>
                                             <div className='d-flex pt-2'>
                                                 <img src={MailIcon} alt="" />
-                                                <h6 className='ms-3 pt-1'>info@xmtechnologoies.com</h6>
+                                                <a className='mails' href="mailto:info@xmtechnologies.com">
+                                                    <h6 className='ms-3 pt-1'>info@xmtechnologies.com</h6></a>
+
                                             </div>
                                         </div>
 
