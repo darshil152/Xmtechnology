@@ -617,12 +617,12 @@ export default function Node() {
                                             </div>
                                             <div className='d-flex pt-2'>
                                                 <img src={CallIcon} alt="" />
-                                                <h6 className='ms-3 pt-1'>+91 999-888-0845</h6>
+                                                <h6 className='ms-3 pt-1'>+91 9624068750</h6>
                                             </div>
                                             <div className='d-flex pt-2'>
                                                 <img src={MailIcon} alt="" />
-                                                <a className='mails' href="mailto:info@xmtechnologies.com">
-                                                    <h6 className='ms-3 pt-1'>info@xmtechnologies.com</h6></a>
+                                                <a className='mails' href="mailto:info@xmtechnologies.in">
+                                                    <h6 className='ms-3 pt-1'>info@xmtechnologies.in</h6></a>
 
                                             </div>
                                         </div>

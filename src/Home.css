@@ -655,6 +655,12 @@ button.us {
     background-size: cover;
 }
 
+
+a.abc{
+    color: white;
+    text-decoration: none;
+}
+
 @media screen and (max-width:390px) {
 
     input.PhoneInputInput {

@@ -26,7 +26,11 @@ import Intralogo from './assets/Image/instagram-sketched 1.svg';
 import Sklogo from './assets/Image/skype 1.svg';
 import Gmlogo from './assets/Image/gmail 1.svg';
 import { useNavigate } from "react-router-dom";
+import men from "./assets/Image/download (2).jpg"
+import women from "./assets/Image/download (3).jpg"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 import { PopupWidget } from "react-calendly";
 
@@ -187,54 +191,314 @@ export default function About() {
                     </Row>
 
 
-                    <Row>
-                        <div className=' mb-5 dics'>
-                            <Col lg={4} md={6}>
-                                <div className='border border-secondary-subtle  m-auto text-center p-4 mt-5 ms-2 me-3 mb-2' style={{ width: "350px" }}>
-                                    {/* <img className='image-text-div img-fluid' width={55} height={60} src={testimonial1} alt="" /> */}
-                                    <div className='d-flex  justify-content-center'>
-                                        <div className='image-text-div'></div>
-                                    </div>
-                                    <h4 className='fw-bold pt-3'>Tim Brown</h4>
-                                    <p className='web'>Can say about these guys only good
-                                        words. After we build a website the
-                                        customer's flow is quite stable and our
-                                        SEO results growing. </p>
-                                    ⭐⭐⭐⭐⭐
-                                </div>
-                            </Col>
-                            <Col lg={4} md={6}>
-                                <div className='border border-secondary-subtle  m-auto text-center p-4  mt-5  ms-2 me-3 mb-2' style={{ width: "350px" }}>
-                                    {/* <img className='image-text-div' width={55} src={testimonial2} alt="" /> */}
-                                    <div className='d-flex  justify-content-center'>
-                                        <div className='image-text-div1'></div>
-                                    </div>
-                                    <h4 className='fw-bold pt-3'>Michael Vice</h4>
-                                    <p className='web'>Can say about these guys only good
-                                        words. After we build a website the
-                                        customer's flow is quite stable and our
-                                        SEO results growing. </p>
-                                    ⭐⭐⭐⭐⭐
-                                </div>
-                            </Col>
-                            <Col lg={4} md={6}>
-                                <div className='border border-secondary-subtle  m-auto text-center p-4  mt-5  ms-2 me-3 mb-2' style={{ width: "350px" }}>
-                                    {/* <img className='image-text-div' width={55} height={55} src={testimonial3} alt="" /> */}
-                                    <div className='d-flex  justify-content-center'>
-                                        <div className='image-text-div2'></div>
-                                    </div>
-                                    <h4 className='fw-bold pt-3'>Lucy Raymond</h4>
-                                    <p className='web'>Can say about these guys only good
-                                        words. After we build a website the
-                                        customer's flow is quite stable and our
-                                        SEO results growing. </p>
-                                    ⭐⭐⭐⭐⭐
-                                </div>
-                            </Col>
+                    <div id="myCarousel" className="carousel slide" data-ride="carousel">
+                        {/* Carousel indicators */}
+                        <ol className="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to={0} className="active" />
+                            <li data-target="#myCarousel" data-slide-to={1} />
+                            <li data-target="#myCarousel" data-slide-to={2} />
+                            <li data-target="#myCarousel" data-slide-to={3} />
+                            <li data-target="#myCarousel" data-slide-to={4} />
+                            <li data-target="#myCarousel" data-slide-to={5} />
+                            <li data-target="#myCarousel" data-slide-to={6} />
+                            <li data-target="#myCarousel" data-slide-to={7} />
 
+                        </ol>
+                        {/* Wrapper for carousel items */}
+                        <div className="carousel-inner">
+                            <div className="carousel-item active">
+                                <div className="img-box">
+                                    <img src={women} alt="" />
+                                </div>
+                                <p className="testimonial">
+                                    I'm so glad I found Akash's team. XM Technologies have a team of experienced IT professionals who are able to handle any problem I throw their way. I'm a very satisfied. Thank you so much akash !!
+                                </p>
+                                <p className="overview">
+                                    <b>Silvia Tucker
+                                    </b>
+                                </p>
+                                <div className="star-rating">
+                                    <ul className="list-inline">
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="carousel-item">
+                                <div className="img-box">
+                                    <img src={men} alt="" />
+                                </div>
+                                <p className="testimonial">
+                                    I had a very positive experience with XM Technologies. They were very responsive to my needs and they delivered very good works that was exactly what I wanted. I would definitely recommend them to anyone looking for web development services.
+                                </p>
+                                <p className="overview">
+                                    <b>Zak Edris</b>
+                                </p>
+                                <div className="star-rating">
+                                    <ul className="list-inline">
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="carousel-item">
+                                <div className="img-box">
+                                    <img src={men} alt="" />
+
+                                </div>
+                                <p className="testimonial">
+                                    We were looking for permanent based software development company to help us to grow our business. We found Akash and were very impressed with their portfolio and their team's expertise. They were able to understand our needs and deliver a website that exceeded our expectations. We would definitely recommend XM Technologies to anyone looking for a reliable and experienced software development company
+                                </p>
+                                <p className="overview">
+                                    <b>Lary Bautista
+                                    </b>
+                                </p>
+                                <div className="star-rating">
+                                    <ul className="list-inline">
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star-half-o" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div className="carousel-item">
+                                <div className="img-box">
+                                    <img src={women} alt="" />
+
+                                </div>
+                                <p className="testimonial">
+                                    We needed to improve the security of our software applications. We contacted XM Technologies and they were able to assess our needs and implement a number of security measures that have made our applications much more secure. The team was very knowledgeable and professional, and they were able to deliver the project on time and within budget. We would definitely recommend XMT to anyone looking to improve the security of their software                                </p>
+                                <p className="overview">
+                                    <b>Suminthra Binda
+                                    </b>
+                                </p>
+                                <div className="star-rating">
+                                    <ul className="list-inline">
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star-half-o" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div className="carousel-item">
+                                <div className="img-box">
+                                    <img src={men} alt="" />
+
+                                </div>
+                                <p className="testimonial">
+                                    I would definitely recommend XM Technologies to anyone looking for natural language processing development services. We needed to develop an AI-powered natural language processing system. Akash helped us to do this, and the system has been very powerful. We have been able to use the system to extract insights from text data, and we have been able to make better decisions based on this data. I had great working with XM Tech. I like Akash's passion related the work.</p>
+                                <p className="overview">
+                                    <b>Salavador Espejo
+
+                                    </b>
+                                </p>
+                                <div className="star-rating">
+                                    <ul className="list-inline">
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star-half-o" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="carousel-item">
+                                <div className="img-box">
+                                    <img src={men} alt="" />
+
+                                </div>
+                                <p className="testimonial">
+                                    The services I received from XM Technologies was excellent. They were very responsive to my questions and they went above and beyond to make sure that I was satisfied with the data collection process. I would definitely use this company again.</p>
+                                <p className="overview">
+                                    <b>Indian TTS
+                                    </b>
+                                </p>
+                                <div className="star-rating">
+                                    <ul className="list-inline">
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star-half-o" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div className="carousel-item">
+                                <div className="img-box">
+                                    <img src={men} alt="" />
+
+                                </div>
+                                <p className="testimonial">
+                                    Hi Akash !! Your team was a pleasure to work with. They were friendly, professional, and knowledgeable. I would definitely work with your company again</p>
+                                <p className="overview">
+                                    <b>Gabriela Lopez
+
+                                    </b>
+                                </p>
+                                <div className="star-rating">
+                                    <ul className="list-inline">
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star-half-o" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="carousel-item">
+                                <div className="img-box">
+                                    <img src={men} alt="" />
+
+                                </div>
+                                <p className="testimonial">
+                                    The team at XM Technologies was incredibly responsive and helpful throughout the entire process. They took the time to understand our needs and created a designs that was both beautiful and functional. We are happier with the results.</p>
+                                <p className="overview">
+                                    <b>Bringo Tech
+                                    </b>
+                                </p>
+                                <div className="star-rating">
+                                    <ul className="list-inline">
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star-half-o" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="carousel-item">
+                                <div className="img-box">
+                                    <img src={women} alt="" />
+
+                                </div>
+                                <p className="testimonial">
+                                    Hi Akash !! Your team was a pleasure to work with. They were friendly, professional, and knowledgeable. I would definitely work with your company again                           <b>Gabriela Lopez
+
+
+                                    </b>
+                                </p>
+                                <div className="star-rating">
+                                    <ul className="list-inline">
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <i className="fa fa-star-half-o" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </Row>
-
+                        {/* Carousel controls */}
+                        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev" >
+                            <FontAwesomeIcon icon={faArrowLeft} />
+                        </a>
+                        <a class="carousel-control-next" href="#myCarousel" data-slide="next" >
+                            <FontAwesomeIcon icon={faArrowRight} />
+                        </a>
+                    </div>
                 </Container>
             </div>
 
@@ -307,12 +571,12 @@ export default function About() {
                                             </div>
                                             <div className='d-flex pt-2'>
                                                 <img src={CallIcon} alt="" />
-                                                <h6 className='ms-3 pt-1'>+91 999-888-0845</h6>
+                                                <h6 className='ms-3 pt-1'>+91 9624068750</h6>
                                             </div>
                                             <div className='d-flex pt-2'>
                                                 <img src={MailIcon} alt="" />
-                                                <a className='mails' href="mailto:info@xmtechnologies.com">
-                                                    <h6 className='ms-3 pt-1'>info@xmtechnologies.com</h6></a>
+                                                <a className='mails' href="mailto:info@xmtechnologies.in">
+                                                    <h6 className='ms-3 pt-1'>info@xmtechnologies.in</h6></a>
 
                                             </div>
                                         </div>

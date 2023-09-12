@@ -471,23 +471,23 @@ export default function Career() {
                 </div>
             </div>
 
-            <Tabs >
-                <TabList>
-                    <Tab>Website Development</Tab>
-                    <Tab>Application development</Tab>
-                    <Tab>Ui/Ux Development</Tab>
+            // <Tabs >
+            //     <TabList>
+            //         <Tab>Website Development</Tab>
+            //         <Tab>Application development</Tab>
+            //         <Tab>Ui/Ux Development</Tab>
 
-                </TabList>
+            //     </TabList>
 
-                <TabPanel>
+            //     <TabPanel>
 
 
 
-                </TabPanel>
-                <TabPanel>
-                    <h2>Any content 2</h2>
-                </TabPanel>
-            </Tabs>
+            //     </TabPanel>
+            //     <TabPanel>
+            //         <h2>Any content 2</h2>
+            //     </TabPanel>
+            // </Tabs>
 
             <div className="container-fluid foryou" >
                 <div className="row">
@@ -731,12 +731,12 @@ export default function Career() {
                                             </div>
                                             <div className='d-flex pt-2'>
                                                 <img src={CallIcon} alt="" />
-                                                <h6 className='ms-3 pt-1'>+91 999-888-0845</h6>
+                                                <h6 className='ms-3 pt-1'>+91 9624068750</h6>
                                             </div>
                                             <div className='d-flex pt-2'>
                                                 <img src={MailIcon} alt="" />
-                                                <a className='mails' href="mailto:info@xmtechnologies.com">
-                                                    <h6 className='ms-3 pt-1'>info@xmtechnologies.com</h6></a>
+                                                <a className='mails' href="mailto:info@xmtechnologies.in">
+                                                    <h6 className='ms-3 pt-1'>info@xmtechnologies.in</h6></a>
 
                                             </div>
                                         </div>
