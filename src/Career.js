@@ -267,8 +267,6 @@ export default function Career() {
         const db = firebaseApp.firestore();
         db.collection('Jobs').get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-
-
                 dummydata.push(doc.data())
                 alldata.push(doc.data())
                 setItem(alldata)
@@ -298,6 +296,7 @@ export default function Career() {
 
 
             })
+            console.log(showdata)
         }).catch(err => {
             console.error(err)
         });
@@ -471,23 +470,7 @@ export default function Career() {
                 </div>
             </div>
 
-            // <Tabs >
-            //     <TabList>
-            //         <Tab>Website Development</Tab>
-            //         <Tab>Application development</Tab>
-            //         <Tab>Ui/Ux Development</Tab>
 
-            //     </TabList>
-
-            //     <TabPanel>
-
-
-
-            //     </TabPanel>
-            //     <TabPanel>
-            //         <h2>Any content 2</h2>
-            //     </TabPanel>
-            // </Tabs>
 
             <div className="container-fluid foryou" >
                 <div className="row">
