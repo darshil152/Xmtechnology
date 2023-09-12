@@ -27,7 +27,7 @@ function App() {
           <Route path="/admin" element={<Admin />} />
 
 
-          <Route path="/hire/react" element={<ReactDeveloper />} />
+          <Route path="/hire/dev" element={<ReactDeveloper />} />
           <Route path="/hire/python" element={<Python />} />
           <Route path="/hire/node" element={<Node />} />
           <Route path="/hire/android" element={<Android />} />

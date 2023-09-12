@@ -392,7 +392,7 @@ export default function Career() {
 
 
     const toreact = () => {
-        navigate("/hire/react")
+        navigate("/hire/dev")
     }
 
 
@@ -481,7 +481,6 @@ export default function Career() {
                                 <Tab>Webiste Development</Tab>
                                 <Tab>Applicaion Development</Tab>
                                 <Tab>Ui/Ux Designing</Tab>
-
                             </TabList>
 
                             <TabPanel>
