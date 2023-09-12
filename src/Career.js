@@ -476,30 +476,120 @@ export default function Career() {
                 <div className="row">
                     <div className="container">
                         <h1 className='mt-5 mb-5 text-light text-center sizess'>Hiring developers to work for you!</h1>
-                        <div className="row " data-aos="fade-up"
-                            data-aos-duration="3000">
-                            <div className="col-lg-4">
-                                <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Freact.png?alt=media&token=50f4110f-d5c5-4db3-8e01-3dee262b8d6b "} className='img-fluid saves' onClick={toreact} />
-                            </div>
-                            <div className="col-lg-4">
-                                <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fpython.png?alt=media&token=50c313a9-4d24-4da8-aa12-238a8c0cf898"} className='img-fluid saves' onClick={topython} />
-                            </div>
-                            <div className="col-lg-4">
-                                <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fnode.png?alt=media&token=c49774bb-00f5-42bf-9b92-af62ad2298fc"} className='img-fluid saves' onClick={tonode} />
-                            </div>
-                        </div>
-                        <div className="row mb-5" data-aos="fade-up"
-                            data-aos-duration="3000">
-                            <div className="col-lg-4">
-                                <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fios.png?alt=media&token=59f19538-010f-41ad-883b-0117fca6894c"} className='img-fluid saves' onClick={toios} />
-                            </div>
-                            <div className="col-lg-4">
-                                <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fandroid.png?alt=media&token=6de6310b-7571-4dc7-972b-2e5ea06f9523"} className='img-fluid saves' onClick={toandroid} />
-                            </div>
-                            <div className="col-lg-4">
-                                <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Ffigma.png?alt=media&token=2edf48b4-c20b-4674-9ca9-2f2a8cdb3466"} className='img-fluid saves' onClick={tofigmat} />
-                            </div>
-                        </div>
+                        <Tabs >
+                            <TabList>
+                                <Tab>Webiste Development</Tab>
+                                <Tab>Applicaion Development</Tab>
+                                <Tab>Ui/Ux Designing</Tab>
+
+                            </TabList>
+
+                            <TabPanel>
+                                <div className="container">
+                                    <div className="row " data-aos="fade-up"
+                                        data-aos-duration="3000">
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2FCss.png?alt=media&token=e0f170c0-93b0-497d-b300-5a11629f9f3c "} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2F.net.png?alt=media&token=40c10803-3933-49ec-91ef-cbe9b6949df5 "} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fvue.png?alt=media&token=b2a629fc-36aa-49f3-abc7-fe1c8bcdb529"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fcakephp.png?alt=media&token=c5490456-5b40-4988-83ef-4aac3e17b7f0"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                    </div>
+
+                                    <div className="row mt-3" data-aos="fade-up"
+                                        data-aos-duration="3000">
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fc%23.png?alt=media&token=9a2ff282-6e7b-4b83-8038-c7a17e82f858"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fnext.png?alt=media&token=9301e8b2-3b6c-41e1-bdd6-e1922a055578 "} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fmongo.png?alt=media&token=8e079581-ed97-4d0a-af2d-bef1607bfc31"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fajax.png?alt=media&token=7da03ee7-b588-4b51-bd59-8a31fb085703"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                    </div>
+
+                                    <div className="row mt-3" data-aos="fade-up"
+                                        data-aos-duration="3000">
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fpython%20(2).png?alt=media&token=4dc05868-e036-4637-a0d1-4aebbfe516ac"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fdjango.png?alt=media&token=4410cdfe-aa5c-4c6f-b9f8-bad151ac9519 "} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fnode%20(2).png?alt=media&token=275bd7af-aaff-4708-bb41-03e0a1e66658"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Flaravel.png?alt=media&token=769908b9-dd52-4a64-9598-81580eea852b"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                    </div>
+                                    <div className="row mt-3 text-center" data-aos="fade-up"
+                                        data-aos-duration="3000">
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fjava.png?alt=media&token=4fb0151b-e0af-4c52-a0d0-03f0cf826dd0"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Freact%20(2).png?alt=media&token=7e7fc809-aca4-4468-8d0f-07729449c411"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fnode%20(2).png?alt=media&token=275bd7af-aaff-4708-bb41-03e0a1e66658"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2FiPhone%208%20Plus%20-%2024.png?alt=media&token=8c56e16a-b4a6-4718-a6fe-6a63eafbd033"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </TabPanel>
+                            <TabPanel>
+                                <div className="container">
+                                    <div className="row " data-aos="fade-up"
+                                        data-aos-duration="3000">
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fantive.png?alt=media&token=34425bda-cef2-44dd-8988-c5785293346c "} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fflutter.png?alt=media&token=e458cf0c-ad45-4fde-9a61-9a640feeccb9"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fios%20(2).png?alt=media&token=ca234581-60e0-4af2-8258-8a92c1aa648c"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fandroid%20(2).png?alt=media&token=bd0c5534-fc2d-4723-a0bb-10037f4d5cc4"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </TabPanel>
+                            <TabPanel>
+                                <div className="container text-center">
+                                    <div className="row" data-aos="fade-up"
+                                        data-aos-duration="3000">
+                                        <div className="col-lg-12">
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fui.png?alt=media&token=9d69dfee-8294-4680-adcf-12b02d68e5d9s "} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                            </TabPanel>
+                        </Tabs>
+
+
                     </div>
                 </div >
             </div>

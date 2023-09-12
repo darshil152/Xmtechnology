@@ -39,6 +39,8 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contactus />} />
+          <Route path="*" element={<Home />} />
+
 
         </Routes>
       </BrowserRouter>

@@ -30,8 +30,30 @@ textarea#names {
 h1.jost {
     font-family: 'Jost', sans-serif;
         font-weight: 500;
-        font-size: 35px;
+        font-size: 35px;     
+}
 
+ul.react-tabs__tab-list{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.react-tabs__tab--selected {
+    background: #00142d !important;
+    border-color: #aaa !important;
+    color: white !important;
+    border-radius: 5px 5px 0 0;
+    border-bottom: none !important;
+}
+.react-tabs__tab {
+    display: inline-block;
+    border: 1px solid transparent;
+    border-bottom: none;
+    bottom: -1px;
+    position: relative;
+    list-style: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: white;
 }
 
 h1.borlowe {

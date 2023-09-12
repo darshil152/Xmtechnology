@@ -688,6 +688,7 @@ const Home = () => {
                             <li data-target="#myCarousel" data-slide-to={5} />
                             <li data-target="#myCarousel" data-slide-to={6} />
                             <li data-target="#myCarousel" data-slide-to={7} />
+                            <li data-target="#myCarousel" data-slide-to={8} />
 
                         </ol>
                         {/* Wrapper for carousel items */}
@@ -723,6 +724,7 @@ const Home = () => {
                                     </ul>
                                 </div>
                             </div>
+
                             <div className="carousel-item">
                                 <div className="img-box">
                                     <img src={men} alt="" />
@@ -945,13 +947,16 @@ const Home = () => {
                                     </ul>
                                 </div>
                             </div>
+
                             <div className="carousel-item">
                                 <div className="img-box">
-                                    <img src={women} alt="" />
+                                    <img src={men} alt="" />
 
                                 </div>
                                 <p className="testimonial">
-                                    Hi Akash !! Your team was a pleasure to work with. They were friendly, professional, and knowledgeable. I would definitely work with your company again                           <b>Gabriela Lopez
+                                    I'm not very tech-savvy, so I was worried about hiring a web maintenance company. But XM Technologies was really patient and understanding. They took the time to explain everything to me, and they made sure I was comfortable with the process. I would definitely recommend them to anyone who is not tech-savvy.</p>
+                                <p className="overview">
+                                    <b>Jordan Vyas
 
 
                                     </b>
@@ -976,6 +981,7 @@ const Home = () => {
                                     </ul>
                                 </div>
                             </div>
+
                         </div>
                         {/* Carousel controls */}
                         <a class="carousel-control-prev" href="#myCarousel" data-slide="prev" >
