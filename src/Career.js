@@ -526,7 +526,7 @@ export default function Career() {
                                             <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fdjango.png?alt=media&token=4410cdfe-aa5c-4c6f-b9f8-bad151ac9519 "} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
                                         </div>
                                         <div className="col-lg-3">
-                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fnode%20(2).png?alt=media&token=275bd7af-aaff-4708-bb41-03e0a1e66658"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2FiPhone%208%20Plus%20-%2021%20(1).png?alt=media&token=9aca2d7d-3f99-4c31-b0dc-11ce9ab1d806"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
                                         </div>
                                         <div className="col-lg-3">
                                             <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Flaravel.png?alt=media&token=769908b9-dd52-4a64-9598-81580eea852b"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
@@ -541,7 +541,7 @@ export default function Career() {
                                             <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Freact%20(2).png?alt=media&token=7e7fc809-aca4-4468-8d0f-07729449c411"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
                                         </div>
                                         <div className="col-lg-3">
-                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fnode%20(2).png?alt=media&token=275bd7af-aaff-4708-bb41-03e0a1e66658"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2FiPhone%208%20Plus%20-%2021.png?alt=media&token=c2572573-fa28-4907-874d-194fc8e5302c8"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
                                         </div>
                                         <div className="col-lg-3">
                                             <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2FiPhone%208%20Plus%20-%2024.png?alt=media&token=8c56e16a-b4a6-4718-a6fe-6a63eafbd033"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />

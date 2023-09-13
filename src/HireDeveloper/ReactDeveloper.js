@@ -300,7 +300,18 @@ export default function ReactDeveloper() {
                                                     <div className="row mt-3">
                                                         <select className='text-input inputstyle' id='name' style={{ width: "95%" }} value={team} onChange={(e) => setteam(e.target.value)}>
                                                             <option value="react">React Developer</option>
+                                                            <option value="css">Css Developer</option>
                                                             <option value="node">Node Developer</option>
+                                                            <option value="vue">Vue Developer</option>
+                                                            <option value="Cakephp">Cakephp Developer</option>
+                                                            <option value="csharp">c# Developer</option>
+                                                            <option value="next">Nextjs Developer</option>
+                                                            <option value="mongodb">mongodb Developer</option>
+                                                            <option value="ajax">ajax Developer</option>
+                                                            <option value="django">django Developer</option>
+                                                            <option value="Nuxtjs">Nuxtjs Developer</option>
+                                                            <option value="java">java Developer</option>
+                                                            <option value="jquery">jquery Developer</option>
                                                             <option value="ios">Ios Developer</option>
                                                             <option value="flutter">Flutter Developer</option>
                                                             <option value="android">Android Developer</option>
