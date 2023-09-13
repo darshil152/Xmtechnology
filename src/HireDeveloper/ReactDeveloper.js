@@ -162,7 +162,7 @@ export default function ReactDeveloper() {
     }
 
     const tohire = () => {
-        navigate("/hire/react")
+        navigate("/hire/dev")
     }
 
     const tocontact = () => {

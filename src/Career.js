@@ -380,7 +380,7 @@ export default function Career() {
     }
 
     const tohire = () => {
-        navigate("/hire/react")
+        navigate("/hire/dev")
 
     }
 

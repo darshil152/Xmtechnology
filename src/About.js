@@ -57,7 +57,7 @@ export default function About() {
     }
 
     const tohire = () => {
-        navigate("/hire/react")
+        navigate("/hire/dev")
     }
 
 

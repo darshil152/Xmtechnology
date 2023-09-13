@@ -46,7 +46,7 @@ export default function Admin() {
     }
 
     const tohire = () => {
-        navigate("/hire/react")
+        navigate("/hire/dev")
 
     }
 

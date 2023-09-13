@@ -64,7 +64,7 @@ export default function Portfolio() {
     }
 
     const tohire = () => {
-        navigate("/hire/react")
+        navigate("/hire/dev")
     }
 
 

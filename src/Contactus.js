@@ -107,7 +107,7 @@ export default function Contactus() {
     }
 
     const tohire = () => {
-        navigate("/hire/react")
+        navigate("/hire/dev")
 
     }
 
