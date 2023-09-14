@@ -695,7 +695,7 @@ const Home = () => {
                         <div className="carousel-inner">
                             <div className="carousel-item active">
                                 <div className="img-box">
-                                    <img src={women} alt="" />
+                                    <img src={women} alt="" className='img-fluid' />
                                 </div>
                                 <p className="testimonial">
                                     I'm so glad I found Akash's team. XM Technologies have a team of experienced IT professionals who are able to handle any problem I throw their way. I'm a very satisfied. Thank you so much akash !!
@@ -727,7 +727,7 @@ const Home = () => {
 
                             <div className="carousel-item">
                                 <div className="img-box">
-                                    <img src={men} alt="" />
+                                    <img src={men} alt="" className='img-fluid' />
                                 </div>
                                 <p className="testimonial">
                                     I had a very positive experience with XM Technologies. They were very responsive to my needs and they delivered very good works that was exactly what I wanted. I would definitely recommend them to anyone looking for web development services.
@@ -757,7 +757,7 @@ const Home = () => {
                             </div>
                             <div className="carousel-item">
                                 <div className="img-box">
-                                    <img src={men} alt="" />
+                                    <img src={men} alt="" className='img-fluid' />
 
                                 </div>
                                 <p className="testimonial">
@@ -790,7 +790,7 @@ const Home = () => {
 
                             <div className="carousel-item">
                                 <div className="img-box">
-                                    <img src={women} alt="" />
+                                    <img src={women} alt="" className='img-fluid' />
 
                                 </div>
                                 <p className="testimonial">
@@ -822,7 +822,7 @@ const Home = () => {
 
                             <div className="carousel-item">
                                 <div className="img-box">
-                                    <img src={men} alt="" />
+                                    <img src={men} alt="" className='img-fluid' />
 
                                 </div>
                                 <p className="testimonial">
@@ -854,7 +854,7 @@ const Home = () => {
                             </div>
                             <div className="carousel-item">
                                 <div className="img-box">
-                                    <img src={men} alt="" />
+                                    <img src={men} alt="" className='img-fluid' />
 
                                 </div>
                                 <p className="testimonial">
@@ -886,7 +886,7 @@ const Home = () => {
 
                             <div className="carousel-item">
                                 <div className="img-box">
-                                    <img src={men} alt="" />
+                                    <img src={men} alt="" className='img-fluid' />
 
                                 </div>
                                 <p className="testimonial">
@@ -918,7 +918,7 @@ const Home = () => {
                             </div>
                             <div className="carousel-item">
                                 <div className="img-box">
-                                    <img src={men} alt="" />
+                                    <img src={men} alt="" className='img-fluid' />
 
                                 </div>
                                 <p className="testimonial">
@@ -950,7 +950,7 @@ const Home = () => {
 
                             <div className="carousel-item">
                                 <div className="img-box">
-                                    <img src={men} alt="" />
+                                    <img src={men} alt="" className='img-fluid' />
 
                                 </div>
                                 <p className="testimonial">

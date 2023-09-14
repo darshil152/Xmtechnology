@@ -561,7 +561,7 @@ export default function Career() {
                                             <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fflutter.png?alt=media&token=e458cf0c-ad45-4fde-9a61-9a640feeccb9"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
                                         </div>
                                         <div className="col-lg-3">
-                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fios%20(2).png?alt=media&token=ca234581-60e0-4af2-8258-8a92c1aa648c"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2FiPhone%208%20Plus%20-%2023.png?alt=media&token=43e223e1-3e54-45fb-881a-42fbe93dc656"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
                                         </div>
                                         <div className="col-lg-3">
                                             <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fandroid%20(2).png?alt=media&token=bd0c5534-fc2d-4723-a0bb-10037f4d5cc4"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
@@ -577,7 +577,7 @@ export default function Career() {
                                     <div className="row" data-aos="fade-up"
                                         data-aos-duration="3000">
                                         <div className="col-lg-12">
-                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2Fui.png?alt=media&token=9d69dfee-8294-4680-adcf-12b02d68e5d9s "} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
+                                            <img src={"https://firebasestorage.googleapis.com/v0/b/test-15878.appspot.com/o/Images%2FiPhone%208%20Plus%20-%2023.png?alt=media&token=43e223e1-3e54-45fb-881a-42fbe93dc656"} className='img-fluid saves' style={{ borderRadius: "15px" }} onClick={toreact} />
                                         </div>
 
                                     </div>
