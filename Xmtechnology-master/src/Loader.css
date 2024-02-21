@@ -1,0 +1,199 @@
+.content {
+    width: 60vmin;
+    height: 60vmin;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content div {
+    width: var(--wh);
+    height: var(--wh);
+    position: absolute;
+    animation: loading var(--sp) ease 0s infinite;
+    clip-path: polygon(50% var(--cp), 0% 100%, 100% 100%);
+}
+
+.content div:before,
+.content div:after {
+    content: "";
+    position: absolute;
+    width: var(--ln);
+    height: 100%;
+    bottom: 0.1vmin;
+    transform-origin: 100% 100%;
+    transform: rotate(29.85deg);
+    border-radius: 1vmin;
+    background: linear-gradient(0deg, #1fa5ff, #0b8cdf);
+}
+
+.content div:after {
+    background: linear-gradient(180deg, #0b8cdf, #196291);
+    transform: rotate(-29.85deg);
+    transform-origin: 0% 100%;
+    right: 0;
+}
+
+.content div span {
+    background: linear-gradient(90deg, #fff 0 25%, #0d4e78);
+    width: 100%;
+    height: var(--ln);
+    position: absolute;
+    bottom: 0;
+    border-radius: 1vmin;
+    z-index: 1;
+}
+
+.content div:nth-child(1) {
+    animation-delay: calc(1 * calc(var(--sp) / 80));
+    --wh: calc(1 * 5%);
+    margin-bottom: calc(1 * 1vmin);
+}
+
+.content div:nth-child(2) {
+    animation-delay: calc(2 * calc(var(--sp) / 80));
+    --wh: calc(2 * 5%);
+    margin-bottom: calc(2 * 1vmin);
+}
+
+.content div:nth-child(3) {
+    animation-delay: calc(3 * calc(var(--sp) / 80));
+    --wh: calc(3 * 5%);
+    margin-bottom: calc(3 * 1vmin);
+}
+
+.content div:nth-child(4) {
+    animation-delay: calc(4 * calc(var(--sp) / 80));
+    --wh: calc(4 * 5%);
+    margin-bottom: calc(4 * 1vmin);
+}
+
+.content div:nth-child(5) {
+    animation-delay: calc(5 * calc(var(--sp) / 80));
+    --wh: calc(5 * 5%);
+    margin-bottom: calc(5 * 1vmin);
+}
+
+.content div:nth-child(6) {
+    animation-delay: calc(6 * calc(var(--sp) / 80));
+    --wh: calc(6 * 5%);
+    margin-bottom: calc(6 * 1vmin);
+}
+
+.content div:nth-child(7) {
+    animation-delay: calc(7 * calc(var(--sp) / 80));
+    --wh: calc(7 * 5%);
+    margin-bottom: calc(7 * 1vmin);
+}
+
+.content div:nth-child(8) {
+    animation-delay: calc(8 * calc(var(--sp) / 80));
+    --wh: calc(8 * 5%);
+    margin-bottom: calc(8 * 1vmin);
+}
+
+.content div:nth-child(9) {
+    animation-delay: calc(9 * calc(var(--sp) / 80));
+    --wh: calc(9 * 5%);
+    margin-bottom: calc(9 * 1vmin);
+}
+
+.content div:nth-child(10) {
+    animation-delay: calc(10 * calc(var(--sp) / 80));
+    --wh: calc(10 * 5%);
+    margin-bottom: calc(10 * 1vmin);
+}
+
+.content div:nth-child(11) {
+    animation-delay: calc(11 * calc(var(--sp) / 80));
+    --wh: calc(11 * 5%);
+    margin-bottom: calc(11 * 1vmin);
+}
+
+.content div:nth-child(12) {
+    animation-delay: calc(12 * calc(var(--sp) / 80));
+    --wh: calc(12 * 5%);
+    margin-bottom: calc(12 * 1vmin);
+}
+
+.content div:nth-child(13) {
+    animation-delay: calc(13 * calc(var(--sp) / 80));
+    --wh: calc(13 * 5%);
+    margin-bottom: calc(13 * 1vmin);
+}
+
+.content div:nth-child(14) {
+    animation-delay: calc(14 * calc(var(--sp) / 80));
+    --wh: calc(14 * 5%);
+    margin-bottom: calc(14 * 1vmin);
+}
+
+.content div:nth-child(15) {
+    animation-delay: calc(15 * calc(var(--sp) / 80));
+    --wh: calc(15 * 5%);
+    margin-bottom: calc(15 * 1vmin);
+}
+
+.content div:nth-child(16) {
+    animation-delay: calc(16 * calc(var(--sp) / 80));
+    --wh: calc(16 * 5%);
+    margin-bottom: calc(16 * 1vmin);
+}
+
+.content div:nth-child(17) {
+    animation-delay: calc(17 * calc(var(--sp) / 80));
+    --wh: calc(17 * 5%);
+    margin-bottom: calc(17 * 1vmin);
+}
+
+.content div:nth-child(18) {
+    animation-delay: calc(18 * calc(var(--sp) / 80));
+    --wh: calc(18 * 5%);
+    margin-bottom: calc(18 * 1vmin);
+}
+
+.content div:nth-child(19) {
+    animation-delay: calc(19 * calc(var(--sp) / 80));
+    --wh: calc(19 * 5%);
+    margin-bottom: calc(19 * 1vmin);
+}
+
+.content div:nth-child(20) {
+    animation-delay: calc(20 * calc(var(--sp) / 80));
+    --wh: calc(20 * 5%);
+    margin-bottom: calc(20 * 1vmin);
+}
+
+.content div:nth-child(n + 4) {
+    --cp: 12%;
+}
+
+.content div:nth-child(n + 9) {
+    --cp: 12.5%;
+}
+
+@keyframes loading {
+
+    0%,
+    30%,
+    90%,
+    100% {
+        transform: rotateY(0deg);
+        filter: none;
+    }
+
+    50% {
+        transform: rotateY(60deg);
+        filter: hue-rotate(15deg) saturate(1.5) brightness(0.75) contrast(1.5);
+    }
+
+    60% {
+        filter: hue-rotate(15deg) saturate(1.25) brightness(0.85) contrast(1.25);
+    }
+
+    70% {
+        transform: rotateY(-60deg);
+        filter: hue-rotate(15deg) saturate(1.5) brightness(0.75) contrast(1.5);
+    }
+}
