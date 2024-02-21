@@ -549,7 +549,7 @@ export default function About() {
                                         <div>
                                             <h5>Services</h5>
                                             <p className='m-0'> Web Development</p>
-                                            <p className='m-0'> Digital Marketing</p>
+                                            <p className='m-0'> Digital Marketing </p>
                                             <p className='m-0'> Application Development</p>
                                             <p className='m-0'> E-Commerce Solution</p>
                                             <p className='m-0'> Backup & Security</p>
